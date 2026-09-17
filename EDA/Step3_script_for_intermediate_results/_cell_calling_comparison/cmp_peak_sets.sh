@@ -9,7 +9,6 @@ bash ${script_dir}/cmp_peaksets.sh -o $res_dir/FRIPpeaks_vs_Rawpeaks \
 	-b  $res_dir/Rawpeaks \
 	-c  $res_dir/FRIP_cells_peaks
 
-
 bash ${script_dir}/cmp_peaksets.sh -o $res_dir/TSSpeaks_vs_Rawpeaks \
 	-b $res_dir/Rawpeaks \
 	-c  $res_dir/TSS_cells_peaks
@@ -18,7 +17,6 @@ bash ${script_dir}/cmp_peaksets.sh -o $res_dir/Entropypeaks_vs_Rawpeaks \
 	-b $res_dir/Rawpeaks \
 	-c $res_dir/Entropy_cells_peaks
 
-exit 0
 
 
 # Common vs Raw
@@ -41,10 +39,10 @@ bash ${script_dir}/cmp_peaksets.sh -o $res_dir/Entropypeaks_vs_Commonpeaks \
 	-c $res_dir/Entropy_cells_peaks
 
 
-# Entropy peaks vs TSS peaks
-bash ${script_dir}/cmp_peaksets.sh -o $res_dir/Entropypeaks_vs_TSSpeaks \
-	-b $res_dir/TSS_cells_peaks \
-	-c $res_dir/Entropy_cells_peaks
+# # Entropy peaks vs TSS peaks
+# bash ${script_dir}/cmp_peaksets.sh -o $res_dir/Entropypeaks_vs_TSSpeaks \
+# 	-b $res_dir/TSS_cells_peaks \
+# 	-c $res_dir/Entropy_cells_peaks
 
 
 

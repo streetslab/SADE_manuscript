@@ -28,6 +28,14 @@ Go to the manuscript branch analysis folder:
     ## running this to have the Raw peaks, SADE-peaks, CR-peaks, and TSSe-peaks, 
     ##         as well as the 'Union_cell_3set_all_info.tsv' that does not record bc deemed to be noisy by all the 3 methods
 
+
+    - bash cmp_peak_sets.sh
+    ## running this to see differences among peak-sets 
+
+    - bash  annotate_peaks.sh
+    ## running this to annotate all the peaks 
+
+    
     - run /home/syyang/GitRepo/SADE/EDA/F2_prepare_save_rna_in_atac_union_bc_v.ipynb
     ## save rna modality info into h5:  _cell_calling_comparison/Union_3set_rna.h5ad
 
@@ -46,11 +54,12 @@ Go to the manuscript branch analysis folder:
     - cd VIB_10xultiome_2_WS3000F/_cell_calling_comparison
 
     - bash overlap_frag_peaks.sh 
-    ## run this to have subset fragments that overlapped with each peak set.
+    ## run this to have subset fragments that overlap with each peak set.
     
 
     ## Able to run 
     ##  /home/syyang/GitRepo/SADE/EDA/F2_union_set_comparison.ipynb
+
 
     - cd VIB_10xultiome_2_WS3000F/_cell_calling_comparison
     - bash convert_frag_to_bam.sh
