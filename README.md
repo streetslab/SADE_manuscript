@@ -10,6 +10,12 @@ It is for historical reasons the analysis scripts folder is named as `EDA`.
 needs to be callable in your OS.   
 [bamCoverage](https://deeptools.readthedocs.io/en/develop/content/tools/bamCoverage.html)
 needs to be installed in your python environment.   
+[Genrich](https://github.com/jsh58/genrich)
+needs to be callable in your OS.    
+[bedtools](https://bedtools.readthedocs.io/en/stable/)
+needs to be callable in your OS.    
+[Homer](http://homer.ucsd.edu/homer/ngs/annotation.html)
+needs to be callable in your OS.
 
 We suggest 
   you copy and paste the whole subfolder `EDA` to outside of the local-sade-path,   
