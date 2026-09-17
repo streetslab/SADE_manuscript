@@ -1,9 +1,15 @@
+# SADE / VIB_10xultiome_2 Workflow
 
-1. run sade on sample 
-    bash sade.sh sample/fragments.tsv.gz -o VIB_10xultiome_2_WS3000F
+## 1) Run SADE on the sample
+```bash
+bash sade.sh sample/fragments.tsv.gz -o VIB_10xultiome_2_WS3000F
+
     ## Able to run 
     ## /home/syyang/GitRepo/SADE/EDA/F1_demo_v.ipynb  
 
+## 2) Prepare intermediate results
+
+Go to the manuscript branch analysis folder:
 2. cd 'local_git_repo-manuscript_branch/EDA/reproduce_VIB_10xmultiome_2_analysisresult'
     - bash cp_scripts_to_resfolder.sh
         # Now you should have all the scripts in local_SADE-manuscript_branch/EDA/Step3_script_for_intermediate_results/* within VIB_10xultiome_2_WS3000F
@@ -54,12 +60,16 @@
     ## Able to run 
     ##  /home/syyang/GitRepo/SADE/EDA/F3_FRIP_union_3sets.ipynb
 
+    - bash get_set_frag_bigwig.sh
+    ## get fragments corresponding to each filtering methods's barcode set.
+    ##                 in the format of .bam as well as .bigwig (For visualization purpose)
 
     - cd VIB_10xultiome_2_WS3000F/_cell_calling_comparison
     - bash  get_specific_bc_frag_bigwig_p2.sh
-    ## Get per barcode fragment 
+    ## Get per barcode fragments
+    ##                 in the format of .bam as well as .bigwig (For visualization purpose)
+    ## This step takes long (a whole day or so) due to converting to .bigwig needs to be done per barcode 
 
-    - bash 
 
     ## Able to run 
     ##  /home/syyang/GitRepo/SADE/EDA/F3_frag_dist_union_3sets_perbarcode.ipynb
