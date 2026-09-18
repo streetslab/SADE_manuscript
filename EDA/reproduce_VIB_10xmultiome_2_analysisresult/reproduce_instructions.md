@@ -4,24 +4,37 @@
 ```bash
 bash sade.sh sample/fragments.tsv.gz -o VIB_10xultiome_2_WS3000F
 
-    ## Able to run 
-    ## /home/syyang/GitRepo/SADE/EDA/F1_demo_v.ipynb  
+```
+Able to run 
+```  /home/syyang/GitRepo/SADE/EDA/F1_demo_v.ipynb  ```
 
 ## 2) Prepare intermediate results
 
 Go to the manuscript branch analysis folder:
-2. cd 'local_git_repo-manuscript_branch/EDA/reproduce_VIB_10xmultiome_2_analysisresult'
-    - bash cp_scripts_to_resfolder.sh
-        # Now you should have all the scripts in local_SADE-manuscript_branch/EDA/Step3_script_for_intermediate_results/* within VIB_10xultiome_2_WS3000F
-    - cd VIB_10xultiome_2_WS3000F/_ArchR_TSS
-    - bash prepare_frag_for_archr.sh 
-        # Now you should have ArchR-TSSe filtering results, its filtered barcodes in the VIB_10xmultiome_2_WS3000F/_ArchR_TSS/ subfolder
-    
-    - cd VIB_10xultiome_2_WS3000F/_CR_FRIP
-    - bash get_CR_barcodes.sh
+```bash
+bash local_SADE_manuscript/EDA/reproduce_VIB_10xmultiome_2_analysisresult/cp_scripts_to_resfolder.sh
+```
+Now you should have all the scripts in ```local_SADE_manuscript/EDA/Step3_script_for_intermediate_results/*``` copied into ```VIB_10xultiome_2_WS3000F```
 
-    - run  /home/syyang/GitRepo/SADE/EDA/F2_prepare_data.ipynb
-    ## running this is necessary to have 'Union_cell_3set_all_info.tsv' (BC that's not in union-bc are flagged but still kept) in the 'VIB_10xmultiome_2_WS3000F/_cell_calling_comparison'
+
+### 2.1 ArchR TSS processing
+```bash
+cd VIB_10xultiome_2_WS3000F/_ArchR_TSS
+bash prepare_frag_for_archr.sh 
+```
+Now you should have ArchR-TSSe filtering results, its filtered barcodes in the ```VIB_10xmultiome_2_WS3000F/_ArchR_TSS/``` subfolder
+
+### 2.2 CellRanger (filtered with FRIP) barcodes
+```bash
+VIB_10xultiome_2_WS3000F/_CR_FRIP
+bash get_CR_barcodes.sh
+```
+### 2.3 Prepare union-cell information    
+Run:    
+* ``` /home/syyang/GitRepo/SADE/EDA/F2_prepare_data.ipynb ```    
+This creates:    
+* ```Union_cell_3set_all_info.tsv``` within the ```VIB_10xmultiome_2_WS3000F/_cell_calling_comparison```   
+**Notes**   Barcodes not in the union barcodes are flagged but still kept. 
 
     - cd VIB_10xultiome_2_WS3000F/_cell_calling_comparison
     - bash get_peak_sets.sh
