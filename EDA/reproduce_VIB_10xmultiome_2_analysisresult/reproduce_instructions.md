@@ -86,7 +86,7 @@ Go to the manuscript branch analysis folder:
     - bash  get_specific_bc_frag_bigwig_p2.sh
     ## Get per barcode fragments
     ##                 in the format of .bam as well as .bigwig (For visualization purpose)
-    ## This step takes long (a whole day or so) due to converting to .bigwig needs to be done per barcode 
+    ## This step takes long (2 whole days or so) due to converting to .bigwig needs to be done per barcode 
 
 
     ## Able to run 
