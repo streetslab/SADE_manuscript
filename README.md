@@ -18,7 +18,6 @@ needs to be callable in your OS.
 needs to be callable in your OS.
 
 We suggest 
-  you copy and paste the whole subfolder `EDA` to outside of the local-sade-path,   
+  you copy and paste the whole subfolder `EDA` to outside of the local-side-manuscript-path,
   make suitable and necessary changes to the file paths within those scripts,   
-  and execute the scripts based on the instructions within,   
-  all the while keeping the local-sade-path at main branch.
+  and execute the scripts based on the instructions within.
