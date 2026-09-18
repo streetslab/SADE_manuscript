@@ -35,7 +35,7 @@ Go to the manuscript branch analysis folder:
     - bash  annotate_peaks.sh
     ## running this to annotate all the peaks 
 
-    
+
     - run /home/syyang/GitRepo/SADE/EDA/F2_prepare_save_rna_in_atac_union_bc_v.ipynb
     ## save rna modality info into h5:  _cell_calling_comparison/Union_3set_rna.h5ad
 
@@ -43,7 +43,7 @@ Go to the manuscript branch analysis folder:
     ## save rna gene expression cluster info: _cell_calling_comparison/Union_cell_3set_with_RNA_cluster.tsv
     ##                                        _cell_calling_comparison/Union_3set_rna_with_RNA_cluster.h5ad
 
-    - run /home/syyang/GitRepo/SADE/EDA/F2_prepare_save_rna_RNACR_QC_info.ipynb
+    - run /home/syyang/GitRepo/SADE/EDA/F2_prepare_save_rna_RNACR_QC_info_v.ipynb
     ## Add one more column to the 'rna_pass_cr' to 'Union_cell_3set_all_info.tsv' file 
     ## resulting: _cell_calling_comparison/Union_cell_3set_w_RNAQC.tsv file
 
@@ -52,13 +52,22 @@ Go to the manuscript branch analysis folder:
     ## run this to have the 'union_bc_fragments.bed' that has subset fragments corresponding to the union bc retained by any of the 3 methods
 
     - cd VIB_10xultiome_2_WS3000F/_cell_calling_comparison
-
     - bash overlap_frag_peaks.sh 
     ## run this to have subset fragments that overlap with each peak set.
     
 
     ## Able to run 
     ##  /home/syyang/GitRepo/SADE/EDA/F2_union_set_comparison.ipynb
+
+    ## Able to run 
+    ##  /home/syyang/GitRepo/SADE_manuscript/EDA/F3_peakset_comparison_v.ipynb
+
+    - bash runAMULET.sh
+    ## run this to flag ATAC doublets with AMULET among the union barcodes 
+     
+    ## Able to run 
+    ##   /home/syyang/GitRepo/SADE_manuscript/EDA/F3_unionset_rna_clustering_v.ipynb
+    ##   /home/syyang/GitRepo/SADE_manuscript/EDA/F3_sup_unionset_gene_expression_v.ipynb
 
 
     - cd VIB_10xultiome_2_WS3000F/_cell_calling_comparison

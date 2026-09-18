@@ -10,31 +10,31 @@ res_dir=${output_dir}/cmp_3Set/filtering_method_set
 set_annotation_file=$output_dir/Union_cell_3set.tsv
 mkdir -p ${res_dir}
 
-# set_list=("atac_pass_CR" "atac_pass_entropy" "atac_pass_archr_TSS")
-# for i in {0..2}
-# do
-# 	     set_name=${set_list[$i]}
-# 	     col=$(($i+3))
+set_list=("atac_pass_CR" "atac_pass_entropy" "atac_pass_archr_TSS")
+for i in {0..2}
+do
+	     set_name=${set_list[$i]}
+	     col=$(($i+3))
 
-# 	awk -F '\t' -v OFS='' -v col="${col}" '{ if ($col=="True") print $1 }' ${set_annotation_file} > $res_dir/${set_name}_bc.txt
+	awk -F '\t' -v OFS='' -v col="${col}" '{ if ($col=="True") print $1 }' ${set_annotation_file} > $res_dir/${set_name}_bc.txt
 
-# 	samtools view -h $frag_bam_file | awk -F '\t' -v OFS='\t'  '
-#         NR==FNR {
-# 	bc_list[$1]; next
-#         }
+	samtools view -h $frag_bam_file | awk -F '\t' -v OFS='\t'  '
+        NR==FNR {
+	bc_list[$1]; next
+        }
 
-# 	{ if ($1 ~ /^@/) { print $0; next }
-# 	if (  $1 in bc_list ) print $0  
-# 	}
-# 	'  $res_dir/${set_name}_bc.txt  - |  samtools sort -@ 8 -o $res_dir/sorted_farg_${set_name}.bam 
+	{ if ($1 ~ /^@/) { print $0; next }
+	if (  $1 in bc_list ) print $0  
+	}
+	'  $res_dir/${set_name}_bc.txt  - |  samtools sort -@ 8 -o $res_dir/sorted_farg_${set_name}.bam 
 	
-# 	samtools index $res_dir/sorted_farg_${set_name}.bam
-# 	bamCoverage -b $res_dir/sorted_farg_${set_name}.bam \
-# 		    -o $res_dir/sorted_farg_${set_name}.bw \
-# 		    -bs 1 \
-# 		    -p 32
+	samtools index $res_dir/sorted_farg_${set_name}.bam
+	bamCoverage -b $res_dir/sorted_farg_${set_name}.bam \
+		    -o $res_dir/sorted_farg_${set_name}.bw \
+		    -bs 1 \
+		    -p 32
 
-# done
+done
 
 
 

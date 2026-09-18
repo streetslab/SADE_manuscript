@@ -6,6 +6,7 @@ awk -F '\t' -v OFS=""  'NR>1 {print $1}' Union_cell_3set.tsv  > Union_cells_bc.t
 
 
 rg -f  Union_cells_bc.txt $frag_file > union_bc_fragments.tsv
+gzip -k union_bc_fragments.tsv
 
 sort -k1,1 -k2,2n union_bc_fragments.tsv  > union_bc_fragments.bed
 
