@@ -90,6 +90,6 @@ Go to the manuscript branch analysis folder:
 
 
     ## Able to run 
-    ##  /home/syyang/GitRepo/SADE/EDA/F3_frag_dist_union_3sets_perbarcode.ipynb
+    ##  /home/syyang/GitRepo/SADE/EDA/F3_frag_dist_union_3sets_perbarcode_v.ipynb
 
     ## Able to run the rest of the ipynb
