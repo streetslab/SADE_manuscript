@@ -11,7 +11,7 @@ needs to be callable in your OS.
 [bamCoverage](https://deeptools.readthedocs.io/en/develop/content/tools/bamCoverage.html)
 needs to be installed in your python environment.   
 [Genrich](https://github.com/jsh58/genrich)
-needs to be installed in your OS.
+needs to be installed in your OS.    
 [bedtools](https://bedtools.readthedocs.io/en/stable/)
 needs to be callable in your OS.    
 [Homer](http://homer.ucsd.edu/homer/ngs/annotation.html)
