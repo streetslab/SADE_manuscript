@@ -1,0 +1,1507 @@
+
+           ___      .______        ______  __    __  .______      
+          /   \     |   _  \      /      ||  |  |  | |   _  \     
+         /  ^  \    |  |_)  |    |  ,----'|  |__|  | |  |_)  |    
+        /  /_\  \   |      /     |  |     |   __   | |      /     
+       /  _____  \  |  |\  \\___ |  `----.|  |  |  | |  |\  \\___.
+      /__/     \__\ | _| `._____| \______||__|  |__| | _| `._____|
+    
+Logging With ArchR!
+
+Start Time : 2026-06-17 17:28:19.07745
+
+------- ArchR Info
+
+ArchRThreads = 32
+ArchRGenome = Mm10
+
+------- System Info
+
+Computer OS = unix
+Total Cores = 64
+
+------- Session Info
+
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /home/syyang/miniconda3/envs/seuratv5/lib/libopenblasp-r0.3.26.so;  LAPACK version 3.12.0
+
+Random number generation:
+ RNG:     L'Ecuyer-CMRG 
+ Normal:  Inversion 
+ Sample:  Rejection 
+ 
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: America/Los_Angeles
+tzcode source: system (glibc)
+
+attached base packages:
+ [1] parallel  stats4    grid      stats     graphics  grDevices utils    
+ [8] datasets  methods   base     
+
+other attached packages:
+ [1] BSgenome.Mmusculus.UCSC.mm10_1.4.3 BSgenome_1.70.2                   
+ [3] rtracklayer_1.62.0                 BiocIO_1.12.0                     
+ [5] Biostrings_2.70.1                  XVector_0.42.0                    
+ [7] rhdf5_2.46.1                       SummarizedExperiment_1.32.0       
+ [9] Biobase_2.62.0                     RcppArmadillo_15.0.2-1            
+[11] Rcpp_1.1.1                         Matrix_1.6-5                      
+[13] GenomicRanges_1.54.1               GenomeInfoDb_1.38.8               
+[15] IRanges_2.36.0                     S4Vectors_0.40.2                  
+[17] BiocGenerics_0.48.1                sparseMatrixStats_1.14.0          
+[19] MatrixGenerics_1.14.0              matrixStats_1.5.0                 
+[21] data.table_1.18.2.1                stringr_1.6.0                     
+[23] plyr_1.8.9                         magrittr_2.0.4                    
+[25] ggplot2_4.0.2                      gtable_0.3.6                      
+[27] gtools_3.9.5                       gridExtra_2.3                     
+[29] devtools_2.4.6                     usethis_3.2.1                     
+[31] ArchR_1.0.3                       
+
+loaded via a namespace (and not attached):
+ [1] rjson_0.2.23             remotes_2.5.0            lattice_0.22-9          
+ [4] rhdf5filters_1.14.1      vctrs_0.7.1              tools_4.3.3             
+ [7] bitops_1.0-9             generics_0.1.4           tibble_3.3.1            
+[10] pkgconfig_2.0.3          RColorBrewer_1.1-3       S7_0.2.0                
+[13] lifecycle_1.0.5          GenomeInfoDbData_1.2.11  compiler_4.3.3          
+[16] farver_2.1.2             Rsamtools_2.18.0         codetools_0.2-20        
+[19] yaml_2.3.12              RCurl_1.98-1.17          pillar_1.11.1           
+[22] crayon_1.5.3             ellipsis_0.3.2           BiocParallel_1.36.0     
+[25] cachem_1.1.0             DelayedArray_0.28.0      sessioninfo_1.2.3       
+[28] abind_1.4-8              tidyselect_1.2.1         stringi_1.8.7           
+[31] restfulr_0.0.16          dplyr_1.2.0              purrr_1.2.1             
+[34] fastmap_1.2.0            cli_3.6.5                SparseArray_1.2.4       
+[37] S4Arrays_1.2.1           XML_3.99-0.22            dichromat_2.0-0.1       
+[40] pkgbuild_1.4.8           withr_3.0.2              scales_1.4.0            
+[43] memoise_2.0.1            rlang_1.1.7              glue_1.8.0              
+[46] pkgload_1.5.0            R6_2.6.1                 Rhdf5lib_1.24.2         
+[49] GenomicAlignments_1.38.2 fs_1.6.6                 zlibbioc_1.48.2         
+
+
+------- Log Info
+
+
+2026-06-17 17:28:19.110493 : createArrowFiles Input-Parameters, Class = list
+
+createArrowFiles Input-Parameters$inputFiles: length = 1
+                                                                                        mouse_cryo_brain_5k 
+"/mnt/hdd_bob/syy/adipose/atac/cr_goldstand/mouse_cryo_brain_5k/atac_v1_E18_brain_cryo_5k_fragments.tsv.gz" 
+
+
+createArrowFiles Input-Parameters$sampleNames: length = 1
+[1] "mouse_cryo_brain_5k"
+
+
+createArrowFiles Input-Parameters$outputNames: length = 1
+[1] "mouse_cryo_brain_5k"
+
+
+createArrowFiles Input-Parameters$validBarcodes: length = 0
+NULL
+
+
+createArrowFiles Input-Parameters$minTSS: length = 1
+[1] 4
+
+
+createArrowFiles Input-Parameters$minFrags: length = 1
+[1] 1000
+
+
+createArrowFiles Input-Parameters$maxFrags: length = 1
+[1] 1e+05
+
+
+createArrowFiles Input-Parameters$minFragSize: length = 1
+[1] 10
+
+
+createArrowFiles Input-Parameters$maxFragSize: length = 1
+[1] 2000
+
+
+createArrowFiles Input-Parameters$QCDir: length = 1
+[1] "QualityControl"
+
+
+createArrowFiles Input-Parameters$nucLength: length = 1
+[1] 147
+
+
+createArrowFiles Input-Parameters$promoterRegion: length = 2
+[1] 2000  100
+
+
+createArrowFiles Input-Parameters$excludeChr: length = 2
+[1] "chrM" "chrY"
+
+
+createArrowFiles Input-Parameters$nChunk: length = 1
+[1] 5
+
+
+createArrowFiles Input-Parameters$bcTag: length = 1
+[1] "qname"
+
+
+createArrowFiles Input-Parameters$gsubExpression: length = 0
+NULL
+
+
+createArrowFiles Input-Parameters$bamFlag: length = 0
+NULL
+
+
+createArrowFiles Input-Parameters$offsetPlus: length = 1
+[1] 4
+
+
+createArrowFiles Input-Parameters$offsetMinus: length = 1
+[1] -5
+
+
+createArrowFiles Input-Parameters$addTileMat: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$addGeneScoreMat: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$force: length = 1
+[1] FALSE
+
+
+createArrowFiles Input-Parameters$threads: length = 1
+[1] 32
+
+
+createArrowFiles Input-Parameters$parallelParam: length = 0
+NULL
+
+
+createArrowFiles Input-Parameters$subThreading: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$verbose: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$cleanTmp: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$logFile: length = 1
+[1] "ArchRLogs/ArchR-createArrows-3f91e376af48d1-Date-2026-06-17_Time-17-28-19.074907.log"
+
+
+createArrowFiles Input-Parameters$filterFrags: length = 1
+[1] 1000
+
+
+createArrowFiles Input-Parameters$filterTSS: length = 1
+[1] 4
+
+
+
+2026-06-17 17:28:19.141277 : Cleaning Temporary Files
+2026-06-17 17:28:19.146307 : Batch Execution w/ safelapply!, 0 mins elapsed.
+
+###########
+2026-06-17 17:28:19.147268 : Creating Arrow File mouse_cryo_brain_5k.arrow (mouse_cryo_brain_5k : 1 of 1)
+###########
+
+
+2026-06-17 17:28:19.147758 : validBC, Class = NULL
+
+validBC: length = 0
+NULL
+
+
+
+2026-06-17 17:28:19.168103 : (mouse_cryo_brain_5k : 1 of 1) Determining Arrow Method to use!
+2026-06-17 17:28:19.17212 : (mouse_cryo_brain_5k : 1 of 1) Reading In Fragments from inputFiles (readMethod = tabix), 0 mins elapsed.
+2026-06-17 17:28:19.175447 : (mouse_cryo_brain_5k : 1 of 1) Tabix Bed To Temporary File, 0 mins elapsed.
+
+2026-06-17 17:28:19.279415 : tileChromSizes, Class = GRanges
+GRanges object with 105 ranges and 1 metadata column:
+        seqnames              ranges strand |     chunkName
+           <Rle>           <IRanges>  <Rle> |   <character>
+    [1]     chr1          1-39094394      * |   chr1#chunk1
+    [2]     chr1   39094395-78188788      * |   chr1#chunk2
+    [3]     chr1  78188789-117283182      * |   chr1#chunk3
+    [4]     chr1 117283183-156377576      * |   chr1#chunk4
+    [5]     chr1 156377577-195471971      * |   chr1#chunk5
+    ...      ...                 ...    ... .           ...
+  [101]     chrY          1-18348939      * | chrY#chunk101
+  [102]     chrY   18348940-36697879      * | chrY#chunk102
+  [103]     chrY   36697880-55046818      * | chrY#chunk103
+  [104]     chrY   55046819-73395758      * | chrY#chunk104
+  [105]     chrY   73395759-91744698      * | chrY#chunk105
+  -------
+  seqinfo: 21 sequences from an unspecified genome; no seqlengths
+
+
+2026-06-17 17:28:26.114193 : (mouse_cryo_brain_5k : 1 of 1) .tabixToTmp Fragments-Chunk-(1 of 105)-chr1:1-39094394, Class = data.table
+ 
+2026-06-17 17:28:26.114193 : (mouse_cryo_brain_5k : 1 of 1) .tabixToTmp Fragments-Chunk-(1 of 105)-chr1:1-39094394, Class = data.frame
+(mouse_cryo_brain_5k : 1 of 1) .tabixToTmp Fragments-Chunk-(1 of 105)-chr1:1-39094394: nRows = 1081316, nCols = 3
+        V2      V3                 V4
+     <num>   <int>             <char>
+1: 3000155 3000205 ATGGATCGTGTGTGCC-1
+2: 3000186 3000395 GATGATCGTCGCTAGC-1
+3: 3000228 3000436 GTCTACCTCGTGAGTT-1
+4: 3000333 3000525 CTCGCTACAAGCCTTA-1
+5: 3000380 3000595 ATTGTCTAGTGGTGTG-1
+6: 3000408 3000606 CACGTTCAGAATCAGT-1
+
+
+
+2026-06-17 17:28:26.126123 : (mouse_cryo_brain_5k : 1 of 1) .tabixToTmp Barcodes-Chunk-(1 of 105)-chr1:1-39094394, Class = character
+
+(mouse_cryo_brain_5k : 1 of 1) .tabixToTmp Barcodes-Chunk-(1 of 105)-chr1:1-39094394: length = 21428
+[1] "ATGGATCGTGTGTGCC-1" "GATGATCGTCGCTAGC-1" "GTCTACCTCGTGAGTT-1"
+[4] "CTCGCTACAAGCCTTA-1" "ATTGTCTAGTGGTGTG-1" "CACGTTCAGAATCAGT-1"
+
+
+2026-06-17 17:28:36.068121 : (mouse_cryo_brain_5k : 1 of 1) Reading TabixFile 62 Percent, 0.282 mins elapsed.
+2026-06-17 17:28:49.532037 : (mouse_cryo_brain_5k : 1 of 1) Parallel Hdf5 Linkage Temporary File, 0.506 mins elapsed.
+2026-06-17 17:28:50.284965 : (mouse_cryo_brain_5k : 1 of 1) Successful creation of Temporary File, 0.519 mins elapsed.
+2026-06-17 17:28:50.2877 : (mouse_cryo_brain_5k : 1 of 1) Creating ArrowFile From Temporary File, 0.519 mins elapsed.
+
+2026-06-17 17:28:50.552976 : (mouse_cryo_brain_5k : 1 of 1) chunkChrNames, Class = data.frame
+(mouse_cryo_brain_5k : 1 of 1) chunkChrNames: nRows = 105, nCols = 1
+     chunkNames
+1   chr1#chunk1
+2   chr1#chunk2
+3   chr1#chunk3
+4   chr1#chunk4
+5   chr1#chunk5
+6 chr10#chunk46
+
+
+2026-06-17 17:28:50.557323 : (mouse_cryo_brain_5k : 1 of 1) Counting Unique Barcodes From Temporary File, 0.524 mins elapsed.
+
+2026-06-17 17:28:54.558095 : (mouse_cryo_brain_5k : 1 of 1) BarcodeFrequencyTable, Class = data.table
+ 
+2026-06-17 17:28:54.558095 : (mouse_cryo_brain_5k : 1 of 1) BarcodeFrequencyTable, Class = data.frame
+(mouse_cryo_brain_5k : 1 of 1) BarcodeFrequencyTable: nRows = 358217, nCols = 2
+            values.V1     V1
+               <char>  <int>
+1: AGCCTCTGTGGAAAGA-1 356391
+2: GCCATAAAGAATATCG-1 210334
+3: CTAGCGGAGCGCATTT-1 205974
+4: TCTCAGCCACTCGCAG-1 173342
+5: TCGGGACTCTATCTTG-1 167116
+6: ACTATTCTCCTTGACC-1 161088
+
+
+
+2026-06-17 17:28:54.568917 : (mouse_cryo_brain_5k : 1 of 1) BarcodesMinMaxFrags, Class = data.frame
+(mouse_cryo_brain_5k : 1 of 1) BarcodesMinMaxFrags: nRows = 5070, nCols = 1
+                  bc
+1 GATCATGGTGTCCCAG-1
+2 AATGTCGAGCCCATTA-1
+3 GAGGATGGTCGACTGC-1
+4 TACATGGTCGTCCCAT-1
+5 GGAGAACTCCGTGCAG-1
+6 GTAATCGGTACCAAGG-1
+
+
+
+2026-06-17 17:28:55.173997 : (mouse_cryo_brain_5k : 1 of 1) Unique Chromosomes, Class = data.frame
+(mouse_cryo_brain_5k : 1 of 1) Unique Chromosomes: nRows = 21, nCols = 1
+   chr
+1 chr1
+2 chr2
+3 chr3
+4 chr4
+5 chr5
+6 chr6
+
+
+2026-06-17 17:28:55.210814 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 1 of 21, 0.601 mins elapsed.
+2026-06-17 17:28:55.230504 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 2 of 21, 0.601 mins elapsed.
+2026-06-17 17:28:55.250433 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 3 of 21, 0.602 mins elapsed.
+2026-06-17 17:28:55.268449 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 4 of 21, 0.602 mins elapsed.
+2026-06-17 17:28:55.288548 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 5 of 21, 0.602 mins elapsed.
+2026-06-17 17:28:55.307241 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 6 of 21, 0.603 mins elapsed.
+2026-06-17 17:28:55.324756 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 7 of 21, 0.603 mins elapsed.
+2026-06-17 17:28:55.342052 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 8 of 21, 0.603 mins elapsed.
+2026-06-17 17:28:55.359054 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 9 of 21, 0.604 mins elapsed.
+2026-06-17 17:28:55.376381 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 10 of 21, 0.604 mins elapsed.
+2026-06-17 17:28:55.391771 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 11 of 21, 0.604 mins elapsed.
+2026-06-17 17:28:55.410245 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 12 of 21, 0.604 mins elapsed.
+2026-06-17 17:28:55.430448 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 13 of 21, 0.605 mins elapsed.
+2026-06-17 17:28:55.450429 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 14 of 21, 0.605 mins elapsed.
+2026-06-17 17:28:55.468567 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 15 of 21, 0.605 mins elapsed.
+2026-06-17 17:28:55.489066 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 16 of 21, 0.606 mins elapsed.
+2026-06-17 17:28:55.510949 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 17 of 21, 0.606 mins elapsed.
+2026-06-17 17:28:55.532087 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 18 of 21, 0.606 mins elapsed.
+2026-06-17 17:28:55.554844 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 19 of 21, 0.607 mins elapsed.
+2026-06-17 17:28:55.577403 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 20 of 21, 0.607 mins elapsed.
+2026-06-17 17:28:55.600466 : (mouse_cryo_brain_5k : 1 of 1) Adding Chromosome 21 of 21, 0.608 mins elapsed.
+
+2026-06-17 17:28:58.456402 : (mouse_cryo_brain_5k : 1 of 1) .tmpToArrow Fragments0-Chr-(1 of 21)-chr1, Class = IRanges
+
+(mouse_cryo_brain_5k : 1 of 1) .tmpToArrow Fragments0-Chr-(1 of 21)-chr1: length = 6990461
+IRanges object with 6 ranges and 1 metadata column:
+          start       end     width |                 RG
+      <integer> <integer> <integer> |              <Rle>
+  [1]   3671708   3671839       132 | AAACGAAAGAACGACC-1
+  [2]   5585854   5586118       265 | AAACGAAAGAAGCCGT-1
+  [3]  23017034  23017090        57 | AAACGAAAGAAGCCGT-1
+  [4]   3398402   3398427        26 | AAACGAAAGACAGCTG-1
+  [5]   3671750   3671804        55 | AAACGAAAGACAGCTG-1
+  [6]   3672010   3672399       390 | AAACGAAAGACAGCTG-1
+
+
+
+2026-06-17 17:28:58.463282 : (mouse_cryo_brain_5k : 1 of 1) .tmpToArrow Barcodes0-Chr-(1 of 21)-chr1, Class = data.frame
+(mouse_cryo_brain_5k : 1 of 1) .tmpToArrow Barcodes0-Chr-(1 of 21)-chr1: nRows = 127867, nCols = 1
+                  bc
+1 AAACGAAAGAACGACC-1
+2 AAACGAAAGAAGCCGT-1
+3 AAACGAAAGACAGCTG-1
+4 AAACGAAAGACGCCCT-1
+5 AAACGAAAGACGTCAG-1
+6 AAACGAAAGAGCTGTG-1
+
+
+
+2026-06-17 17:28:58.466133 : (mouse_cryo_brain_5k : 1 of 1) .tmpToArrow bcPass0-Chr-(1 of 21)-chr1, Class = data.frame
+(mouse_cryo_brain_5k : 1 of 1) .tmpToArrow bcPass0-Chr-(1 of 21)-chr1: nRows = 5070, nCols = 1
+                  bc
+1 GATCATGGTGTCCCAG-1
+2 AATGTCGAGCCCATTA-1
+3 GAGGATGGTCGACTGC-1
+4 TACATGGTCGTCCCAT-1
+5 GGAGAACTCCGTGCAG-1
+6 GTAATCGGTACCAAGG-1
+
+
+
+2026-06-17 17:29:03.162588 : (mouse_cryo_brain_5k : 1 of 1) .tmpToArrow Fragments-Chr-(1 of 21)-chr1, Class = IRanges
+
+(mouse_cryo_brain_5k : 1 of 1) .tmpToArrow Fragments-Chr-(1 of 21)-chr1: length = 6594260
+IRanges object with 6 ranges and 1 metadata column:
+          start       end     width |                 RG
+      <integer> <integer> <integer> |              <Rle>
+  [1]   3094965   3095259       295 | GATCATGGTGTCCCAG-1
+  [2]   3114095   3114261       167 | GATCATGGTGTCCCAG-1
+  [3]   3120464   3120587       124 | GATCATGGTGTCCCAG-1
+  [4]   3249984   3250202       219 | GATCATGGTGTCCCAG-1
+  [5]   3368069   3368270       202 | GATCATGGTGTCCCAG-1
+  [6]   3471920   3472239       320 | GATCATGGTGTCCCAG-1
+
+
+
+2026-06-17 17:29:03.173208 : (mouse_cryo_brain_5k : 1 of 1) .tmpToArrow Barcodes-Chr-(1 of 21)-chr1, Class = data.frame
+(mouse_cryo_brain_5k : 1 of 1) .tmpToArrow Barcodes-Chr-(1 of 21)-chr1: nRows = 5067, nCols = 1
+                  bc
+1 GATCATGGTGTCCCAG-1
+2 AATGTCGAGCCCATTA-1
+3 GAGGATGGTCGACTGC-1
+4 TACATGGTCGTCCCAT-1
+5 GGAGAACTCCGTGCAG-1
+6 GTAATCGGTACCAAGG-1
+
+
+2026-06-17 17:29:05.308208 : (mouse_cryo_brain_5k : 1 of 1) Parallel Hdf5 Linkage Arrow File, 0.769 mins elapsed.
+2026-06-17 17:29:05.637525 : (mouse_cryo_brain_5k : 1 of 1) Successful creation of Arrow File, 0.775 mins elapsed.
+2026-06-17 17:29:06.354287 : (mouse_cryo_brain_5k : 1 of 1) Adding Fragment Summary, 0.787 mins elapsed.
+2026-06-17 17:29:21.338189 : (mouse_cryo_brain_5k : 1 of 1) Plotting Fragment Size Distribution, 1.037 mins elapsed.
+2026-06-17 17:29:22.35434 : (mouse_cryo_brain_5k : 1 of 1) Computing TSS Enrichment Scores, 1.053 mins elapsed.
+2026-06-17 17:29:28.71899 : (mouse_cryo_brain_5k : 1 of 1) Computed TSS Scores!, 0.106 mins elapsed.
+2026-06-17 17:29:28.726495 : (mouse_cryo_brain_5k : 1 of 1) CellStats : Number of Cells Pass Filter = 5053 , 1.16 mins elapsed.
+2026-06-17 17:29:28.728505 : (mouse_cryo_brain_5k : 1 of 1) CellStats : Median Frags = 15742 , 1.16 mins elapsed.
+2026-06-17 17:29:28.7303 : (mouse_cryo_brain_5k : 1 of 1) CellStats : Median TSS Enrichment = 15.703 , 1.16 mins elapsed.
+2026-06-17 17:29:28.730769 : (mouse_cryo_brain_5k : 1 of 1) Plotting TSS Enrichment Scores, 1.16 mins elapsed.
+2026-06-17 17:29:29.184071 : (mouse_cryo_brain_5k : 1 of 1) Adding Metadata to Fragments, 1.167 mins elapsed.
+2026-06-17 17:29:29.798659 : (mouse_cryo_brain_5k : 1 of 1) Adding Additional Feature Counts!, 1.178 mins elapsed.
+2026-06-17 17:29:35.570597 : (mouse_cryo_brain_5k : 1 of 1) Finished Adding Additional Feature Counts!, 1.274 mins elapsed.
+
+2026-06-17 17:29:35.571268 : (mouse_cryo_brain_5k : 1 of 1) Metadata, Class = DFrame
+DataFrame with 5070 rows and 12 columns
+                  cellNames    nFrags nMonoFrags  nDiFrags nMultiFrags
+                <character> <numeric>  <numeric> <numeric>   <numeric>
+1    mouse_cryo_brain_5k#..     99981      30826     41273       27882
+2    mouse_cryo_brain_5k#..     99131      38567     34309       26255
+3    mouse_cryo_brain_5k#..     98856      30317     41456       27083
+4    mouse_cryo_brain_5k#..     97240      35857     36746       24637
+5    mouse_cryo_brain_5k#..     96213      43828     29464       22921
+...                     ...       ...        ...       ...         ...
+5066 mouse_cryo_brain_5k#..      1022        348       369         305
+5067 mouse_cryo_brain_5k#..      1019        388       399         232
+5068 mouse_cryo_brain_5k#..      1014        289       445         280
+5069 mouse_cryo_brain_5k#..      1002        256       425         321
+5070 mouse_cryo_brain_5k#..      1000        316       361         323
+     TSSEnrichment ReadsInTSS      Keep ReadsInPromoter PromoterRatio
+         <numeric>  <numeric> <numeric>       <numeric>     <numeric>
+1           15.631      10522         1           42595     0.2130155
+2           15.625      11386         1           44900     0.2264680
+3           13.738       9345         1           38421     0.1943281
+4           18.394      11667         1           45046     0.2316228
+5            4.221       1671         1            9365     0.0486681
+...            ...        ...       ...             ...           ...
+5066        12.871        130         1             481      0.235323
+5067        10.396        105         1             409      0.200687
+5068         9.109         92         1             432      0.213018
+5069         5.644         57         1             235      0.117265
+5070         8.614         87         1             400      0.200000
+     ReadsInBlacklist BlacklistRatio
+            <numeric>      <numeric>
+1                3513      0.0175683
+2                3306      0.0166749
+3                3106      0.0157097
+4                3282      0.0168758
+5                4018      0.0208808
+...               ...            ...
+5066               34      0.0166341
+5067               27      0.0132483
+5068               23      0.0113412
+5069               32      0.0159681
+5070               32      0.0160000
+
+2026-06-17 17:29:35.695229 : (mouse_cryo_brain_5k : 1 of 1) Removing Fragments from Filtered Cells, 1.276 mins elapsed.
+2026-06-17 17:29:35.697417 : (mouse_cryo_brain_5k : 1 of 1) Creating Filtered Arrow File, 1.276 mins elapsed.
+
+2026-06-17 17:29:37.256647 : (mouse_cryo_brain_5k : 1 of 1) .filterCellsFromArrow Fragments-Chr-(1 of 21)-chr1, Class = GRanges
+GRanges object with 6557361 ranges and 1 metadata column:
+            seqnames              ranges strand |                     RG
+               <Rle>           <IRanges>  <Rle> |                  <Rle>
+        [1]     chr1     3094965-3095259      * | mouse_cryo_brain_5k#..
+        [2]     chr1     3114095-3114261      * | mouse_cryo_brain_5k#..
+        [3]     chr1     3120464-3120587      * | mouse_cryo_brain_5k#..
+        [4]     chr1     3249984-3250202      * | mouse_cryo_brain_5k#..
+        [5]     chr1     3368069-3368270      * | mouse_cryo_brain_5k#..
+        ...      ...                 ...    ... .                    ...
+  [6557357]     chr1 188980040-188980165      * | mouse_cryo_brain_5k#..
+  [6557358]     chr1 189588663-189588866      * | mouse_cryo_brain_5k#..
+  [6557359]     chr1 190138857-190139054      * | mouse_cryo_brain_5k#..
+  [6557360]     chr1 192788896-192789498      * | mouse_cryo_brain_5k#..
+  [6557361]     chr1 194976346-194976619      * | mouse_cryo_brain_5k#..
+  -------
+  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+
+
+2026-06-17 17:29:37.267655 : (mouse_cryo_brain_5k : 1 of 1) .filterCellsFromArrow Barcodes-Chr-(1 of 21)-chr1, Class = data.frame
+(mouse_cryo_brain_5k : 1 of 1) .filterCellsFromArrow Barcodes-Chr-(1 of 21)-chr1: nRows = 5051, nCols = 1
+                                      bc
+1 mouse_cryo_brain_5k#GATCATGGTGTCCCAG-1
+2 mouse_cryo_brain_5k#AATGTCGAGCCCATTA-1
+3 mouse_cryo_brain_5k#GAGGATGGTCGACTGC-1
+4 mouse_cryo_brain_5k#TACATGGTCGTCCCAT-1
+5 mouse_cryo_brain_5k#GGAGAACTCCGTGCAG-1
+6 mouse_cryo_brain_5k#GTAATCGGTACCAAGG-1
+
+
+2026-06-17 17:30:10.409009 : (mouse_cryo_brain_5k : 1 of 1) Finished Constructing Filtered Arrow File!, 1.854 mins elapsed.
+2026-06-17 17:30:10.466561 : (mouse_cryo_brain_5k : 1 of 1) Adding TileMatrix!, 1.855 mins elapsed.
+
+2026-06-17 17:30:11.012734 : mouse_cryo_brain_5k .addTileMat FeatureDF, Class = DFrame
+DataFrame with 5267565 rows and 3 columns
+           seqnames       idx     start
+        <character> <integer> <numeric>
+1              chr1         1         0
+2              chr1         2       500
+3              chr1         3      1000
+4              chr1         4      1500
+5              chr1         5      2000
+...             ...       ...       ...
+5267561        chrX    342059 171029000
+5267562        chrX    342060 171029500
+5267563        chrX    342061 171030000
+5267564        chrX    342062 171030500
+5267565        chrX    342063 171031000
+
+2026-06-17 17:30:16.737563 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (1 of 20)!, 0.104 mins elapsed.
+
+2026-06-17 17:30:17.211229 : NTiles_TileMatrix_1_chr1, Class = numeric
+
+NTiles_TileMatrix_1_chr1: length = 1
+  chr1 
+390944 
+
+
+
+2026-06-17 17:30:17.213222 : NCells_TileMatrix_1_chr1, Class = integer
+
+NCells_TileMatrix_1_chr1: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:30:17.21486 : MinTile_TileMatrix_1_chr1, Class = numeric
+
+MinTile_TileMatrix_1_chr1: length = 1
+[1] 6001
+
+
+
+2026-06-17 17:30:17.220969 : MaxTile_TileMatrix_1_chr1, Class = numeric
+
+MaxTile_TileMatrix_1_chr1: length = 1
+[1] 390744
+
+
+
+2026-06-17 17:30:17.252447 : MinCell_TileMatrix_1_chr1, Class = integer
+
+MinCell_TileMatrix_1_chr1: length = 1
+[1] 1
+
+
+
+2026-06-17 17:30:17.25424 : MaxCell_TileMatrix_1_chr1, Class = integer
+
+MaxCell_TileMatrix_1_chr1: length = 1
+[1] 5053
+
+
+2026-06-17 17:30:24.06065 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (2 of 20)!, 0.226 mins elapsed.
+
+2026-06-17 17:30:24.541 : NTiles_TileMatrix_2_chr2, Class = numeric
+
+NTiles_TileMatrix_2_chr2: length = 1
+  chr2 
+364227 
+
+
+
+2026-06-17 17:30:24.542956 : NCells_TileMatrix_2_chr2, Class = integer
+
+NCells_TileMatrix_2_chr2: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:30:24.544544 : MinTile_TileMatrix_2_chr2, Class = numeric
+
+MinTile_TileMatrix_2_chr2: length = 1
+[1] 6100
+
+
+
+2026-06-17 17:30:24.550988 : MaxTile_TileMatrix_2_chr2, Class = numeric
+
+MaxTile_TileMatrix_2_chr2: length = 1
+[1] 364027
+
+
+
+2026-06-17 17:30:24.570796 : MinCell_TileMatrix_2_chr2, Class = integer
+
+MinCell_TileMatrix_2_chr2: length = 1
+[1] 1
+
+
+
+2026-06-17 17:30:24.5724 : MaxCell_TileMatrix_2_chr2, Class = integer
+
+MaxCell_TileMatrix_2_chr2: length = 1
+[1] 5053
+
+
+2026-06-17 17:30:30.56662 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (3 of 20)!, 0.335 mins elapsed.
+
+2026-06-17 17:30:30.885991 : NTiles_TileMatrix_3_chr3, Class = numeric
+
+NTiles_TileMatrix_3_chr3: length = 1
+  chr3 
+320080 
+
+
+
+2026-06-17 17:30:30.887396 : NCells_TileMatrix_3_chr3, Class = integer
+
+NCells_TileMatrix_3_chr3: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:30:30.88846 : MinTile_TileMatrix_3_chr3, Class = numeric
+
+MinTile_TileMatrix_3_chr3: length = 1
+[1] 6001
+
+
+
+2026-06-17 17:30:30.89307 : MaxTile_TileMatrix_3_chr3, Class = numeric
+
+MaxTile_TileMatrix_3_chr3: length = 1
+[1] 319880
+
+
+
+2026-06-17 17:30:30.916237 : MinCell_TileMatrix_3_chr3, Class = integer
+
+MinCell_TileMatrix_3_chr3: length = 1
+[1] 1
+
+
+
+2026-06-17 17:30:30.917287 : MaxCell_TileMatrix_3_chr3, Class = integer
+
+MaxCell_TileMatrix_3_chr3: length = 1
+[1] 5053
+
+
+2026-06-17 17:30:35.145404 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (4 of 20)!, 0.411 mins elapsed.
+
+2026-06-17 17:30:35.50185 : NTiles_TileMatrix_4_chr4, Class = numeric
+
+NTiles_TileMatrix_4_chr4: length = 1
+  chr4 
+313017 
+
+
+
+2026-06-17 17:30:35.503172 : NCells_TileMatrix_4_chr4, Class = integer
+
+NCells_TileMatrix_4_chr4: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:30:35.504219 : MinTile_TileMatrix_4_chr4, Class = numeric
+
+MinTile_TileMatrix_4_chr4: length = 1
+[1] 6100
+
+
+
+2026-06-17 17:30:35.509392 : MaxTile_TileMatrix_4_chr4, Class = numeric
+
+MaxTile_TileMatrix_4_chr4: length = 1
+[1] 312717
+
+
+
+2026-06-17 17:30:35.534538 : MinCell_TileMatrix_4_chr4, Class = integer
+
+MinCell_TileMatrix_4_chr4: length = 1
+[1] 1
+
+
+
+2026-06-17 17:30:35.535592 : MaxCell_TileMatrix_4_chr4, Class = integer
+
+MaxCell_TileMatrix_4_chr4: length = 1
+[1] 5053
+
+
+2026-06-17 17:30:40.118016 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (5 of 20)!, 0.494 mins elapsed.
+
+2026-06-17 17:30:40.449834 : NTiles_TileMatrix_5_chr5, Class = numeric
+
+NTiles_TileMatrix_5_chr5: length = 1
+  chr5 
+303670 
+
+
+
+2026-06-17 17:30:40.451134 : NCells_TileMatrix_5_chr5, Class = integer
+
+NCells_TileMatrix_5_chr5: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:30:40.452192 : MinTile_TileMatrix_5_chr5, Class = numeric
+
+MinTile_TileMatrix_5_chr5: length = 1
+[1] 6005
+
+
+
+2026-06-17 17:30:40.457298 : MaxTile_TileMatrix_5_chr5, Class = numeric
+
+MaxTile_TileMatrix_5_chr5: length = 1
+[1] 303470
+
+
+
+2026-06-17 17:30:40.483367 : MinCell_TileMatrix_5_chr5, Class = integer
+
+MinCell_TileMatrix_5_chr5: length = 1
+[1] 1
+
+
+
+2026-06-17 17:30:40.484427 : MaxCell_TileMatrix_5_chr5, Class = integer
+
+MaxCell_TileMatrix_5_chr5: length = 1
+[1] 5053
+
+
+2026-06-17 17:30:45.142586 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (6 of 20)!, 0.578 mins elapsed.
+
+2026-06-17 17:30:45.432359 : NTiles_TileMatrix_6_chr6, Class = numeric
+
+NTiles_TileMatrix_6_chr6: length = 1
+  chr6 
+299474 
+
+
+
+2026-06-17 17:30:45.433669 : NCells_TileMatrix_6_chr6, Class = integer
+
+NCells_TileMatrix_6_chr6: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:30:45.434688 : MinTile_TileMatrix_6_chr6, Class = numeric
+
+MinTile_TileMatrix_6_chr6: length = 1
+[1] 6101
+
+
+
+2026-06-17 17:30:45.439179 : MaxTile_TileMatrix_6_chr6, Class = numeric
+
+MaxTile_TileMatrix_6_chr6: length = 1
+[1] 299173
+
+
+
+2026-06-17 17:30:45.461483 : MinCell_TileMatrix_6_chr6, Class = integer
+
+MinCell_TileMatrix_6_chr6: length = 1
+[1] 1
+
+
+
+2026-06-17 17:30:45.462539 : MaxCell_TileMatrix_6_chr6, Class = integer
+
+MaxCell_TileMatrix_6_chr6: length = 1
+[1] 5053
+
+
+2026-06-17 17:30:49.698636 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (7 of 20)!, 0.654 mins elapsed.
+
+2026-06-17 17:30:49.989259 : NTiles_TileMatrix_7_chr7, Class = numeric
+
+NTiles_TileMatrix_7_chr7: length = 1
+  chr7 
+290883 
+
+
+
+2026-06-17 17:30:49.99058 : NCells_TileMatrix_7_chr7, Class = integer
+
+NCells_TileMatrix_7_chr7: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:30:49.991644 : MinTile_TileMatrix_7_chr7, Class = numeric
+
+MinTile_TileMatrix_7_chr7: length = 1
+[1] 6013
+
+
+
+2026-06-17 17:30:49.996499 : MaxTile_TileMatrix_7_chr7, Class = numeric
+
+MaxTile_TileMatrix_7_chr7: length = 1
+[1] 290682
+
+
+
+2026-06-17 17:30:50.02078 : MinCell_TileMatrix_7_chr7, Class = integer
+
+MinCell_TileMatrix_7_chr7: length = 1
+[1] 1
+
+
+
+2026-06-17 17:30:50.021842 : MaxCell_TileMatrix_7_chr7, Class = integer
+
+MaxCell_TileMatrix_7_chr7: length = 1
+[1] 5053
+
+
+2026-06-17 17:30:54.370235 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (8 of 20)!, 0.732 mins elapsed.
+
+2026-06-17 17:30:54.657124 : NTiles_TileMatrix_8_chr8, Class = numeric
+
+NTiles_TileMatrix_8_chr8: length = 1
+  chr8 
+258803 
+
+
+
+2026-06-17 17:30:54.658424 : NCells_TileMatrix_8_chr8, Class = integer
+
+NCells_TileMatrix_8_chr8: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:30:54.65947 : MinTile_TileMatrix_8_chr8, Class = numeric
+
+MinTile_TileMatrix_8_chr8: length = 1
+[1] 6026
+
+
+
+2026-06-17 17:30:54.663918 : MaxTile_TileMatrix_8_chr8, Class = numeric
+
+MaxTile_TileMatrix_8_chr8: length = 1
+[1] 258603
+
+
+
+2026-06-17 17:30:54.685667 : MinCell_TileMatrix_8_chr8, Class = integer
+
+MinCell_TileMatrix_8_chr8: length = 1
+[1] 1
+
+
+
+2026-06-17 17:30:54.686716 : MaxCell_TileMatrix_8_chr8, Class = integer
+
+MaxCell_TileMatrix_8_chr8: length = 1
+[1] 5053
+
+
+2026-06-17 17:30:58.857486 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (9 of 20)!, 0.806 mins elapsed.
+
+2026-06-17 17:30:59.146204 : NTiles_TileMatrix_9_chr9, Class = numeric
+
+NTiles_TileMatrix_9_chr9: length = 1
+  chr9 
+249191 
+
+
+
+2026-06-17 17:30:59.148163 : NCells_TileMatrix_9_chr9, Class = integer
+
+NCells_TileMatrix_9_chr9: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:30:59.149754 : MinTile_TileMatrix_9_chr9, Class = numeric
+
+MinTile_TileMatrix_9_chr9: length = 1
+[1] 6000
+
+
+
+2026-06-17 17:30:59.154776 : MaxTile_TileMatrix_9_chr9, Class = numeric
+
+MaxTile_TileMatrix_9_chr9: length = 1
+[1] 248991
+
+
+
+2026-06-17 17:30:59.177509 : MinCell_TileMatrix_9_chr9, Class = integer
+
+MinCell_TileMatrix_9_chr9: length = 1
+[1] 1
+
+
+
+2026-06-17 17:30:59.179116 : MaxCell_TileMatrix_9_chr9, Class = integer
+
+MaxCell_TileMatrix_9_chr9: length = 1
+[1] 5053
+
+
+2026-06-17 17:31:03.345088 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (10 of 20)!, 0.881 mins elapsed.
+
+2026-06-17 17:31:03.615079 : NTiles_TileMatrix_10_chr10, Class = numeric
+
+NTiles_TileMatrix_10_chr10: length = 1
+ chr10 
+261390 
+
+
+
+2026-06-17 17:31:03.617024 : NCells_TileMatrix_10_chr10, Class = integer
+
+NCells_TileMatrix_10_chr10: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:31:03.618624 : MinTile_TileMatrix_10_chr10, Class = numeric
+
+MinTile_TileMatrix_10_chr10: length = 1
+[1] 6203
+
+
+
+2026-06-17 17:31:03.623504 : MaxTile_TileMatrix_10_chr10, Class = numeric
+
+MaxTile_TileMatrix_10_chr10: length = 1
+[1] 261190
+
+
+
+2026-06-17 17:31:03.645268 : MinCell_TileMatrix_10_chr10, Class = integer
+
+MinCell_TileMatrix_10_chr10: length = 1
+[1] 1
+
+
+
+2026-06-17 17:31:03.646867 : MaxCell_TileMatrix_10_chr10, Class = integer
+
+MaxCell_TileMatrix_10_chr10: length = 1
+[1] 5053
+
+
+2026-06-17 17:31:07.61329 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (11 of 20)!, 0.952 mins elapsed.
+
+2026-06-17 17:31:07.905239 : NTiles_TileMatrix_11_chr11, Class = numeric
+
+NTiles_TileMatrix_11_chr11: length = 1
+ chr11 
+244166 
+
+
+
+2026-06-17 17:31:07.907113 : NCells_TileMatrix_11_chr11, Class = integer
+
+NCells_TileMatrix_11_chr11: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:31:07.908729 : MinTile_TileMatrix_11_chr11, Class = numeric
+
+MinTile_TileMatrix_11_chr11: length = 1
+[1] 6201
+
+
+
+2026-06-17 17:31:07.914329 : MaxTile_TileMatrix_11_chr11, Class = numeric
+
+MaxTile_TileMatrix_11_chr11: length = 1
+[1] 243965
+
+
+
+2026-06-17 17:31:07.940215 : MinCell_TileMatrix_11_chr11, Class = integer
+
+MinCell_TileMatrix_11_chr11: length = 1
+[1] 1
+
+
+
+2026-06-17 17:31:07.941843 : MaxCell_TileMatrix_11_chr11, Class = integer
+
+MaxCell_TileMatrix_11_chr11: length = 1
+[1] 5053
+
+
+2026-06-17 17:31:12.547881 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (12 of 20)!, 1.035 mins elapsed.
+
+2026-06-17 17:31:12.778138 : NTiles_TileMatrix_12_chr12, Class = numeric
+
+NTiles_TileMatrix_12_chr12: length = 1
+ chr12 
+240259 
+
+
+
+2026-06-17 17:31:12.779396 : NCells_TileMatrix_12_chr12, Class = integer
+
+NCells_TileMatrix_12_chr12: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:31:12.780394 : MinTile_TileMatrix_12_chr12, Class = numeric
+
+MinTile_TileMatrix_12_chr12: length = 1
+[1] 6004
+
+
+
+2026-06-17 17:31:12.784206 : MaxTile_TileMatrix_12_chr12, Class = numeric
+
+MaxTile_TileMatrix_12_chr12: length = 1
+[1] 240058
+
+
+
+2026-06-17 17:31:12.802806 : MinCell_TileMatrix_12_chr12, Class = integer
+
+MinCell_TileMatrix_12_chr12: length = 1
+[1] 1
+
+
+
+2026-06-17 17:31:12.803864 : MaxCell_TileMatrix_12_chr12, Class = integer
+
+MaxCell_TileMatrix_12_chr12: length = 1
+[1] 5053
+
+
+2026-06-17 17:31:16.459756 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (13 of 20)!, 1.1 mins elapsed.
+
+2026-06-17 17:31:16.710695 : NTiles_TileMatrix_13_chr13, Class = numeric
+
+NTiles_TileMatrix_13_chr13: length = 1
+ chr13 
+240844 
+
+
+
+2026-06-17 17:31:16.711971 : NCells_TileMatrix_13_chr13, Class = integer
+
+NCells_TileMatrix_13_chr13: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:31:16.712984 : MinTile_TileMatrix_13_chr13, Class = numeric
+
+MinTile_TileMatrix_13_chr13: length = 1
+[1] 6004
+
+
+
+2026-06-17 17:31:16.71692 : MaxTile_TileMatrix_13_chr13, Class = numeric
+
+MaxTile_TileMatrix_13_chr13: length = 1
+[1] 240643
+
+
+
+2026-06-17 17:31:16.735588 : MinCell_TileMatrix_13_chr13, Class = integer
+
+MinCell_TileMatrix_13_chr13: length = 1
+[1] 1
+
+
+
+2026-06-17 17:31:16.736653 : MaxCell_TileMatrix_13_chr13, Class = integer
+
+MaxCell_TileMatrix_13_chr13: length = 1
+[1] 5053
+
+
+2026-06-17 17:31:20.50694 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (14 of 20)!, 1.167 mins elapsed.
+
+2026-06-17 17:31:20.715908 : NTiles_TileMatrix_14_chr14, Class = numeric
+
+NTiles_TileMatrix_14_chr14: length = 1
+ chr14 
+249805 
+
+
+
+2026-06-17 17:31:20.717153 : NCells_TileMatrix_14_chr14, Class = integer
+
+NCells_TileMatrix_14_chr14: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:31:20.718162 : MinTile_TileMatrix_14_chr14, Class = numeric
+
+MinTile_TileMatrix_14_chr14: length = 1
+[1] 6010
+
+
+
+2026-06-17 17:31:20.721788 : MaxTile_TileMatrix_14_chr14, Class = numeric
+
+MaxTile_TileMatrix_14_chr14: length = 1
+[1] 249604
+
+
+
+2026-06-17 17:31:20.738623 : MinCell_TileMatrix_14_chr14, Class = integer
+
+MinCell_TileMatrix_14_chr14: length = 1
+[1] 1
+
+
+
+2026-06-17 17:31:20.739682 : MaxCell_TileMatrix_14_chr14, Class = integer
+
+MaxCell_TileMatrix_14_chr14: length = 1
+[1] 5053
+
+
+2026-06-17 17:31:24.210895 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (15 of 20)!, 1.229 mins elapsed.
+
+2026-06-17 17:31:24.41364 : NTiles_TileMatrix_15_chr15, Class = numeric
+
+NTiles_TileMatrix_15_chr15: length = 1
+ chr15 
+208088 
+
+
+
+2026-06-17 17:31:24.415614 : NCells_TileMatrix_15_chr15, Class = integer
+
+NCells_TileMatrix_15_chr15: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:31:24.417178 : MinTile_TileMatrix_15_chr15, Class = numeric
+
+MinTile_TileMatrix_15_chr15: length = 1
+[1] 6103
+
+
+
+2026-06-17 17:31:24.421473 : MaxTile_TileMatrix_15_chr15, Class = numeric
+
+MaxTile_TileMatrix_15_chr15: length = 1
+[1] 207888
+
+
+
+2026-06-17 17:31:24.439445 : MinCell_TileMatrix_15_chr15, Class = integer
+
+MinCell_TileMatrix_15_chr15: length = 1
+[1] 1
+
+
+
+2026-06-17 17:31:24.441047 : MaxCell_TileMatrix_15_chr15, Class = integer
+
+MaxCell_TileMatrix_15_chr15: length = 1
+[1] 5053
+
+
+2026-06-17 17:31:27.879817 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (16 of 20)!, 1.29 mins elapsed.
+
+2026-06-17 17:31:28.04677 : NTiles_TileMatrix_16_chr16, Class = numeric
+
+NTiles_TileMatrix_16_chr16: length = 1
+ chr16 
+196416 
+
+
+
+2026-06-17 17:31:28.048711 : NCells_TileMatrix_16_chr16, Class = integer
+
+NCells_TileMatrix_16_chr16: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:31:28.05028 : MinTile_TileMatrix_16_chr16, Class = numeric
+
+MinTile_TileMatrix_16_chr16: length = 1
+[1] 6012
+
+
+
+2026-06-17 17:31:28.05418 : MaxTile_TileMatrix_16_chr16, Class = numeric
+
+MaxTile_TileMatrix_16_chr16: length = 1
+[1] 196216
+
+
+
+2026-06-17 17:31:28.064522 : MinCell_TileMatrix_16_chr16, Class = integer
+
+MinCell_TileMatrix_16_chr16: length = 1
+[1] 1
+
+
+
+2026-06-17 17:31:28.066145 : MaxCell_TileMatrix_16_chr16, Class = integer
+
+MaxCell_TileMatrix_16_chr16: length = 1
+[1] 5053
+
+
+2026-06-17 17:31:31.278799 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (17 of 20)!, 1.347 mins elapsed.
+
+2026-06-17 17:31:31.48425 : NTiles_TileMatrix_17_chr17, Class = numeric
+
+NTiles_TileMatrix_17_chr17: length = 1
+ chr17 
+189975 
+
+
+
+2026-06-17 17:31:31.486198 : NCells_TileMatrix_17_chr17, Class = integer
+
+NCells_TileMatrix_17_chr17: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:31:31.487794 : MinTile_TileMatrix_17_chr17, Class = numeric
+
+MinTile_TileMatrix_17_chr17: length = 1
+[1] 6001
+
+
+
+2026-06-17 17:31:31.491986 : MaxTile_TileMatrix_17_chr17, Class = numeric
+
+MaxTile_TileMatrix_17_chr17: length = 1
+[1] 189775
+
+
+
+2026-06-17 17:31:31.509642 : MinCell_TileMatrix_17_chr17, Class = integer
+
+MinCell_TileMatrix_17_chr17: length = 1
+[1] 1
+
+
+
+2026-06-17 17:31:31.511249 : MaxCell_TileMatrix_17_chr17, Class = integer
+
+MaxCell_TileMatrix_17_chr17: length = 1
+[1] 5053
+
+
+2026-06-17 17:31:35.471474 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (18 of 20)!, 1.417 mins elapsed.
+
+2026-06-17 17:31:35.645337 : NTiles_TileMatrix_18_chr18, Class = numeric
+
+NTiles_TileMatrix_18_chr18: length = 1
+ chr18 
+181406 
+
+
+
+2026-06-17 17:31:35.647285 : NCells_TileMatrix_18_chr18, Class = integer
+
+NCells_TileMatrix_18_chr18: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:31:35.648834 : MinTile_TileMatrix_18_chr18, Class = numeric
+
+MinTile_TileMatrix_18_chr18: length = 1
+[1] 6001
+
+
+
+2026-06-17 17:31:35.652658 : MaxTile_TileMatrix_18_chr18, Class = numeric
+
+MaxTile_TileMatrix_18_chr18: length = 1
+[1] 181205
+
+
+
+2026-06-17 17:31:35.662783 : MinCell_TileMatrix_18_chr18, Class = integer
+
+MinCell_TileMatrix_18_chr18: length = 1
+[1] 1
+
+
+
+2026-06-17 17:31:35.664366 : MaxCell_TileMatrix_18_chr18, Class = integer
+
+MaxCell_TileMatrix_18_chr18: length = 1
+[1] 5053
+
+
+2026-06-17 17:31:38.993568 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (19 of 20)!, 1.475 mins elapsed.
+
+2026-06-17 17:31:39.127366 : NTiles_TileMatrix_19_chr19, Class = numeric
+
+NTiles_TileMatrix_19_chr19: length = 1
+ chr19 
+122864 
+
+
+
+2026-06-17 17:31:39.1292 : NCells_TileMatrix_19_chr19, Class = integer
+
+NCells_TileMatrix_19_chr19: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:31:39.130772 : MinTile_TileMatrix_19_chr19, Class = numeric
+
+MinTile_TileMatrix_19_chr19: length = 1
+[1] 6157
+
+
+
+2026-06-17 17:31:39.134117 : MaxTile_TileMatrix_19_chr19, Class = numeric
+
+MaxTile_TileMatrix_19_chr19: length = 1
+[1] 122663
+
+
+
+2026-06-17 17:31:39.142332 : MinCell_TileMatrix_19_chr19, Class = integer
+
+MinCell_TileMatrix_19_chr19: length = 1
+[1] 1
+
+
+
+2026-06-17 17:31:39.143935 : MaxCell_TileMatrix_19_chr19, Class = integer
+
+MaxCell_TileMatrix_19_chr19: length = 1
+[1] 5053
+
+
+2026-06-17 17:31:42.080377 : Adding TileMatrix to mouse_cryo_brain_5k for Chr (20 of 20)!, 1.527 mins elapsed.
+
+2026-06-17 17:31:42.184114 : NTiles_TileMatrix_20_chrX, Class = numeric
+
+NTiles_TileMatrix_20_chrX: length = 1
+  chrX 
+342063 
+
+
+
+2026-06-17 17:31:42.185345 : NCells_TileMatrix_20_chrX, Class = integer
+
+NCells_TileMatrix_20_chrX: length = 1
+[1] 5053
+
+
+
+2026-06-17 17:31:42.186346 : MinTile_TileMatrix_20_chrX, Class = numeric
+
+MinTile_TileMatrix_20_chrX: length = 1
+[1] 6101
+
+
+
+2026-06-17 17:31:42.188704 : MaxTile_TileMatrix_20_chrX, Class = numeric
+
+MaxTile_TileMatrix_20_chrX: length = 1
+[1] 341763
+
+
+
+2026-06-17 17:31:42.198041 : MinCell_TileMatrix_20_chrX, Class = integer
+
+MinCell_TileMatrix_20_chrX: length = 1
+[1] 1
+
+
+
+2026-06-17 17:31:42.19908 : MaxCell_TileMatrix_20_chrX, Class = integer
+
+MaxCell_TileMatrix_20_chrX: length = 1
+[1] 5053
+
+
+2026-06-17 17:31:45.479078 : (mouse_cryo_brain_5k : 1 of 1) Finished Adding TileMatrix!, 3.439 mins elapsed.
+2026-06-17 17:31:45.480234 : (mouse_cryo_brain_5k : 1 of 1) Adding GeneScoreMatrix!, 3.439 mins elapsed.
+
+
+2026-06-17 17:31:45.571303 : mouse_cryo_brain_5k .addGeneScoreMat geneRegions, Class = GRanges
+GRanges object with 24333 ranges and 5 metadata columns:
+          seqnames              ranges strand |     gene_id        symbol
+             <Rle>           <IRanges>  <Rle> | <character>   <character>
+      [1]     chr1     3214482-3676498      - |      497097          Xkr4
+      [2]     chr1     4290846-4414241      - |       19888           Rp1
+      [3]     chr1     4490928-4502354      - |       20671         Sox17
+      [4]     chr1     4773198-4790726      - |       27395        Mrpl15
+      [5]     chr1     4802893-4846735      + |       18777        Lypla1
+      ...      ...                 ...    ... .         ...           ...
+  [24329]     chrX 169251538-169325372      - |       15159          Hccs
+  [24330]     chrX 169315422-169368178      + |   101055907       Gm15246
+  [24331]     chrX 169680199-169990798      + |       17318          Mid1
+  [24332]     chrX 169776378-169784635      - |       66747 4933400A11Rik
+  [24333]     chrX 170667644-170678054      + |      107626          Asmt
+          geneStart   geneEnd geneWeight
+          <integer> <integer>  <numeric>
+      [1]   3671498   3214482    1.04354
+      [2]   4409241   4290846    1.16301
+      [3]   4497354   4490928    2.76029
+      [4]   4785726   4773198    2.14752
+      [5]   4807893   4846735    1.45879
+      ...       ...       ...        ...
+  [24329] 169320372 169251538    1.27243
+  [24330] 169320422 169368178    1.38127
+  [24331] 169685199 169990798    1.06476
+  [24332] 169779635 169776378    3.43580
+  [24333] 170672644 170678054    2.93207
+  -------
+  seqinfo: 20 sequences from mm10 genome
+
+2026-06-17 17:31:45.697054 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (1 of 20)!, 0.001 mins elapsed.
+2026-06-17 17:31:45.721476 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (2 of 20)!, 0.001 mins elapsed.
+2026-06-17 17:31:45.745856 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (3 of 20)!, 0.001 mins elapsed.
+2026-06-17 17:31:45.765175 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (4 of 20)!, 0.002 mins elapsed.
+2026-06-17 17:31:45.788258 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (5 of 20)!, 0.002 mins elapsed.
+2026-06-17 17:31:45.812631 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (6 of 20)!, 0.003 mins elapsed.
+2026-06-17 17:31:45.837828 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (7 of 20)!, 0.003 mins elapsed.
+2026-06-17 17:31:45.863188 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (8 of 20)!, 0.003 mins elapsed.
+2026-06-17 17:31:45.890145 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (9 of 20)!, 0.004 mins elapsed.
+2026-06-17 17:31:45.919625 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (10 of 20)!, 0.004 mins elapsed.
+2026-06-17 17:31:45.950781 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (11 of 20)!, 0.005 mins elapsed.
+2026-06-17 17:31:45.98098 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (12 of 20)!, 0.005 mins elapsed.
+2026-06-17 17:31:46.012617 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (13 of 20)!, 0.006 mins elapsed.
+2026-06-17 17:31:46.04524 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (14 of 20)!, 0.006 mins elapsed.
+2026-06-17 17:31:46.077243 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (15 of 20)!, 0.007 mins elapsed.
+2026-06-17 17:31:46.11134 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (16 of 20)!, 0.008 mins elapsed.
+2026-06-17 17:31:46.146053 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (17 of 20)!, 0.008 mins elapsed.
+2026-06-17 17:31:46.1801 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (18 of 20)!, 0.009 mins elapsed.
+2026-06-17 17:31:46.2156 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (19 of 20)!, 0.009 mins elapsed.
+2026-06-17 17:31:46.248132 : Creating Temp GeneScoreMatrix for mouse_cryo_brain_5k, Chr (20 of 20)!, 0.01 mins elapsed.
+
+2026-06-17 17:31:53.29166 : mouse_cryo_brain_5k .addGeneScoreMat FeatureDF, Class = data.frame
+mouse_cryo_brain_5k .addGeneScoreMat FeatureDF: nRows = 24333, nCols = 6
+  seqnames   start     end strand   name idx
+1     chr1 3671498 3214482      2   Xkr4   1
+2     chr1 4409241 4290846      2    Rp1   2
+3     chr1 4497354 4490928      2  Sox17   3
+4     chr1 4785726 4773198      2 Mrpl15   4
+5     chr1 4807893 4846735      1 Lypla1   5
+6     chr1 4857694 4897909      1  Tcea1   6
+
+
+2026-06-17 17:31:54.210356 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (1 of 20)!, 0.143 mins elapsed.
+2026-06-17 17:31:56.182293 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (2 of 20)!, 0.175 mins elapsed.
+2026-06-17 17:31:58.506288 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (3 of 20)!, 0.214 mins elapsed.
+2026-06-17 17:32:00.670332 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (4 of 20)!, 0.25 mins elapsed.
+2026-06-17 17:32:02.635844 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (5 of 20)!, 0.283 mins elapsed.
+2026-06-17 17:32:04.574141 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (6 of 20)!, 0.315 mins elapsed.
+2026-06-17 17:32:06.853054 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (7 of 20)!, 0.353 mins elapsed.
+2026-06-17 17:32:09.136625 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (8 of 20)!, 0.391 mins elapsed.
+2026-06-17 17:32:10.758118 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (9 of 20)!, 0.418 mins elapsed.
+2026-06-17 17:32:13.088432 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (10 of 20)!, 0.457 mins elapsed.
+2026-06-17 17:32:14.816964 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (11 of 20)!, 0.486 mins elapsed.
+2026-06-17 17:32:17.001089 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (12 of 20)!, 0.522 mins elapsed.
+2026-06-17 17:32:18.975411 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (13 of 20)!, 0.555 mins elapsed.
+2026-06-17 17:32:20.455619 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (14 of 20)!, 0.58 mins elapsed.
+2026-06-17 17:32:21.821078 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (15 of 20)!, 0.603 mins elapsed.
+2026-06-17 17:32:23.785493 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (16 of 20)!, 0.635 mins elapsed.
+2026-06-17 17:32:25.062251 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (17 of 20)!, 0.657 mins elapsed.
+2026-06-17 17:32:26.638798 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (18 of 20)!, 0.683 mins elapsed.
+2026-06-17 17:32:28.434042 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (19 of 20)!, 0.713 mins elapsed.
+2026-06-17 17:32:29.63549 : Adding GeneScoreMatrix to mouse_cryo_brain_5k for Chr (20 of 20)!, 0.733 mins elapsed.
+2026-06-17 17:32:31.9075 : (mouse_cryo_brain_5k : 1 of 1) Finished Adding GeneScoreMatrix!, 4.213 mins elapsed.
+2026-06-17 17:32:31.90878 : (mouse_cryo_brain_5k : 1 of 1) Finished Creating Arrow File, 4.213 mins elapsed.
+
+------- Completed
+
+End Time : 2026-06-17 17:32:31.916243
+Elapsed Time Minutes = 4.21396915912628
+Elapsed Time Hours = 0.0702328921026654
+
+-------
+
+
+

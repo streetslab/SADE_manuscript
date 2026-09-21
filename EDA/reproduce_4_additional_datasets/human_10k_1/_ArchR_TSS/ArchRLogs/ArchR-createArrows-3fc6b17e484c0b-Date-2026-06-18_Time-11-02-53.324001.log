@@ -1,0 +1,1619 @@
+
+           ___      .______        ______  __    __  .______      
+          /   \     |   _  \      /      ||  |  |  | |   _  \     
+         /  ^  \    |  |_)  |    |  ,----'|  |__|  | |  |_)  |    
+        /  /_\  \   |      /     |  |     |   __   | |      /     
+       /  _____  \  |  |\  \\___ |  `----.|  |  |  | |  |\  \\___.
+      /__/     \__\ | _| `._____| \______||__|  |__| | _| `._____|
+    
+Logging With ArchR!
+
+Start Time : 2026-06-18 11:02:53.329067
+
+------- ArchR Info
+
+ArchRThreads = 32
+ArchRGenome = Hg38
+
+------- System Info
+
+Computer OS = unix
+Total Cores = 64
+
+------- Session Info
+
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /home/syyang/miniconda3/envs/seuratv5/lib/libopenblasp-r0.3.26.so;  LAPACK version 3.12.0
+
+Random number generation:
+ RNG:     L'Ecuyer-CMRG 
+ Normal:  Inversion 
+ Sample:  Rejection 
+ 
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: America/Los_Angeles
+tzcode source: system (glibc)
+
+attached base packages:
+ [1] parallel  stats4    grid      stats     graphics  grDevices utils    
+ [8] datasets  methods   base     
+
+other attached packages:
+ [1] BSgenome.Hsapiens.UCSC.hg38_1.4.5 BSgenome_1.70.2                  
+ [3] rtracklayer_1.62.0                BiocIO_1.12.0                    
+ [5] Biostrings_2.70.1                 XVector_0.42.0                   
+ [7] rhdf5_2.46.1                      SummarizedExperiment_1.32.0      
+ [9] Biobase_2.62.0                    RcppArmadillo_15.0.2-1           
+[11] Rcpp_1.1.1                        Matrix_1.6-5                     
+[13] GenomicRanges_1.54.1              GenomeInfoDb_1.38.8              
+[15] IRanges_2.36.0                    S4Vectors_0.40.2                 
+[17] BiocGenerics_0.48.1               sparseMatrixStats_1.14.0         
+[19] MatrixGenerics_1.14.0             matrixStats_1.5.0                
+[21] data.table_1.18.2.1               stringr_1.6.0                    
+[23] plyr_1.8.9                        magrittr_2.0.4                   
+[25] ggplot2_4.0.2                     gtable_0.3.6                     
+[27] gtools_3.9.5                      gridExtra_2.3                    
+[29] devtools_2.4.6                    usethis_3.2.1                    
+[31] ArchR_1.0.3                       optparse_1.7.5                   
+
+loaded via a namespace (and not attached):
+ [1] tidyselect_1.2.1         dplyr_1.2.0              farver_2.1.2            
+ [4] S7_0.2.0                 bitops_1.0-9             fastmap_1.2.0           
+ [7] RCurl_1.98-1.17          GenomicAlignments_1.38.2 XML_3.99-0.22           
+[10] lifecycle_1.0.5          ellipsis_0.3.2           compiler_4.3.3          
+[13] rlang_1.1.7              tools_4.3.3              yaml_2.3.12             
+[16] S4Arrays_1.2.1           pkgbuild_1.4.8           DelayedArray_0.28.0     
+[19] RColorBrewer_1.1-3       pkgload_1.5.0            abind_1.4-8             
+[22] BiocParallel_1.36.0      withr_3.0.2              purrr_1.2.1             
+[25] Rhdf5lib_1.24.2          scales_1.4.0             dichromat_2.0-0.1       
+[28] cli_3.6.5                crayon_1.5.3             generics_0.1.4          
+[31] remotes_2.5.0            rjson_0.2.23             sessioninfo_1.2.3       
+[34] getopt_1.20.4            cachem_1.1.0             zlibbioc_1.48.2         
+[37] restfulr_0.0.16          vctrs_0.7.1              glue_1.8.0              
+[40] codetools_0.2-20         stringi_1.8.7            tibble_3.3.1            
+[43] pillar_1.11.1            rhdf5filters_1.14.1      GenomeInfoDbData_1.2.11 
+[46] R6_2.6.1                 lattice_0.22-9           Rsamtools_2.18.0        
+[49] memoise_2.0.1            SparseArray_1.2.4        fs_1.6.6                
+[52] pkgconfig_2.0.3         
+
+
+------- Log Info
+
+
+2026-06-18 11:02:53.369417 : createArrowFiles Input-Parameters, Class = list
+
+createArrowFiles Input-Parameters$inputFiles: length = 1
+                                                                                                     human_10k 
+"/mnt/hdd_bob/syy/adipose/atac/cr_goldstand/human_10k_1/10k_pbmc_ATACv1p1_nextgem_Chromium_X_fragments.tsv.gz" 
+
+
+createArrowFiles Input-Parameters$sampleNames: length = 1
+[1] "human_10k"
+
+
+createArrowFiles Input-Parameters$outputNames: length = 1
+[1] "human_10k"
+
+
+createArrowFiles Input-Parameters$validBarcodes: length = 0
+NULL
+
+
+createArrowFiles Input-Parameters$minTSS: length = 1
+[1] 4
+
+
+createArrowFiles Input-Parameters$minFrags: length = 1
+[1] 1000
+
+
+createArrowFiles Input-Parameters$maxFrags: length = 1
+[1] 1e+05
+
+
+createArrowFiles Input-Parameters$minFragSize: length = 1
+[1] 10
+
+
+createArrowFiles Input-Parameters$maxFragSize: length = 1
+[1] 2000
+
+
+createArrowFiles Input-Parameters$QCDir: length = 1
+[1] "QualityControl"
+
+
+createArrowFiles Input-Parameters$nucLength: length = 1
+[1] 147
+
+
+createArrowFiles Input-Parameters$promoterRegion: length = 2
+[1] 2000  100
+
+
+createArrowFiles Input-Parameters$excludeChr: length = 2
+[1] "chrM" "chrY"
+
+
+createArrowFiles Input-Parameters$nChunk: length = 1
+[1] 5
+
+
+createArrowFiles Input-Parameters$bcTag: length = 1
+[1] "qname"
+
+
+createArrowFiles Input-Parameters$gsubExpression: length = 0
+NULL
+
+
+createArrowFiles Input-Parameters$bamFlag: length = 0
+NULL
+
+
+createArrowFiles Input-Parameters$offsetPlus: length = 1
+[1] 4
+
+
+createArrowFiles Input-Parameters$offsetMinus: length = 1
+[1] -5
+
+
+createArrowFiles Input-Parameters$addTileMat: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$addGeneScoreMat: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$force: length = 1
+[1] FALSE
+
+
+createArrowFiles Input-Parameters$threads: length = 1
+[1] 32
+
+
+createArrowFiles Input-Parameters$parallelParam: length = 0
+NULL
+
+
+createArrowFiles Input-Parameters$subThreading: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$verbose: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$cleanTmp: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$logFile: length = 1
+[1] "ArchRLogs/ArchR-createArrows-3fc6b17e484c0b-Date-2026-06-18_Time-11-02-53.324001.log"
+
+
+createArrowFiles Input-Parameters$filterFrags: length = 1
+[1] 1000
+
+
+createArrowFiles Input-Parameters$filterTSS: length = 1
+[1] 4
+
+
+
+2026-06-18 11:02:53.40768 : Cleaning Temporary Files
+2026-06-18 11:02:53.411539 : Batch Execution w/ safelapply!, 0 mins elapsed.
+
+###########
+2026-06-18 11:02:53.41241 : Creating Arrow File human_10k.arrow (human_10k : 1 of 1)
+###########
+
+
+2026-06-18 11:02:53.412849 : validBC, Class = NULL
+
+validBC: length = 0
+NULL
+
+
+
+2026-06-18 11:02:53.430816 : (human_10k : 1 of 1) Determining Arrow Method to use!
+2026-06-18 11:02:53.43626 : (human_10k : 1 of 1) Reading In Fragments from inputFiles (readMethod = tabix), 0 mins elapsed.
+2026-06-18 11:02:53.44064 : (human_10k : 1 of 1) Tabix Bed To Temporary File, 0 mins elapsed.
+
+2026-06-18 11:02:53.584465 : tileChromSizes, Class = GRanges
+GRanges object with 120 ranges and 1 metadata column:
+        seqnames              ranges strand |     chunkName
+           <Rle>           <IRanges>  <Rle> |   <character>
+    [1]     chr1          1-49791284      * |   chr1#chunk1
+    [2]     chr1   49791285-99582568      * |   chr1#chunk2
+    [3]     chr1  99582569-149373853      * |   chr1#chunk3
+    [4]     chr1 149373854-199165137      * |   chr1#chunk4
+    [5]     chr1 199165138-248956422      * |   chr1#chunk5
+    ...      ...                 ...    ... .           ...
+  [116]     chrY          1-11445483      * | chrY#chunk116
+  [117]     chrY   11445484-22890966      * | chrY#chunk117
+  [118]     chrY   22890967-34336449      * | chrY#chunk118
+  [119]     chrY   34336450-45781932      * | chrY#chunk119
+  [120]     chrY   45781933-57227415      * | chrY#chunk120
+  -------
+  seqinfo: 24 sequences from an unspecified genome; no seqlengths
+
+
+2026-06-18 11:03:17.651819 : (human_10k : 1 of 1) .tabixToTmp Fragments-Chunk-(1 of 120)-chr1:1-49791284, Class = data.table
+ 
+2026-06-18 11:03:17.651819 : (human_10k : 1 of 1) .tabixToTmp Fragments-Chunk-(1 of 120)-chr1:1-49791284, Class = data.frame
+(human_10k : 1 of 1) .tabixToTmp Fragments-Chunk-(1 of 120)-chr1:1-49791284: nRows = 7201662, nCols = 3
+      V2    V3                 V4
+   <num> <int>             <char>
+1: 10068 10191 TGACTCCTCAAATGGA-1
+2: 10074 10215 TACGGATAGGATTAAC-1
+3: 10074 10333 TAAGCCAAGAAGAGTG-1
+4: 10079 10333 TGAGCCGCATTTGTTC-1
+5: 10086 10346 TAAGTGCTCTTAACGG-1
+6: 10091 10479 GGTGTCGAGTATGGGC-1
+
+
+
+2026-06-18 11:03:17.660781 : (human_10k : 1 of 1) .tabixToTmp Barcodes-Chunk-(1 of 120)-chr1:1-49791284, Class = character
+
+(human_10k : 1 of 1) .tabixToTmp Barcodes-Chunk-(1 of 120)-chr1:1-49791284: length = 156271
+[1] "TGACTCCTCAAATGGA-1" "TACGGATAGGATTAAC-1" "TAAGCCAAGAAGAGTG-1"
+[4] "TGAGCCGCATTTGTTC-1" "TAAGTGCTCTTAACGG-1" "GGTGTCGAGTATGGGC-1"
+
+
+2026-06-18 11:05:07.333135 : (human_10k : 1 of 1) Reading TabixFile 8 Percent, 2.232 mins elapsed.
+2026-06-18 11:06:52.78935 : (human_10k : 1 of 1) Reading TabixFile 17 Percent, 3.99 mins elapsed.
+2026-06-18 11:08:23.70006 : (human_10k : 1 of 1) Reading TabixFile 25 Percent, 5.505 mins elapsed.
+2026-06-18 11:09:42.948632 : (human_10k : 1 of 1) Reading TabixFile 33 Percent, 6.826 mins elapsed.
+2026-06-18 11:10:53.175224 : (human_10k : 1 of 1) Reading TabixFile 42 Percent, 7.996 mins elapsed.
+2026-06-18 11:12:10.517142 : (human_10k : 1 of 1) Reading TabixFile 50 Percent, 9.285 mins elapsed.
+2026-06-18 11:12:58.569659 : (human_10k : 1 of 1) Reading TabixFile 58 Percent, 10.086 mins elapsed.
+2026-06-18 11:13:49.189463 : (human_10k : 1 of 1) Reading TabixFile 67 Percent, 10.93 mins elapsed.
+2026-06-18 11:14:45.479047 : (human_10k : 1 of 1) Reading TabixFile 75 Percent, 11.868 mins elapsed.
+2026-06-18 11:15:40.309538 : (human_10k : 1 of 1) Reading TabixFile 83 Percent, 12.782 mins elapsed.
+2026-06-18 11:16:04.318347 : (human_10k : 1 of 1) Reading TabixFile 92 Percent, 13.182 mins elapsed.
+2026-06-18 11:16:29.287104 : (human_10k : 1 of 1) Reading TabixFile 100 Percent, 13.598 mins elapsed.
+2026-06-18 11:16:29.97384 : (human_10k : 1 of 1) Successful creation of Temporary File, 13.609 mins elapsed.
+2026-06-18 11:16:29.975575 : (human_10k : 1 of 1) Creating ArrowFile From Temporary File, 13.609 mins elapsed.
+
+2026-06-18 11:16:30.044478 : (human_10k : 1 of 1) chunkChrNames, Class = data.frame
+(human_10k : 1 of 1) chunkChrNames: nRows = 118, nCols = 1
+     chunkNames
+1   chr1#chunk1
+2   chr1#chunk2
+3   chr1#chunk3
+4   chr1#chunk4
+5   chr1#chunk5
+6 chr10#chunk46
+
+
+2026-06-18 11:16:30.048298 : (human_10k : 1 of 1) Counting Unique Barcodes From Temporary File, 13.611 mins elapsed.
+
+2026-06-18 11:16:45.592693 : (human_10k : 1 of 1) BarcodeFrequencyTable, Class = data.table
+ 
+2026-06-18 11:16:45.592693 : (human_10k : 1 of 1) BarcodeFrequencyTable, Class = data.frame
+(human_10k : 1 of 1) BarcodeFrequencyTable: nRows = 575759, nCols = 2
+            values.V1     V1
+               <char>  <int>
+1: CGCACAGGTCAGTGTT-1 603739
+2: AGTCCGGGTCAGCAAG-1 567776
+3: CATGCCTTCACTACCC-1 424066
+4: TAGCACAAGTGAGCTG-1 397769
+5: CTCACCATCAGGAAGC-1 392996
+6: ATAGTCGAGTCTCTAG-1 392191
+
+
+
+2026-06-18 11:16:45.607591 : (human_10k : 1 of 1) BarcodesMinMaxFrags, Class = data.frame
+(human_10k : 1 of 1) BarcodesMinMaxFrags: nRows = 42817, nCols = 1
+                  bc
+1 ACTAACGCATCAGCTA-1
+2 CAAGAAACACTCCCAT-1
+3 TTTGAGGGTCCAACCG-1
+4 CAGCTAACAGTATACC-1
+5 TAACTTCCAGTTAAAG-1
+6 AGTGCGCTCTGCGTCT-1
+
+
+
+2026-06-18 11:16:46.466835 : (human_10k : 1 of 1) Unique Chromosomes, Class = data.frame
+(human_10k : 1 of 1) Unique Chromosomes: nRows = 24, nCols = 1
+   chr
+1 chr1
+2 chr2
+3 chr3
+4 chr4
+5 chr5
+6 chr6
+
+
+2026-06-18 11:16:46.468901 : (human_10k : 1 of 1) Adding Chromosome 1 of 24, 13.884 mins elapsed.
+
+2026-06-18 11:16:59.102484 : (human_10k : 1 of 1) .tmpToArrow Fragments-Chr-(1 of 24)-chr1, Class = IRanges
+
+(human_10k : 1 of 1) .tmpToArrow Fragments-Chr-(1 of 24)-chr1: length = 19991948
+IRanges object with 6 ranges and 1 metadata column:
+          start       end     width |                 RG
+      <integer> <integer> <integer> |              <Rle>
+  [1]   1013497   1013555        59 | ACTAACGCATCAGCTA-1
+  [2]   1080331   1080672       342 | ACTAACGCATCAGCTA-1
+  [3]   1116159   1116206        48 | ACTAACGCATCAGCTA-1
+  [4]   1232158   1232452       295 | ACTAACGCATCAGCTA-1
+  [5]   1239099   1239511       413 | ACTAACGCATCAGCTA-1
+  [6]   1309644   1309676        33 | ACTAACGCATCAGCTA-1
+
+
+
+2026-06-18 11:16:59.110973 : (human_10k : 1 of 1) .tmpToArrow Barcodes-Chr-(1 of 24)-chr1, Class = data.frame
+(human_10k : 1 of 1) .tmpToArrow Barcodes-Chr-(1 of 24)-chr1: nRows = 42817, nCols = 1
+                  bc
+1 ACTAACGCATCAGCTA-1
+2 CAAGAAACACTCCCAT-1
+3 TTTGAGGGTCCAACCG-1
+4 CAGCTAACAGTATACC-1
+5 TAACTTCCAGTTAAAG-1
+6 AGTGCGCTCTGCGTCT-1
+
+
+2026-06-18 11:17:03.476203 : (human_10k : 1 of 1) Adding Chromosome 2 of 24, 14.168 mins elapsed.
+2026-06-18 11:17:17.502512 : (human_10k : 1 of 1) Adding Chromosome 3 of 24, 14.402 mins elapsed.
+2026-06-18 11:17:29.60495 : (human_10k : 1 of 1) Adding Chromosome 4 of 24, 14.603 mins elapsed.
+2026-06-18 11:17:37.793445 : (human_10k : 1 of 1) Adding Chromosome 5 of 24, 14.74 mins elapsed.
+2026-06-18 11:17:47.995831 : (human_10k : 1 of 1) Adding Chromosome 6 of 24, 14.91 mins elapsed.
+2026-06-18 11:17:58.2012 : (human_10k : 1 of 1) Adding Chromosome 7 of 24, 15.08 mins elapsed.
+2026-06-18 11:18:06.676751 : (human_10k : 1 of 1) Adding Chromosome 8 of 24, 15.221 mins elapsed.
+2026-06-18 11:18:13.177383 : (human_10k : 1 of 1) Adding Chromosome 9 of 24, 15.329 mins elapsed.
+2026-06-18 11:18:19.630292 : (human_10k : 1 of 1) Adding Chromosome 10 of 24, 15.437 mins elapsed.
+2026-06-18 11:18:26.939909 : (human_10k : 1 of 1) Adding Chromosome 11 of 24, 15.559 mins elapsed.
+2026-06-18 11:18:35.848552 : (human_10k : 1 of 1) Adding Chromosome 12 of 24, 15.707 mins elapsed.
+2026-06-18 11:18:44.540501 : (human_10k : 1 of 1) Adding Chromosome 13 of 24, 15.852 mins elapsed.
+2026-06-18 11:18:49.107167 : (human_10k : 1 of 1) Adding Chromosome 14 of 24, 15.928 mins elapsed.
+2026-06-18 11:18:54.645887 : (human_10k : 1 of 1) Adding Chromosome 15 of 24, 16.021 mins elapsed.
+2026-06-18 11:18:59.288518 : (human_10k : 1 of 1) Adding Chromosome 16 of 24, 16.098 mins elapsed.
+2026-06-18 11:19:05.127333 : (human_10k : 1 of 1) Adding Chromosome 17 of 24, 16.195 mins elapsed.
+2026-06-18 11:19:12.31086 : (human_10k : 1 of 1) Adding Chromosome 18 of 24, 16.315 mins elapsed.
+2026-06-18 11:19:16.159762 : (human_10k : 1 of 1) Adding Chromosome 19 of 24, 16.379 mins elapsed.
+2026-06-18 11:19:23.209735 : (human_10k : 1 of 1) Adding Chromosome 20 of 24, 16.497 mins elapsed.
+2026-06-18 11:19:27.773864 : (human_10k : 1 of 1) Adding Chromosome 21 of 24, 16.573 mins elapsed.
+2026-06-18 11:19:30.186182 : (human_10k : 1 of 1) Adding Chromosome 22 of 24, 16.613 mins elapsed.
+2026-06-18 11:19:33.714477 : (human_10k : 1 of 1) Adding Chromosome 23 of 24, 16.672 mins elapsed.
+2026-06-18 11:19:37.691097 : (human_10k : 1 of 1) Adding Chromosome 24 of 24, 16.738 mins elapsed.
+2026-06-18 11:19:39.140761 : (human_10k : 1 of 1) Successful creation of Arrow File, 16.762 mins elapsed.
+2026-06-18 11:19:39.862205 : (human_10k : 1 of 1) Adding Fragment Summary, 16.774 mins elapsed.
+2026-06-18 11:20:09.180527 : (human_10k : 1 of 1) Plotting Fragment Size Distribution, 17.263 mins elapsed.
+2026-06-18 11:20:10.248891 : (human_10k : 1 of 1) Computing TSS Enrichment Scores, 17.281 mins elapsed.
+2026-06-18 11:21:47.276417 : (human_10k : 1 of 1) Computed TSS Scores!, 1.617 mins elapsed.
+2026-06-18 11:21:47.283615 : (human_10k : 1 of 1) CellStats : Number of Cells Pass Filter = 11514 , 18.898 mins elapsed.
+2026-06-18 11:21:47.285713 : (human_10k : 1 of 1) CellStats : Median Frags = 13292 , 18.898 mins elapsed.
+2026-06-18 11:21:47.287618 : (human_10k : 1 of 1) CellStats : Median TSS Enrichment = 15.7935 , 18.898 mins elapsed.
+2026-06-18 11:21:47.287976 : (human_10k : 1 of 1) Plotting TSS Enrichment Scores, 18.898 mins elapsed.
+2026-06-18 11:21:48.633968 : (human_10k : 1 of 1) Adding Metadata to Fragments, 18.92 mins elapsed.
+2026-06-18 11:21:49.383815 : (human_10k : 1 of 1) Adding Additional Feature Counts!, 18.933 mins elapsed.
+2026-06-18 11:23:17.402087 : (human_10k : 1 of 1) Finished Adding Additional Feature Counts!, 20.4 mins elapsed.
+
+2026-06-18 11:23:17.402542 : (human_10k : 1 of 1) Metadata, Class = DFrame
+DataFrame with 42817 rows and 12 columns
+                   cellNames    nFrags nMonoFrags  nDiFrags nMultiFrags
+                 <character> <numeric>  <numeric> <numeric>   <numeric>
+1     human_10k#ACTAACGCAT..     98742      13027     58374       27341
+2     human_10k#CAAGAAACAC..     98733      18329     57078       23326
+3     human_10k#TTTGAGGGTC..     96837      17751     59233       19853
+4     human_10k#CAGCTAACAG..     94874      24983     61581        8310
+5     human_10k#TAACTTCCAG..     93737      29923     43693       20121
+...                      ...       ...        ...       ...         ...
+42813 human_10k#TTGTTGTTCT..      1000        233       607         160
+42814 human_10k#ACCGAATGTC..      1000        305       598          97
+42815 human_10k#AGCTGATTCT..      1000        274       603         123
+42816 human_10k#TACATGGAGG..      1000        270       625         105
+42817 human_10k#TTAGCTTTCG..      1000        306       577         117
+      TSSEnrichment ReadsInTSS      Keep ReadsInPromoter PromoterRatio
+          <numeric>  <numeric> <numeric>       <numeric>     <numeric>
+1             5.200       4645         1            6252     0.0316583
+2             3.817       5104         0            7407     0.0375103
+3             4.460       9372         1           11816     0.0610097
+4             1.165        760         0            2338     0.0123216
+5            11.610      37506         1           37203     0.1984435
+...             ...        ...       ...             ...           ...
+42813         2.735         29         0              52        0.0260
+42814         0.849         15         0              40        0.0200
+42815         1.727         41         0              56        0.0280
+42816         1.337         27         0              42        0.0210
+42817         0.707         15         0              45        0.0225
+      ReadsInBlacklist BlacklistRatio
+             <numeric>      <numeric>
+1                 1536     0.00777785
+2                 1233     0.00624411
+3                  841     0.00434235
+4                 2286     0.01204756
+5                 1237     0.00659825
+...                ...            ...
+42813                2         0.0010
+42814               17         0.0085
+42815                0         0.0000
+42816               13         0.0065
+42817                2         0.0010
+
+2026-06-18 11:23:17.864428 : (human_10k : 1 of 1) Removing Fragments from Filtered Cells, 20.408 mins elapsed.
+2026-06-18 11:23:17.866444 : (human_10k : 1 of 1) Creating Filtered Arrow File, 20.408 mins elapsed.
+
+2026-06-18 11:23:22.750482 : (human_10k : 1 of 1) .filterCellsFromArrow Fragments-Chr-(1 of 24)-chr1, Class = GRanges
+GRanges object with 15546277 ranges and 1 metadata column:
+             seqnames              ranges strand |                     RG
+                <Rle>           <IRanges>  <Rle> |                  <Rle>
+         [1]     chr1     1013497-1013555      * | human_10k#ACTAACGCAT..
+         [2]     chr1     1080331-1080672      * | human_10k#ACTAACGCAT..
+         [3]     chr1     1116159-1116206      * | human_10k#ACTAACGCAT..
+         [4]     chr1     1232158-1232452      * | human_10k#ACTAACGCAT..
+         [5]     chr1     1239099-1239511      * | human_10k#ACTAACGCAT..
+         ...      ...                 ...    ... .                    ...
+  [15546273]     chr1 225239921-225239951      * | human_10k#CCAGATAAGC..
+  [15546274]     chr1 226918417-226918626      * | human_10k#CCAGATAAGC..
+  [15546275]     chr1 226919659-226919854      * | human_10k#CCAGATAAGC..
+  [15546276]     chr1 240359474-240359660      * | human_10k#CCAGATAAGC..
+  [15546277]     chr1 240366391-240366759      * | human_10k#CCAGATAAGC..
+  -------
+  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+
+
+2026-06-18 11:23:22.759618 : (human_10k : 1 of 1) .filterCellsFromArrow Barcodes-Chr-(1 of 24)-chr1, Class = data.frame
+(human_10k : 1 of 1) .filterCellsFromArrow Barcodes-Chr-(1 of 24)-chr1: nRows = 11514, nCols = 1
+                            bc
+1 human_10k#ACTAACGCATCAGCTA-1
+2 human_10k#TTTGAGGGTCCAACCG-1
+3 human_10k#TAACTTCCAGTTAAAG-1
+4 human_10k#CGCTAGGGTGACAAGC-1
+5 human_10k#GCCCAGACAGAGTCGA-1
+6 human_10k#GGAATCTGTGGTGGTA-1
+
+
+2026-06-18 11:24:28.596096 : (human_10k : 1 of 1) Finished Constructing Filtered Arrow File!, 21.586 mins elapsed.
+2026-06-18 11:24:28.665807 : (human_10k : 1 of 1) Adding TileMatrix!, 21.588 mins elapsed.
+
+2026-06-18 11:24:29.371775 : human_10k .addTileMat FeatureDF, Class = DFrame
+DataFrame with 6062095 rows and 3 columns
+           seqnames       idx     start
+        <character> <integer> <numeric>
+1              chr1         1         0
+2              chr1         2       500
+3              chr1         3      1000
+4              chr1         4      1500
+5              chr1         5      2000
+...             ...       ...       ...
+6062091        chrX    312078 156038500
+6062092        chrX    312079 156039000
+6062093        chrX    312080 156039500
+6062094        chrX    312081 156040000
+6062095        chrX    312082 156040500
+
+2026-06-18 11:24:35.712857 : Adding TileMatrix to human_10k for Chr (1 of 23)!, 0.117 mins elapsed.
+
+2026-06-18 11:24:38.185813 : NTiles_TileMatrix_1_chr1, Class = numeric
+
+NTiles_TileMatrix_1_chr1: length = 1
+  chr1 
+497913 
+
+
+
+2026-06-18 11:24:38.187104 : NCells_TileMatrix_1_chr1, Class = integer
+
+NCells_TileMatrix_1_chr1: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:24:38.188199 : MinTile_TileMatrix_1_chr1, Class = numeric
+
+MinTile_TileMatrix_1_chr1: length = 1
+[1] 21
+
+
+
+2026-06-18 11:24:38.199718 : MaxTile_TileMatrix_1_chr1, Class = numeric
+
+MaxTile_TileMatrix_1_chr1: length = 1
+[1] 497893
+
+
+
+2026-06-18 11:24:38.271937 : MinCell_TileMatrix_1_chr1, Class = integer
+
+MinCell_TileMatrix_1_chr1: length = 1
+[1] 1
+
+
+
+2026-06-18 11:24:38.273273 : MaxCell_TileMatrix_1_chr1, Class = integer
+
+MaxCell_TileMatrix_1_chr1: length = 1
+[1] 11514
+
+
+2026-06-18 11:24:50.720063 : Adding TileMatrix to human_10k for Chr (2 of 23)!, 0.367 mins elapsed.
+
+2026-06-18 11:24:51.536943 : NTiles_TileMatrix_2_chr2, Class = numeric
+
+NTiles_TileMatrix_2_chr2: length = 1
+  chr2 
+484388 
+
+
+
+2026-06-18 11:24:51.538306 : NCells_TileMatrix_2_chr2, Class = integer
+
+NCells_TileMatrix_2_chr2: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:24:51.53949 : MinTile_TileMatrix_2_chr2, Class = numeric
+
+MinTile_TileMatrix_2_chr2: length = 1
+[1] 21
+
+
+
+2026-06-18 11:24:51.548951 : MaxTile_TileMatrix_2_chr2, Class = numeric
+
+MaxTile_TileMatrix_2_chr2: length = 1
+[1] 484368
+
+
+
+2026-06-18 11:24:51.600773 : MinCell_TileMatrix_2_chr2, Class = integer
+
+MinCell_TileMatrix_2_chr2: length = 1
+[1] 1
+
+
+
+2026-06-18 11:24:51.601957 : MaxCell_TileMatrix_2_chr2, Class = integer
+
+MaxCell_TileMatrix_2_chr2: length = 1
+[1] 11514
+
+
+2026-06-18 11:25:00.030461 : Adding TileMatrix to human_10k for Chr (3 of 23)!, 0.523 mins elapsed.
+
+2026-06-18 11:25:00.677358 : NTiles_TileMatrix_3_chr3, Class = numeric
+
+NTiles_TileMatrix_3_chr3: length = 1
+  chr3 
+396592 
+
+
+
+2026-06-18 11:25:00.67924 : NCells_TileMatrix_3_chr3, Class = integer
+
+NCells_TileMatrix_3_chr3: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:25:00.680899 : MinTile_TileMatrix_3_chr3, Class = numeric
+
+MinTile_TileMatrix_3_chr3: length = 1
+[1] 21
+
+
+
+2026-06-18 11:25:00.689408 : MaxTile_TileMatrix_3_chr3, Class = numeric
+
+MaxTile_TileMatrix_3_chr3: length = 1
+[1] 396441
+
+
+
+2026-06-18 11:25:00.736566 : MinCell_TileMatrix_3_chr3, Class = integer
+
+MinCell_TileMatrix_3_chr3: length = 1
+[1] 1
+
+
+
+2026-06-18 11:25:00.738296 : MaxCell_TileMatrix_3_chr3, Class = integer
+
+MaxCell_TileMatrix_3_chr3: length = 1
+[1] 11514
+
+
+2026-06-18 11:25:07.972352 : Adding TileMatrix to human_10k for Chr (4 of 23)!, 0.655 mins elapsed.
+
+2026-06-18 11:25:08.345426 : NTiles_TileMatrix_4_chr4, Class = numeric
+
+NTiles_TileMatrix_4_chr4: length = 1
+  chr4 
+380430 
+
+
+
+2026-06-18 11:25:08.347316 : NCells_TileMatrix_4_chr4, Class = integer
+
+NCells_TileMatrix_4_chr4: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:25:08.349192 : MinTile_TileMatrix_4_chr4, Class = numeric
+
+MinTile_TileMatrix_4_chr4: length = 1
+[1] 21
+
+
+
+2026-06-18 11:25:08.355539 : MaxTile_TileMatrix_4_chr4, Class = numeric
+
+MaxTile_TileMatrix_4_chr4: length = 1
+[1] 380410
+
+
+
+2026-06-18 11:25:08.385843 : MinCell_TileMatrix_4_chr4, Class = integer
+
+MinCell_TileMatrix_4_chr4: length = 1
+[1] 1
+
+
+
+2026-06-18 11:25:08.387501 : MaxCell_TileMatrix_4_chr4, Class = integer
+
+MaxCell_TileMatrix_4_chr4: length = 1
+[1] 11514
+
+
+2026-06-18 11:25:13.797565 : Adding TileMatrix to human_10k for Chr (5 of 23)!, 0.752 mins elapsed.
+
+2026-06-18 11:25:14.284956 : NTiles_TileMatrix_5_chr5, Class = numeric
+
+NTiles_TileMatrix_5_chr5: length = 1
+  chr5 
+363077 
+
+
+
+2026-06-18 11:25:14.286845 : NCells_TileMatrix_5_chr5, Class = integer
+
+NCells_TileMatrix_5_chr5: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:25:14.288515 : MinTile_TileMatrix_5_chr5, Class = numeric
+
+MinTile_TileMatrix_5_chr5: length = 1
+[1] 21
+
+
+
+2026-06-18 11:25:14.295776 : MaxTile_TileMatrix_5_chr5, Class = numeric
+
+MaxTile_TileMatrix_5_chr5: length = 1
+[1] 362956
+
+
+
+2026-06-18 11:25:14.330711 : MinCell_TileMatrix_5_chr5, Class = integer
+
+MinCell_TileMatrix_5_chr5: length = 1
+[1] 1
+
+
+
+2026-06-18 11:25:14.332388 : MaxCell_TileMatrix_5_chr5, Class = integer
+
+MaxCell_TileMatrix_5_chr5: length = 1
+[1] 11514
+
+
+2026-06-18 11:25:20.552192 : Adding TileMatrix to human_10k for Chr (6 of 23)!, 0.865 mins elapsed.
+
+2026-06-18 11:25:21.143681 : NTiles_TileMatrix_6_chr6, Class = numeric
+
+NTiles_TileMatrix_6_chr6: length = 1
+  chr6 
+341612 
+
+
+
+2026-06-18 11:25:21.14558 : NCells_TileMatrix_6_chr6, Class = integer
+
+NCells_TileMatrix_6_chr6: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:25:21.147226 : MinTile_TileMatrix_6_chr6, Class = numeric
+
+MinTile_TileMatrix_6_chr6: length = 1
+[1] 128
+
+
+
+2026-06-18 11:25:21.155336 : MaxTile_TileMatrix_6_chr6, Class = numeric
+
+MaxTile_TileMatrix_6_chr6: length = 1
+[1] 341485
+
+
+
+2026-06-18 11:25:21.198603 : MinCell_TileMatrix_6_chr6, Class = integer
+
+MinCell_TileMatrix_6_chr6: length = 1
+[1] 1
+
+
+
+2026-06-18 11:25:21.200294 : MaxCell_TileMatrix_6_chr6, Class = integer
+
+MaxCell_TileMatrix_6_chr6: length = 1
+[1] 11514
+
+
+2026-06-18 11:25:28.107673 : Adding TileMatrix to human_10k for Chr (7 of 23)!, 0.991 mins elapsed.
+
+2026-06-18 11:25:28.569924 : NTiles_TileMatrix_7_chr7, Class = numeric
+
+NTiles_TileMatrix_7_chr7: length = 1
+  chr7 
+318692 
+
+
+
+2026-06-18 11:25:28.571837 : NCells_TileMatrix_7_chr7, Class = integer
+
+NCells_TileMatrix_7_chr7: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:25:28.573491 : MinTile_TileMatrix_7_chr7, Class = numeric
+
+MinTile_TileMatrix_7_chr7: length = 1
+[1] 21
+
+
+
+2026-06-18 11:25:28.58056 : MaxTile_TileMatrix_7_chr7, Class = numeric
+
+MaxTile_TileMatrix_7_chr7: length = 1
+[1] 318672
+
+
+
+2026-06-18 11:25:28.614318 : MinCell_TileMatrix_7_chr7, Class = integer
+
+MinCell_TileMatrix_7_chr7: length = 1
+[1] 1
+
+
+
+2026-06-18 11:25:28.616006 : MaxCell_TileMatrix_7_chr7, Class = integer
+
+MaxCell_TileMatrix_7_chr7: length = 1
+[1] 11514
+
+
+2026-06-18 11:25:34.488814 : Adding TileMatrix to human_10k for Chr (8 of 23)!, 1.097 mins elapsed.
+
+2026-06-18 11:25:34.850604 : NTiles_TileMatrix_8_chr8, Class = numeric
+
+NTiles_TileMatrix_8_chr8: length = 1
+  chr8 
+290278 
+
+
+
+2026-06-18 11:25:34.852511 : NCells_TileMatrix_8_chr8, Class = integer
+
+NCells_TileMatrix_8_chr8: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:25:34.854138 : MinTile_TileMatrix_8_chr8, Class = numeric
+
+MinTile_TileMatrix_8_chr8: length = 1
+[1] 152
+
+
+
+2026-06-18 11:25:34.860237 : MaxTile_TileMatrix_8_chr8, Class = numeric
+
+MaxTile_TileMatrix_8_chr8: length = 1
+[1] 290158
+
+
+
+2026-06-18 11:25:34.888382 : MinCell_TileMatrix_8_chr8, Class = integer
+
+MinCell_TileMatrix_8_chr8: length = 1
+[1] 1
+
+
+
+2026-06-18 11:25:34.890043 : MaxCell_TileMatrix_8_chr8, Class = integer
+
+MaxCell_TileMatrix_8_chr8: length = 1
+[1] 11514
+
+
+2026-06-18 11:25:40.494891 : Adding TileMatrix to human_10k for Chr (9 of 23)!, 1.197 mins elapsed.
+
+2026-06-18 11:25:40.94783 : NTiles_TileMatrix_9_chr9, Class = numeric
+
+NTiles_TileMatrix_9_chr9: length = 1
+  chr9 
+276790 
+
+
+
+2026-06-18 11:25:40.94976 : NCells_TileMatrix_9_chr9, Class = integer
+
+NCells_TileMatrix_9_chr9: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:25:40.95139 : MinTile_TileMatrix_9_chr9, Class = numeric
+
+MinTile_TileMatrix_9_chr9: length = 1
+[1] 21
+
+
+
+2026-06-18 11:25:40.957559 : MaxTile_TileMatrix_9_chr9, Class = numeric
+
+MaxTile_TileMatrix_9_chr9: length = 1
+[1] 276625
+
+
+
+2026-06-18 11:25:40.986074 : MinCell_TileMatrix_9_chr9, Class = integer
+
+MinCell_TileMatrix_9_chr9: length = 1
+[1] 1
+
+
+
+2026-06-18 11:25:40.987735 : MaxCell_TileMatrix_9_chr9, Class = integer
+
+MaxCell_TileMatrix_9_chr9: length = 1
+[1] 11514
+
+
+2026-06-18 11:25:46.146673 : Adding TileMatrix to human_10k for Chr (10 of 23)!, 1.291 mins elapsed.
+
+2026-06-18 11:25:46.547108 : NTiles_TileMatrix_10_chr10, Class = numeric
+
+NTiles_TileMatrix_10_chr10: length = 1
+ chr10 
+267595 
+
+
+
+2026-06-18 11:25:46.548994 : NCells_TileMatrix_10_chr10, Class = integer
+
+NCells_TileMatrix_10_chr10: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:25:46.550666 : MinTile_TileMatrix_10_chr10, Class = numeric
+
+MinTile_TileMatrix_10_chr10: length = 1
+[1] 21
+
+
+
+2026-06-18 11:25:46.557486 : MaxTile_TileMatrix_10_chr10, Class = numeric
+
+MaxTile_TileMatrix_10_chr10: length = 1
+[1] 267575
+
+
+
+2026-06-18 11:25:46.589064 : MinCell_TileMatrix_10_chr10, Class = integer
+
+MinCell_TileMatrix_10_chr10: length = 1
+[1] 1
+
+
+
+2026-06-18 11:25:46.590727 : MaxCell_TileMatrix_10_chr10, Class = integer
+
+MaxCell_TileMatrix_10_chr10: length = 1
+[1] 11514
+
+
+2026-06-18 11:25:52.073555 : Adding TileMatrix to human_10k for Chr (11 of 23)!, 1.39 mins elapsed.
+
+2026-06-18 11:25:52.547931 : NTiles_TileMatrix_11_chr11, Class = numeric
+
+NTiles_TileMatrix_11_chr11: length = 1
+ chr11 
+270174 
+
+
+
+2026-06-18 11:25:52.549353 : NCells_TileMatrix_11_chr11, Class = integer
+
+NCells_TileMatrix_11_chr11: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:25:52.55057 : MinTile_TileMatrix_11_chr11, Class = numeric
+
+MinTile_TileMatrix_11_chr11: length = 1
+[1] 207
+
+
+
+2026-06-18 11:25:52.557456 : MaxTile_TileMatrix_11_chr11, Class = numeric
+
+MaxTile_TileMatrix_11_chr11: length = 1
+[1] 270154
+
+
+
+2026-06-18 11:25:52.595311 : MinCell_TileMatrix_11_chr11, Class = integer
+
+MinCell_TileMatrix_11_chr11: length = 1
+[1] 1
+
+
+
+2026-06-18 11:25:52.596595 : MaxCell_TileMatrix_11_chr11, Class = integer
+
+MaxCell_TileMatrix_11_chr11: length = 1
+[1] 11514
+
+
+2026-06-18 11:25:58.560499 : Adding TileMatrix to human_10k for Chr (12 of 23)!, 1.498 mins elapsed.
+
+2026-06-18 11:25:59.054134 : NTiles_TileMatrix_12_chr12, Class = numeric
+
+NTiles_TileMatrix_12_chr12: length = 1
+ chr12 
+266551 
+
+
+
+2026-06-18 11:25:59.055586 : NCells_TileMatrix_12_chr12, Class = integer
+
+NCells_TileMatrix_12_chr12: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:25:59.056798 : MinTile_TileMatrix_12_chr12, Class = numeric
+
+MinTile_TileMatrix_12_chr12: length = 1
+[1] 21
+
+
+
+2026-06-18 11:25:59.063923 : MaxTile_TileMatrix_12_chr12, Class = numeric
+
+MaxTile_TileMatrix_12_chr12: length = 1
+[1] 266530
+
+
+
+2026-06-18 11:25:59.10195 : MinCell_TileMatrix_12_chr12, Class = integer
+
+MinCell_TileMatrix_12_chr12: length = 1
+[1] 1
+
+
+
+2026-06-18 11:25:59.103194 : MaxCell_TileMatrix_12_chr12, Class = integer
+
+MaxCell_TileMatrix_12_chr12: length = 1
+[1] 11514
+
+
+2026-06-18 11:26:05.158453 : Adding TileMatrix to human_10k for Chr (13 of 23)!, 1.608 mins elapsed.
+
+2026-06-18 11:26:05.343839 : NTiles_TileMatrix_13_chr13, Class = numeric
+
+NTiles_TileMatrix_13_chr13: length = 1
+ chr13 
+228729 
+
+
+
+2026-06-18 11:26:05.345221 : NCells_TileMatrix_13_chr13, Class = integer
+
+NCells_TileMatrix_13_chr13: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:26:05.34639 : MinTile_TileMatrix_13_chr13, Class = numeric
+
+MinTile_TileMatrix_13_chr13: length = 1
+[1] 32700
+
+
+
+2026-06-18 11:26:05.350187 : MaxTile_TileMatrix_13_chr13, Class = numeric
+
+MaxTile_TileMatrix_13_chr13: length = 1
+[1] 228709
+
+
+
+2026-06-18 11:26:05.36127 : MinCell_TileMatrix_13_chr13, Class = integer
+
+MinCell_TileMatrix_13_chr13: length = 1
+[1] 1
+
+
+
+2026-06-18 11:26:05.362486 : MaxCell_TileMatrix_13_chr13, Class = integer
+
+MaxCell_TileMatrix_13_chr13: length = 1
+[1] 11514
+
+
+2026-06-18 11:26:08.938689 : Adding TileMatrix to human_10k for Chr (14 of 23)!, 1.671 mins elapsed.
+
+2026-06-18 11:26:09.244325 : NTiles_TileMatrix_14_chr14, Class = numeric
+
+NTiles_TileMatrix_14_chr14: length = 1
+ chr14 
+214088 
+
+
+
+2026-06-18 11:26:09.24576 : NCells_TileMatrix_14_chr14, Class = integer
+
+NCells_TileMatrix_14_chr14: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:26:09.246967 : MinTile_TileMatrix_14_chr14, Class = numeric
+
+MinTile_TileMatrix_14_chr14: length = 1
+[1] 32046
+
+
+
+2026-06-18 11:26:09.252046 : MaxTile_TileMatrix_14_chr14, Class = numeric
+
+MaxTile_TileMatrix_14_chr14: length = 1
+[1] 213768
+
+
+
+2026-06-18 11:26:09.276071 : MinCell_TileMatrix_14_chr14, Class = integer
+
+MinCell_TileMatrix_14_chr14: length = 1
+[1] 1
+
+
+
+2026-06-18 11:26:09.277299 : MaxCell_TileMatrix_14_chr14, Class = integer
+
+MaxCell_TileMatrix_14_chr14: length = 1
+[1] 11514
+
+
+2026-06-18 11:26:13.555416 : Adding TileMatrix to human_10k for Chr (15 of 23)!, 1.748 mins elapsed.
+
+2026-06-18 11:26:13.796321 : NTiles_TileMatrix_15_chr15, Class = numeric
+
+NTiles_TileMatrix_15_chr15: length = 1
+ chr15 
+203983 
+
+
+
+2026-06-18 11:26:13.797747 : NCells_TileMatrix_15_chr15, Class = integer
+
+NCells_TileMatrix_15_chr15: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:26:13.798904 : MinTile_TileMatrix_15_chr15, Class = numeric
+
+MinTile_TileMatrix_15_chr15: length = 1
+[1] 34019
+
+
+
+2026-06-18 11:26:13.803512 : MaxTile_TileMatrix_15_chr15, Class = numeric
+
+MaxTile_TileMatrix_15_chr15: length = 1
+[1] 203963
+
+
+
+2026-06-18 11:26:13.824654 : MinCell_TileMatrix_15_chr15, Class = integer
+
+MinCell_TileMatrix_15_chr15: length = 1
+[1] 1
+
+
+
+2026-06-18 11:26:13.82588 : MaxCell_TileMatrix_15_chr15, Class = integer
+
+MaxCell_TileMatrix_15_chr15: length = 1
+[1] 11514
+
+
+2026-06-18 11:26:18.078386 : Adding TileMatrix to human_10k for Chr (16 of 23)!, 1.823 mins elapsed.
+
+2026-06-18 11:26:18.407655 : NTiles_TileMatrix_16_chr16, Class = numeric
+
+NTiles_TileMatrix_16_chr16: length = 1
+ chr16 
+180677 
+
+
+
+2026-06-18 11:26:18.409544 : NCells_TileMatrix_16_chr16, Class = integer
+
+NCells_TileMatrix_16_chr16: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:26:18.411182 : MinTile_TileMatrix_16_chr16, Class = numeric
+
+MinTile_TileMatrix_16_chr16: length = 1
+[1] 21
+
+
+
+2026-06-18 11:26:18.417066 : MaxTile_TileMatrix_16_chr16, Class = numeric
+
+MaxTile_TileMatrix_16_chr16: length = 1
+[1] 180454
+
+
+
+2026-06-18 11:26:18.443769 : MinCell_TileMatrix_16_chr16, Class = integer
+
+MinCell_TileMatrix_16_chr16: length = 1
+[1] 1
+
+
+
+2026-06-18 11:26:18.445139 : MaxCell_TileMatrix_16_chr16, Class = integer
+
+MaxCell_TileMatrix_16_chr16: length = 1
+[1] 11514
+
+
+2026-06-18 11:26:23.277714 : Adding TileMatrix to human_10k for Chr (17 of 23)!, 1.91 mins elapsed.
+
+2026-06-18 11:26:23.797331 : NTiles_TileMatrix_17_chr17, Class = numeric
+
+NTiles_TileMatrix_17_chr17: length = 1
+ chr17 
+166515 
+
+
+
+2026-06-18 11:26:23.799223 : NCells_TileMatrix_17_chr17, Class = integer
+
+NCells_TileMatrix_17_chr17: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:26:23.800896 : MinTile_TileMatrix_17_chr17, Class = numeric
+
+MinTile_TileMatrix_17_chr17: length = 1
+[1] 126
+
+
+
+2026-06-18 11:26:23.808086 : MaxTile_TileMatrix_17_chr17, Class = numeric
+
+MaxTile_TileMatrix_17_chr17: length = 1
+[1] 166495
+
+
+
+2026-06-18 11:26:23.845883 : MinCell_TileMatrix_17_chr17, Class = integer
+
+MinCell_TileMatrix_17_chr17: length = 1
+[1] 1
+
+
+
+2026-06-18 11:26:23.847553 : MaxCell_TileMatrix_17_chr17, Class = integer
+
+MaxCell_TileMatrix_17_chr17: length = 1
+[1] 11514
+
+
+2026-06-18 11:26:29.881293 : Adding TileMatrix to human_10k for Chr (18 of 23)!, 2.02 mins elapsed.
+
+2026-06-18 11:26:30.034492 : NTiles_TileMatrix_18_chr18, Class = numeric
+
+NTiles_TileMatrix_18_chr18: length = 1
+ chr18 
+160747 
+
+
+
+2026-06-18 11:26:30.036253 : NCells_TileMatrix_18_chr18, Class = integer
+
+NCells_TileMatrix_18_chr18: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:26:30.037882 : MinTile_TileMatrix_18_chr18, Class = numeric
+
+MinTile_TileMatrix_18_chr18: length = 1
+[1] 21
+
+
+
+2026-06-18 11:26:30.041226 : MaxTile_TileMatrix_18_chr18, Class = numeric
+
+MaxTile_TileMatrix_18_chr18: length = 1
+[1] 160527
+
+
+
+2026-06-18 11:26:30.050666 : MinCell_TileMatrix_18_chr18, Class = integer
+
+MinCell_TileMatrix_18_chr18: length = 1
+[1] 1
+
+
+
+2026-06-18 11:26:30.051838 : MaxCell_TileMatrix_18_chr18, Class = integer
+
+MaxCell_TileMatrix_18_chr18: length = 1
+[1] 11514
+
+
+2026-06-18 11:26:33.363165 : Adding TileMatrix to human_10k for Chr (19 of 23)!, 2.078 mins elapsed.
+
+2026-06-18 11:26:33.960863 : NTiles_TileMatrix_19_chr19, Class = numeric
+
+NTiles_TileMatrix_19_chr19: length = 1
+ chr19 
+117236 
+
+
+
+2026-06-18 11:26:33.962501 : NCells_TileMatrix_19_chr19, Class = integer
+
+NCells_TileMatrix_19_chr19: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:26:33.964107 : MinTile_TileMatrix_19_chr19, Class = numeric
+
+MinTile_TileMatrix_19_chr19: length = 1
+[1] 141
+
+
+
+2026-06-18 11:26:33.971728 : MaxTile_TileMatrix_19_chr19, Class = numeric
+
+MaxTile_TileMatrix_19_chr19: length = 1
+[1] 117216
+
+
+
+2026-06-18 11:26:34.012105 : MinCell_TileMatrix_19_chr19, Class = integer
+
+MinCell_TileMatrix_19_chr19: length = 1
+[1] 1
+
+
+
+2026-06-18 11:26:34.013556 : MaxCell_TileMatrix_19_chr19, Class = integer
+
+MaxCell_TileMatrix_19_chr19: length = 1
+[1] 11514
+
+
+2026-06-18 11:26:40.783053 : Adding TileMatrix to human_10k for Chr (20 of 23)!, 2.202 mins elapsed.
+
+2026-06-18 11:26:40.993041 : NTiles_TileMatrix_20_chr20, Class = numeric
+
+NTiles_TileMatrix_20_chr20: length = 1
+ chr20 
+128889 
+
+
+
+2026-06-18 11:26:40.994881 : NCells_TileMatrix_20_chr20, Class = integer
+
+NCells_TileMatrix_20_chr20: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:26:40.996399 : MinTile_TileMatrix_20_chr20, Class = numeric
+
+MinTile_TileMatrix_20_chr20: length = 1
+[1] 121
+
+
+
+2026-06-18 11:26:41.000931 : MaxTile_TileMatrix_20_chr20, Class = numeric
+
+MaxTile_TileMatrix_20_chr20: length = 1
+[1] 128668
+
+
+
+2026-06-18 11:26:41.013481 : MinCell_TileMatrix_20_chr20, Class = integer
+
+MinCell_TileMatrix_20_chr20: length = 1
+[1] 1
+
+
+
+2026-06-18 11:26:41.015117 : MaxCell_TileMatrix_20_chr20, Class = integer
+
+MaxCell_TileMatrix_20_chr20: length = 1
+[1] 11514
+
+
+2026-06-18 11:26:44.951585 : Adding TileMatrix to human_10k for Chr (21 of 23)!, 2.271 mins elapsed.
+
+2026-06-18 11:26:45.057247 : NTiles_TileMatrix_21_chr21, Class = numeric
+
+NTiles_TileMatrix_21_chr21: length = 1
+chr21 
+93420 
+
+
+
+2026-06-18 11:26:45.058692 : NCells_TileMatrix_21_chr21, Class = integer
+
+NCells_TileMatrix_21_chr21: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:26:45.059819 : MinTile_TileMatrix_21_chr21, Class = numeric
+
+MinTile_TileMatrix_21_chr21: length = 1
+[1] 10062
+
+
+
+2026-06-18 11:26:45.062289 : MaxTile_TileMatrix_21_chr21, Class = numeric
+
+MaxTile_TileMatrix_21_chr21: length = 1
+[1] 93400
+
+
+
+2026-06-18 11:26:45.068484 : MinCell_TileMatrix_21_chr21, Class = integer
+
+MinCell_TileMatrix_21_chr21: length = 1
+[1] 1
+
+
+
+2026-06-18 11:26:45.069644 : MaxCell_TileMatrix_21_chr21, Class = integer
+
+MaxCell_TileMatrix_21_chr21: length = 1
+[1] 11514
+
+
+2026-06-18 11:26:47.718239 : Adding TileMatrix to human_10k for Chr (22 of 23)!, 2.317 mins elapsed.
+
+2026-06-18 11:26:47.894842 : NTiles_TileMatrix_22_chr22, Class = numeric
+
+NTiles_TileMatrix_22_chr22: length = 1
+ chr22 
+101637 
+
+
+
+2026-06-18 11:26:47.896281 : NCells_TileMatrix_22_chr22, Class = integer
+
+NCells_TileMatrix_22_chr22: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:26:47.89741 : MinTile_TileMatrix_22_chr22, Class = numeric
+
+MinTile_TileMatrix_22_chr22: length = 1
+[1] 21062
+
+
+
+2026-06-18 11:26:47.901232 : MaxTile_TileMatrix_22_chr22, Class = numeric
+
+MaxTile_TileMatrix_22_chr22: length = 1
+[1] 101617
+
+
+
+2026-06-18 11:26:47.911711 : MinCell_TileMatrix_22_chr22, Class = integer
+
+MinCell_TileMatrix_22_chr22: length = 1
+[1] 1
+
+
+
+2026-06-18 11:26:47.912903 : MaxCell_TileMatrix_22_chr22, Class = integer
+
+MaxCell_TileMatrix_22_chr22: length = 1
+[1] 11514
+
+
+2026-06-18 11:26:51.478671 : Adding TileMatrix to human_10k for Chr (23 of 23)!, 2.38 mins elapsed.
+
+2026-06-18 11:26:51.653762 : NTiles_TileMatrix_23_chrX, Class = numeric
+
+NTiles_TileMatrix_23_chrX: length = 1
+  chrX 
+312082 
+
+
+
+2026-06-18 11:26:51.655177 : NCells_TileMatrix_23_chrX, Class = integer
+
+NCells_TileMatrix_23_chrX: length = 1
+[1] 11514
+
+
+
+2026-06-18 11:26:51.656297 : MinTile_TileMatrix_23_chrX, Class = numeric
+
+MinTile_TileMatrix_23_chrX: length = 1
+[1] 21
+
+
+
+2026-06-18 11:26:51.660078 : MaxTile_TileMatrix_23_chrX, Class = numeric
+
+MaxTile_TileMatrix_23_chrX: length = 1
+[1] 312062
+
+
+
+2026-06-18 11:26:51.670785 : MinCell_TileMatrix_23_chrX, Class = integer
+
+MinCell_TileMatrix_23_chrX: length = 1
+[1] 1
+
+
+
+2026-06-18 11:26:51.671944 : MaxCell_TileMatrix_23_chrX, Class = integer
+
+MaxCell_TileMatrix_23_chrX: length = 1
+[1] 11514
+
+
+2026-06-18 11:26:55.819393 : (human_10k : 1 of 1) Finished Adding TileMatrix!, 24.04 mins elapsed.
+2026-06-18 11:26:55.820455 : (human_10k : 1 of 1) Adding GeneScoreMatrix!, 24.04 mins elapsed.
+
+
+2026-06-18 11:26:55.910977 : human_10k .addGeneScoreMat geneRegions, Class = GRanges
+GRanges object with 24919 ranges and 5 metadata columns:
+          seqnames              ranges strand |     gene_id       symbol
+             <Rle>           <IRanges>  <Rle> | <character>  <character>
+      [1]     chr1         64091-70008      + |       79501        OR4F5
+      [2]     chr1       139790-145339      - |      729737    LOC729737
+      [3]     chr1       585990-634010      - |   101928626 LOC101928626
+      [4]     chr1       812371-819837      + |      400728       FAM87B
+      [5]     chr1       820138-859446      + |      643837    LINC01128
+      ...      ...                 ...    ... .         ...          ...
+  [24915]     chrX 155258241-155269589      - |      116442       RAB39B
+  [24916]     chrX 155276211-155339657      - |        1193        CLIC2
+  [24917]     chrX 155375787-155381134      + |      474382       H2AFB1
+  [24918]     chrX 155377115-155383230      + |      474383         F8A2
+  [24919]     chrX 155490115-155674944      - |       55217        TMLHE
+          geneStart   geneEnd geneWeight
+          <integer> <integer>  <numeric>
+      [1]     69091     70008    4.40770
+      [2]    140339    139790    4.63365
+      [3]    629010    585990    1.41996
+      [4]    817371    819837    3.70079
+      [5]    825138    859446    1.51303
+      ...       ...       ...        ...
+  [24915] 155264589 155258241    2.77696
+  [24916] 155334657 155276211    1.31785
+  [24917] 155380787 155381134    4.77090
+  [24918] 155382115 155383230    4.29738
+  [24919] 155669944 155490115    1.10911
+  -------
+  seqinfo: 23 sequences from hg38 genome
+
+2026-06-18 11:26:56.001668 : Creating Temp GeneScoreMatrix for human_10k, Chr (1 of 23)!, 0 mins elapsed.
+2026-06-18 11:27:06.927723 : Creating Temp GeneScoreMatrix for human_10k, Chr (2 of 23)!, 0.182 mins elapsed.
+2026-06-18 11:27:14.936543 : Creating Temp GeneScoreMatrix for human_10k, Chr (3 of 23)!, 0.316 mins elapsed.
+2026-06-18 11:27:22.03629 : Creating Temp GeneScoreMatrix for human_10k, Chr (4 of 23)!, 0.434 mins elapsed.
+2026-06-18 11:27:26.78137 : Creating Temp GeneScoreMatrix for human_10k, Chr (5 of 23)!, 0.513 mins elapsed.
+2026-06-18 11:27:32.602365 : Creating Temp GeneScoreMatrix for human_10k, Chr (6 of 23)!, 0.61 mins elapsed.
+2026-06-18 11:27:40.580371 : Creating Temp GeneScoreMatrix for human_10k, Chr (7 of 23)!, 0.743 mins elapsed.
+2026-06-18 11:27:45.675584 : Creating Temp GeneScoreMatrix for human_10k, Chr (8 of 23)!, 0.828 mins elapsed.
+2026-06-18 11:27:50.63525 : Creating Temp GeneScoreMatrix for human_10k, Chr (9 of 23)!, 0.911 mins elapsed.
+2026-06-18 11:27:55.753961 : Creating Temp GeneScoreMatrix for human_10k, Chr (10 of 23)!, 0.996 mins elapsed.
+2026-06-18 11:28:01.701756 : Creating Temp GeneScoreMatrix for human_10k, Chr (11 of 23)!, 1.095 mins elapsed.
+2026-06-18 11:28:08.253575 : Creating Temp GeneScoreMatrix for human_10k, Chr (12 of 23)!, 1.204 mins elapsed.
+2026-06-18 11:28:13.657716 : Creating Temp GeneScoreMatrix for human_10k, Chr (13 of 23)!, 1.294 mins elapsed.
+2026-06-18 11:28:16.787771 : Creating Temp GeneScoreMatrix for human_10k, Chr (14 of 23)!, 1.346 mins elapsed.
+2026-06-18 11:28:21.402842 : Creating Temp GeneScoreMatrix for human_10k, Chr (15 of 23)!, 1.423 mins elapsed.
+2026-06-18 11:28:25.089666 : Creating Temp GeneScoreMatrix for human_10k, Chr (16 of 23)!, 1.485 mins elapsed.
+2026-06-18 11:28:29.515031 : Creating Temp GeneScoreMatrix for human_10k, Chr (17 of 23)!, 1.559 mins elapsed.
+2026-06-18 11:28:35.7205 : Creating Temp GeneScoreMatrix for human_10k, Chr (18 of 23)!, 1.662 mins elapsed.
+2026-06-18 11:28:38.508076 : Creating Temp GeneScoreMatrix for human_10k, Chr (19 of 23)!, 1.708 mins elapsed.
+2026-06-18 11:28:44.739282 : Creating Temp GeneScoreMatrix for human_10k, Chr (20 of 23)!, 1.812 mins elapsed.
+2026-06-18 11:28:47.928871 : Creating Temp GeneScoreMatrix for human_10k, Chr (21 of 23)!, 1.865 mins elapsed.
+2026-06-18 11:28:50.459879 : Creating Temp GeneScoreMatrix for human_10k, Chr (22 of 23)!, 1.908 mins elapsed.
+2026-06-18 11:28:53.552692 : Creating Temp GeneScoreMatrix for human_10k, Chr (23 of 23)!, 1.959 mins elapsed.
+
+2026-06-18 11:28:56.96102 : human_10k .addGeneScoreMat FeatureDF, Class = data.frame
+human_10k .addGeneScoreMat FeatureDF: nRows = 24919, nCols = 6
+  seqnames  start    end strand         name idx
+1     chr1  69091  70008      1        OR4F5   1
+2     chr1 140339 139790      2    LOC729737   2
+3     chr1 629010 585990      2 LOC101928626   3
+4     chr1 817371 819837      1       FAM87B   4
+5     chr1 825138 859446      1    LINC01128   5
+6     chr1 827522 826206      2    LINC00115   6
+
+
+2026-06-18 11:28:57.975169 : Adding GeneScoreMatrix to human_10k for Chr (1 of 23)!, 2.033 mins elapsed.
+2026-06-18 11:29:03.056173 : Adding GeneScoreMatrix to human_10k for Chr (2 of 23)!, 2.118 mins elapsed.
+2026-06-18 11:29:06.387759 : Adding GeneScoreMatrix to human_10k for Chr (3 of 23)!, 2.173 mins elapsed.
+2026-06-18 11:29:10.154993 : Adding GeneScoreMatrix to human_10k for Chr (4 of 23)!, 2.236 mins elapsed.
+2026-06-18 11:29:12.275904 : Adding GeneScoreMatrix to human_10k for Chr (5 of 23)!, 2.271 mins elapsed.
+2026-06-18 11:29:14.843177 : Adding GeneScoreMatrix to human_10k for Chr (6 of 23)!, 2.314 mins elapsed.
+2026-06-18 11:29:18.516564 : Adding GeneScoreMatrix to human_10k for Chr (7 of 23)!, 2.375 mins elapsed.
+2026-06-18 11:29:21.151511 : Adding GeneScoreMatrix to human_10k for Chr (8 of 23)!, 2.419 mins elapsed.
+2026-06-18 11:29:23.357598 : Adding GeneScoreMatrix to human_10k for Chr (9 of 23)!, 2.456 mins elapsed.
+2026-06-18 11:29:26.250382 : Adding GeneScoreMatrix to human_10k for Chr (10 of 23)!, 2.504 mins elapsed.
+2026-06-18 11:29:28.530072 : Adding GeneScoreMatrix to human_10k for Chr (11 of 23)!, 2.542 mins elapsed.
+2026-06-18 11:29:31.611624 : Adding GeneScoreMatrix to human_10k for Chr (12 of 23)!, 2.594 mins elapsed.
+2026-06-18 11:29:35.137508 : Adding GeneScoreMatrix to human_10k for Chr (13 of 23)!, 2.652 mins elapsed.
+2026-06-18 11:29:36.741316 : Adding GeneScoreMatrix to human_10k for Chr (14 of 23)!, 2.679 mins elapsed.
+2026-06-18 11:29:38.893469 : Adding GeneScoreMatrix to human_10k for Chr (15 of 23)!, 2.715 mins elapsed.
+2026-06-18 11:29:41.70283 : Adding GeneScoreMatrix to human_10k for Chr (16 of 23)!, 2.762 mins elapsed.
+2026-06-18 11:29:44.246452 : Adding GeneScoreMatrix to human_10k for Chr (17 of 23)!, 2.804 mins elapsed.
+2026-06-18 11:29:47.671797 : Adding GeneScoreMatrix to human_10k for Chr (18 of 23)!, 2.861 mins elapsed.
+2026-06-18 11:29:49.611909 : Adding GeneScoreMatrix to human_10k for Chr (19 of 23)!, 2.894 mins elapsed.
+2026-06-18 11:29:53.377183 : Adding GeneScoreMatrix to human_10k for Chr (20 of 23)!, 2.956 mins elapsed.
+2026-06-18 11:29:55.270227 : Adding GeneScoreMatrix to human_10k for Chr (21 of 23)!, 2.988 mins elapsed.
+2026-06-18 11:29:57.125337 : Adding GeneScoreMatrix to human_10k for Chr (22 of 23)!, 3.019 mins elapsed.
+2026-06-18 11:29:58.903969 : Adding GeneScoreMatrix to human_10k for Chr (23 of 23)!, 3.048 mins elapsed.
+2026-06-18 11:30:01.736324 : (human_10k : 1 of 1) Finished Adding GeneScoreMatrix!, 27.139 mins elapsed.
+2026-06-18 11:30:01.737495 : (human_10k : 1 of 1) Finished Creating Arrow File, 27.139 mins elapsed.
+
+------- Completed
+
+End Time : 2026-06-18 11:30:01.744639
+Elapsed Time Minutes = 27.1402488032977
+Elapsed Time Hours = 0.452337549991078
+
+-------
+
+
+

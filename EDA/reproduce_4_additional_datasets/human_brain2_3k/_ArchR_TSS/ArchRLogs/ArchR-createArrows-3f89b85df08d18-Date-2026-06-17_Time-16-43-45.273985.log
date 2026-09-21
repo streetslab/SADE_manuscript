@@ -1,0 +1,1650 @@
+
+           ___      .______        ______  __    __  .______      
+          /   \     |   _  \      /      ||  |  |  | |   _  \     
+         /  ^  \    |  |_)  |    |  ,----'|  |__|  | |  |_)  |    
+        /  /_\  \   |      /     |  |     |   __   | |      /     
+       /  _____  \  |  |\  \\___ |  `----.|  |  |  | |  |\  \\___.
+      /__/     \__\ | _| `._____| \______||__|  |__| | _| `._____|
+    
+Logging With ArchR!
+
+Start Time : 2026-06-17 16:43:45.280032
+
+------- ArchR Info
+
+ArchRThreads = 16
+ArchRGenome = Hg38
+
+------- System Info
+
+Computer OS = unix
+Total Cores = 64
+
+------- Session Info
+
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /home/syyang/miniconda3/envs/seuratv5/lib/libopenblasp-r0.3.26.so;  LAPACK version 3.12.0
+
+Random number generation:
+ RNG:     L'Ecuyer-CMRG 
+ Normal:  Inversion 
+ Sample:  Rejection 
+ 
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: America/Los_Angeles
+tzcode source: system (glibc)
+
+attached base packages:
+ [1] parallel  stats4    grid      stats     graphics  grDevices utils    
+ [8] datasets  methods   base     
+
+other attached packages:
+ [1] BSgenome.Hsapiens.UCSC.hg38_1.4.5 BSgenome_1.70.2                  
+ [3] rtracklayer_1.62.0                BiocIO_1.12.0                    
+ [5] Biostrings_2.70.1                 XVector_0.42.0                   
+ [7] rhdf5_2.46.1                      SummarizedExperiment_1.32.0      
+ [9] Biobase_2.62.0                    RcppArmadillo_15.0.2-1           
+[11] Rcpp_1.1.1                        Matrix_1.6-5                     
+[13] GenomicRanges_1.54.1              GenomeInfoDb_1.38.8              
+[15] IRanges_2.36.0                    S4Vectors_0.40.2                 
+[17] BiocGenerics_0.48.1               sparseMatrixStats_1.14.0         
+[19] MatrixGenerics_1.14.0             matrixStats_1.5.0                
+[21] data.table_1.18.2.1               stringr_1.6.0                    
+[23] plyr_1.8.9                        magrittr_2.0.4                   
+[25] ggplot2_4.0.2                     gtable_0.3.6                     
+[27] gtools_3.9.5                      gridExtra_2.3                    
+[29] devtools_2.4.6                    usethis_3.2.1                    
+[31] ArchR_1.0.3                      
+
+loaded via a namespace (and not attached):
+ [1] rjson_0.2.23             remotes_2.5.0            lattice_0.22-9          
+ [4] rhdf5filters_1.14.1      vctrs_0.7.1              tools_4.3.3             
+ [7] bitops_1.0-9             generics_0.1.4           tibble_3.3.1            
+[10] pkgconfig_2.0.3          RColorBrewer_1.1-3       S7_0.2.0                
+[13] lifecycle_1.0.5          GenomeInfoDbData_1.2.11  compiler_4.3.3          
+[16] farver_2.1.2             Rsamtools_2.18.0         codetools_0.2-20        
+[19] yaml_2.3.12              RCurl_1.98-1.17          pillar_1.11.1           
+[22] crayon_1.5.3             ellipsis_0.3.2           BiocParallel_1.36.0     
+[25] cachem_1.1.0             DelayedArray_0.28.0      sessioninfo_1.2.3       
+[28] abind_1.4-8              tidyselect_1.2.1         stringi_1.8.7           
+[31] restfulr_0.0.16          dplyr_1.2.0              purrr_1.2.1             
+[34] fastmap_1.2.0            cli_3.6.5                SparseArray_1.2.4       
+[37] S4Arrays_1.2.1           XML_3.99-0.22            dichromat_2.0-0.1       
+[40] pkgbuild_1.4.8           withr_3.0.2              scales_1.4.0            
+[43] memoise_2.0.1            rlang_1.1.7              glue_1.8.0              
+[46] pkgload_1.5.0            R6_2.6.1                 Rhdf5lib_1.24.2         
+[49] GenomicAlignments_1.38.2 fs_1.6.6                 zlibbioc_1.48.2         
+
+
+------- Log Info
+
+
+2026-06-17 16:43:45.318643 : createArrowFiles Input-Parameters, Class = list
+
+createArrowFiles Input-Parameters$inputFiles: length = 1
+                                                                   human_brain2_3k 
+"/mnt/hdd_bob/syy/adipose/atac/cr_goldstand/human_brain2_3k/atac_fragments.tsv.gz" 
+
+
+createArrowFiles Input-Parameters$sampleNames: length = 1
+[1] "human_brain2_3k"
+
+
+createArrowFiles Input-Parameters$outputNames: length = 1
+[1] "human_brain2_3k"
+
+
+createArrowFiles Input-Parameters$validBarcodes: length = 0
+NULL
+
+
+createArrowFiles Input-Parameters$minTSS: length = 1
+[1] 4
+
+
+createArrowFiles Input-Parameters$minFrags: length = 1
+[1] 1000
+
+
+createArrowFiles Input-Parameters$maxFrags: length = 1
+[1] 1e+05
+
+
+createArrowFiles Input-Parameters$minFragSize: length = 1
+[1] 10
+
+
+createArrowFiles Input-Parameters$maxFragSize: length = 1
+[1] 2000
+
+
+createArrowFiles Input-Parameters$QCDir: length = 1
+[1] "QualityControl"
+
+
+createArrowFiles Input-Parameters$nucLength: length = 1
+[1] 147
+
+
+createArrowFiles Input-Parameters$promoterRegion: length = 2
+[1] 2000  100
+
+
+createArrowFiles Input-Parameters$excludeChr: length = 2
+[1] "chrM" "chrY"
+
+
+createArrowFiles Input-Parameters$nChunk: length = 1
+[1] 5
+
+
+createArrowFiles Input-Parameters$bcTag: length = 1
+[1] "qname"
+
+
+createArrowFiles Input-Parameters$gsubExpression: length = 0
+NULL
+
+
+createArrowFiles Input-Parameters$bamFlag: length = 0
+NULL
+
+
+createArrowFiles Input-Parameters$offsetPlus: length = 1
+[1] 4
+
+
+createArrowFiles Input-Parameters$offsetMinus: length = 1
+[1] -5
+
+
+createArrowFiles Input-Parameters$addTileMat: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$addGeneScoreMat: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$force: length = 1
+[1] FALSE
+
+
+createArrowFiles Input-Parameters$threads: length = 1
+[1] 16
+
+
+createArrowFiles Input-Parameters$parallelParam: length = 0
+NULL
+
+
+createArrowFiles Input-Parameters$subThreading: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$verbose: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$cleanTmp: length = 1
+[1] TRUE
+
+
+createArrowFiles Input-Parameters$logFile: length = 1
+[1] "ArchRLogs/ArchR-createArrows-3f89b85df08d18-Date-2026-06-17_Time-16-43-45.273985.log"
+
+
+createArrowFiles Input-Parameters$filterFrags: length = 1
+[1] 1000
+
+
+createArrowFiles Input-Parameters$filterTSS: length = 1
+[1] 4
+
+
+
+2026-06-17 16:43:45.355257 : Cleaning Temporary Files
+2026-06-17 16:43:45.361576 : Batch Execution w/ safelapply!, 0 mins elapsed.
+
+###########
+2026-06-17 16:43:45.362803 : Creating Arrow File human_brain2_3k.arrow (human_brain2_3k : 1 of 1)
+###########
+
+
+2026-06-17 16:43:45.36342 : validBC, Class = NULL
+
+validBC: length = 0
+NULL
+
+
+
+2026-06-17 16:43:45.388013 : (human_brain2_3k : 1 of 1) Determining Arrow Method to use!
+2026-06-17 16:43:45.393655 : (human_brain2_3k : 1 of 1) Reading In Fragments from inputFiles (readMethod = tabix), 0.001 mins elapsed.
+2026-06-17 16:43:45.398087 : (human_brain2_3k : 1 of 1) Tabix Bed To Temporary File, 0.001 mins elapsed.
+
+2026-06-17 16:43:45.478979 : tileChromSizes, Class = GRanges
+GRanges object with 120 ranges and 1 metadata column:
+        seqnames              ranges strand |     chunkName
+           <Rle>           <IRanges>  <Rle> |   <character>
+    [1]     chr1          1-49791284      * |   chr1#chunk1
+    [2]     chr1   49791285-99582568      * |   chr1#chunk2
+    [3]     chr1  99582569-149373853      * |   chr1#chunk3
+    [4]     chr1 149373854-199165137      * |   chr1#chunk4
+    [5]     chr1 199165138-248956422      * |   chr1#chunk5
+    ...      ...                 ...    ... .           ...
+  [116]     chrY          1-11445483      * | chrY#chunk116
+  [117]     chrY   11445484-22890966      * | chrY#chunk117
+  [118]     chrY   22890967-34336449      * | chrY#chunk118
+  [119]     chrY   34336450-45781932      * | chrY#chunk119
+  [120]     chrY   45781933-57227415      * | chrY#chunk120
+  -------
+  seqinfo: 24 sequences from an unspecified genome; no seqlengths
+
+2026-06-17 16:44:04.477372 : (human_brain2_3k : 1 of 1) Reading TabixFile 28 Percent, 0.319 mins elapsed.
+
+2026-06-17 16:44:08.800068 : (human_brain2_3k : 1 of 1) .tabixToTmp Fragments-Chunk-(1 of 120)-chr1:1-49791284, Class = data.table
+ 
+2026-06-17 16:44:08.800068 : (human_brain2_3k : 1 of 1) .tabixToTmp Fragments-Chunk-(1 of 120)-chr1:1-49791284, Class = data.frame
+(human_brain2_3k : 1 of 1) .tabixToTmp Fragments-Chunk-(1 of 120)-chr1:1-49791284: nRows = 4416993, nCols = 3
+      V2    V3                 V4
+   <num> <int>             <char>
+1: 10067 10198 GATGAGGGTGACATGC-1
+2: 10073 10303 TACGTACAGGAAGCTA-1
+3: 10074 10186 AACCGCTCAGCACCAT-1
+4: 10074 10272 GGTCATTAGCACAGGG-1
+5: 10091 10204 ATCACAATCCTCCTAA-1
+6: 10092 10327 GCGGTTGGTTAAGCCA-1
+
+
+
+2026-06-17 16:44:08.810625 : (human_brain2_3k : 1 of 1) .tabixToTmp Barcodes-Chunk-(1 of 120)-chr1:1-49791284, Class = character
+
+(human_brain2_3k : 1 of 1) .tabixToTmp Barcodes-Chunk-(1 of 120)-chr1:1-49791284: length = 136086
+[1] "GATGAGGGTGACATGC-1" "TACGTACAGGAAGCTA-1" "AACCGCTCAGCACCAT-1"
+[4] "GGTCATTAGCACAGGG-1" "ATCACAATCCTCCTAA-1" "GCGGTTGGTTAAGCCA-1"
+
+
+2026-06-17 16:44:23.08524 : (human_brain2_3k : 1 of 1) Reading TabixFile 55 Percent, 0.623 mins elapsed.
+2026-06-17 16:44:37.994382 : (human_brain2_3k : 1 of 1) Reading TabixFile 82 Percent, 0.877 mins elapsed.
+2026-06-17 16:44:48.491784 : (human_brain2_3k : 1 of 1) Parallel Hdf5 Linkage Temporary File, 1.052 mins elapsed.
+2026-06-17 16:44:49.361586 : (human_brain2_3k : 1 of 1) Successful creation of Temporary File, 1.067 mins elapsed.
+2026-06-17 16:44:49.363494 : (human_brain2_3k : 1 of 1) Creating ArrowFile From Temporary File, 1.067 mins elapsed.
+
+2026-06-17 16:44:49.569265 : (human_brain2_3k : 1 of 1) chunkChrNames, Class = data.frame
+(human_brain2_3k : 1 of 1) chunkChrNames: nRows = 118, nCols = 1
+     chunkNames
+1   chr1#chunk1
+2   chr1#chunk2
+3   chr1#chunk3
+4   chr1#chunk4
+5   chr1#chunk5
+6 chr10#chunk46
+
+
+2026-06-17 16:44:49.572896 : (human_brain2_3k : 1 of 1) Counting Unique Barcodes From Temporary File, 1.07 mins elapsed.
+
+2026-06-17 16:45:03.575798 : (human_brain2_3k : 1 of 1) BarcodeFrequencyTable, Class = data.table
+ 
+2026-06-17 16:45:03.575798 : (human_brain2_3k : 1 of 1) BarcodeFrequencyTable, Class = data.frame
+(human_brain2_3k : 1 of 1) BarcodeFrequencyTable: nRows = 602698, nCols = 2
+            values.V1     V1
+               <char>  <int>
+1: TGGAACAAGTCCTTCA-1 936742
+2: AAGCTTGGTCAAGTGC-1 872401
+3: CTCCAACTCTTAGTCT-1 808949
+4: GTATTGCAGACAAGTG-1 712390
+5: AGTCAAGAGGACCTTG-1 639520
+6: AATCTCAAGAGGAGGA-1 607098
+
+
+
+2026-06-17 16:45:03.588102 : (human_brain2_3k : 1 of 1) BarcodesMinMaxFrags, Class = data.frame
+(human_brain2_3k : 1 of 1) BarcodesMinMaxFrags: nRows = 3305, nCols = 1
+                  bc
+1 GGCATTGTCCTCCATA-1
+2 CTACCTCAGGGACCTC-1
+3 GTTACAGGTTGGATAT-1
+4 TGTCCTGGTCACGAAC-1
+5 GCTAAGAAGGTTACAC-1
+6 TGCATTAAGAGAGCCG-1
+
+
+
+2026-06-17 16:45:04.261942 : (human_brain2_3k : 1 of 1) Unique Chromosomes, Class = data.frame
+(human_brain2_3k : 1 of 1) Unique Chromosomes: nRows = 24, nCols = 1
+   chr
+1 chr1
+2 chr2
+3 chr3
+4 chr4
+5 chr5
+6 chr6
+
+
+2026-06-17 16:45:04.302748 : (human_brain2_3k : 1 of 1) Adding Chromosome 1 of 24, 1.316 mins elapsed.
+2026-06-17 16:45:04.325195 : (human_brain2_3k : 1 of 1) Adding Chromosome 2 of 24, 1.316 mins elapsed.
+2026-06-17 16:45:04.348536 : (human_brain2_3k : 1 of 1) Adding Chromosome 3 of 24, 1.316 mins elapsed.
+2026-06-17 16:45:04.36962 : (human_brain2_3k : 1 of 1) Adding Chromosome 4 of 24, 1.317 mins elapsed.
+2026-06-17 16:45:04.393091 : (human_brain2_3k : 1 of 1) Adding Chromosome 5 of 24, 1.317 mins elapsed.
+2026-06-17 16:45:04.41558 : (human_brain2_3k : 1 of 1) Adding Chromosome 6 of 24, 1.318 mins elapsed.
+2026-06-17 16:45:04.438554 : (human_brain2_3k : 1 of 1) Adding Chromosome 7 of 24, 1.318 mins elapsed.
+2026-06-17 16:45:04.460545 : (human_brain2_3k : 1 of 1) Adding Chromosome 8 of 24, 1.318 mins elapsed.
+2026-06-17 16:45:04.48282 : (human_brain2_3k : 1 of 1) Adding Chromosome 9 of 24, 1.319 mins elapsed.
+2026-06-17 16:45:04.503734 : (human_brain2_3k : 1 of 1) Adding Chromosome 10 of 24, 1.319 mins elapsed.
+2026-06-17 16:45:04.524411 : (human_brain2_3k : 1 of 1) Adding Chromosome 11 of 24, 1.319 mins elapsed.
+2026-06-17 16:45:04.546328 : (human_brain2_3k : 1 of 1) Adding Chromosome 12 of 24, 1.32 mins elapsed.
+2026-06-17 16:45:04.570186 : (human_brain2_3k : 1 of 1) Adding Chromosome 13 of 24, 1.32 mins elapsed.
+2026-06-17 16:45:04.593085 : (human_brain2_3k : 1 of 1) Adding Chromosome 14 of 24, 1.321 mins elapsed.
+2026-06-17 16:45:04.615677 : (human_brain2_3k : 1 of 1) Adding Chromosome 15 of 24, 1.321 mins elapsed.
+2026-06-17 16:45:04.640685 : (human_brain2_3k : 1 of 1) Adding Chromosome 16 of 24, 1.321 mins elapsed.
+
+2026-06-17 16:45:08.626763 : (human_brain2_3k : 1 of 1) .tmpToArrow Fragments0-Chr-(1 of 24)-chr1, Class = IRanges
+
+(human_brain2_3k : 1 of 1) .tmpToArrow Fragments0-Chr-(1 of 24)-chr1: length = 13904425
+IRanges object with 6 ranges and 1 metadata column:
+          start       end     width |                 RG
+      <integer> <integer> <integer> |              <Rle>
+  [1]  30719090  30719377       288 | AAACAGCCAAACAACA-1
+  [2]  30972509  30972641       133 | AAACAGCCAACAACAA-1
+  [3]   1137069   1137123        55 | AAACAGCCAACAGGTG-1
+  [4]   1407335   1407370        36 | AAACAGCCAACAGGTG-1
+  [5]  17193294  17193469       176 | AAACAGCCAACAGGTG-1
+  [6]   2385340   2385362        23 | AAACAGCCAACCTGGT-1
+
+
+
+2026-06-17 16:45:08.635376 : (human_brain2_3k : 1 of 1) .tmpToArrow Barcodes0-Chr-(1 of 24)-chr1, Class = data.frame
+(human_brain2_3k : 1 of 1) .tmpToArrow Barcodes0-Chr-(1 of 24)-chr1: nRows = 484665, nCols = 1
+                  bc
+1 AAACAGCCAAACAACA-1
+2 AAACAGCCAACAACAA-1
+3 AAACAGCCAACAGGTG-1
+4 AAACAGCCAACCTGGT-1
+5 AAACAGCCAACTAGGG-1
+6 AAACAGCCAAGATTCT-1
+
+
+
+2026-06-17 16:45:08.639171 : (human_brain2_3k : 1 of 1) .tmpToArrow bcPass0-Chr-(1 of 24)-chr1, Class = data.frame
+(human_brain2_3k : 1 of 1) .tmpToArrow bcPass0-Chr-(1 of 24)-chr1: nRows = 3305, nCols = 1
+                  bc
+1 GGCATTGTCCTCCATA-1
+2 CTACCTCAGGGACCTC-1
+3 GTTACAGGTTGGATAT-1
+4 TGTCCTGGTCACGAAC-1
+5 GCTAAGAAGGTTACAC-1
+6 TGCATTAAGAGAGCCG-1
+
+
+2026-06-17 16:45:09.104013 : (human_brain2_3k : 1 of 1) Adding Chromosome 17 of 24, 1.396 mins elapsed.
+2026-06-17 16:45:09.202357 : (human_brain2_3k : 1 of 1) Adding Chromosome 18 of 24, 1.397 mins elapsed.
+2026-06-17 16:45:09.330834 : (human_brain2_3k : 1 of 1) Adding Chromosome 19 of 24, 1.4 mins elapsed.
+2026-06-17 16:45:09.52582 : (human_brain2_3k : 1 of 1) Adding Chromosome 20 of 24, 1.403 mins elapsed.
+2026-06-17 16:45:10.043218 : (human_brain2_3k : 1 of 1) Adding Chromosome 21 of 24, 1.411 mins elapsed.
+2026-06-17 16:45:10.564795 : (human_brain2_3k : 1 of 1) Adding Chromosome 22 of 24, 1.42 mins elapsed.
+2026-06-17 16:45:10.882967 : (human_brain2_3k : 1 of 1) Adding Chromosome 23 of 24, 1.425 mins elapsed.
+2026-06-17 16:45:11.038403 : (human_brain2_3k : 1 of 1) Adding Chromosome 24 of 24, 1.428 mins elapsed.
+
+2026-06-17 16:45:13.473539 : (human_brain2_3k : 1 of 1) .tmpToArrow Fragments-Chr-(1 of 24)-chr1, Class = IRanges
+
+(human_brain2_3k : 1 of 1) .tmpToArrow Fragments-Chr-(1 of 24)-chr1: length = 7773674
+IRanges object with 6 ranges and 1 metadata column:
+          start       end     width |                 RG
+      <integer> <integer> <integer> |              <Rle>
+  [1]    586061    586103        43 | GGCATTGTCCTCCATA-1
+  [2]    833516    833562        47 | GGCATTGTCCTCCATA-1
+  [3]    834087    834205       119 | GGCATTGTCCTCCATA-1
+  [4]    834519    834989       471 | GGCATTGTCCTCCATA-1
+  [5]    877232    877442       211 | GGCATTGTCCTCCATA-1
+  [6]    937270    937347        78 | GGCATTGTCCTCCATA-1
+
+
+
+2026-06-17 16:45:13.48096 : (human_brain2_3k : 1 of 1) .tmpToArrow Barcodes-Chr-(1 of 24)-chr1, Class = data.frame
+(human_brain2_3k : 1 of 1) .tmpToArrow Barcodes-Chr-(1 of 24)-chr1: nRows = 3305, nCols = 1
+                  bc
+1 GGCATTGTCCTCCATA-1
+2 CTACCTCAGGGACCTC-1
+3 GTTACAGGTTGGATAT-1
+4 TGTCCTGGTCACGAAC-1
+5 GCTAAGAAGGTTACAC-1
+6 TGCATTAAGAGAGCCG-1
+
+
+2026-06-17 16:45:15.3912 : (human_brain2_3k : 1 of 1) Parallel Hdf5 Linkage Arrow File, 1.501 mins elapsed.
+2026-06-17 16:45:15.791963 : (human_brain2_3k : 1 of 1) Successful creation of Arrow File, 1.507 mins elapsed.
+2026-06-17 16:45:16.562567 : (human_brain2_3k : 1 of 1) Adding Fragment Summary, 1.52 mins elapsed.
+2026-06-17 16:45:29.694333 : (human_brain2_3k : 1 of 1) Plotting Fragment Size Distribution, 1.739 mins elapsed.
+2026-06-17 16:45:30.725789 : (human_brain2_3k : 1 of 1) Computing TSS Enrichment Scores, 1.756 mins elapsed.
+2026-06-17 16:45:39.051993 : (human_brain2_3k : 1 of 1) Computed TSS Scores!, 0.139 mins elapsed.
+2026-06-17 16:45:39.058963 : (human_brain2_3k : 1 of 1) CellStats : Number of Cells Pass Filter = 3020 , 1.895 mins elapsed.
+2026-06-17 16:45:39.060878 : (human_brain2_3k : 1 of 1) CellStats : Median Frags = 19686.5 , 1.895 mins elapsed.
+2026-06-17 16:45:39.062472 : (human_brain2_3k : 1 of 1) CellStats : Median TSS Enrichment = 10.094 , 1.895 mins elapsed.
+2026-06-17 16:45:39.062896 : (human_brain2_3k : 1 of 1) Plotting TSS Enrichment Scores, 1.895 mins elapsed.
+2026-06-17 16:45:39.453366 : (human_brain2_3k : 1 of 1) Adding Metadata to Fragments, 1.902 mins elapsed.
+2026-06-17 16:45:40.081172 : (human_brain2_3k : 1 of 1) Adding Additional Feature Counts!, 1.912 mins elapsed.
+2026-06-17 16:45:47.222969 : (human_brain2_3k : 1 of 1) Finished Adding Additional Feature Counts!, 2.031 mins elapsed.
+
+2026-06-17 16:45:47.223666 : (human_brain2_3k : 1 of 1) Metadata, Class = DFrame
+DataFrame with 3305 rows and 12 columns
+                  cellNames    nFrags nMonoFrags  nDiFrags nMultiFrags
+                <character> <numeric>  <numeric> <numeric>   <numeric>
+1    human_brain2_3k#GGCA..     99934      31639     44525       23770
+2    human_brain2_3k#CTAC..     99919      42705     37033       20181
+3    human_brain2_3k#GTTA..     99568      41316     38416       19836
+4    human_brain2_3k#TGTC..     99415      47460     33717       18238
+5    human_brain2_3k#GCTA..     99396      46868     34617       17911
+...                     ...       ...        ...       ...         ...
+3301 human_brain2_3k#GCGA..      1008        416       394         198
+3302 human_brain2_3k#TGGA..      1006        622       311          73
+3303 human_brain2_3k#CCTT..      1004        620       315          69
+3304 human_brain2_3k#TTAT..      1004        532       302         170
+3305 human_brain2_3k#CTAG..      1001        703       221          77
+     TSSEnrichment ReadsInTSS      Keep ReadsInPromoter PromoterRatio
+         <numeric>  <numeric> <numeric>       <numeric>     <numeric>
+1            5.715      14688         1           19172     0.0959233
+2           11.068      35329         1           37870     0.1895035
+3            6.360      16893         1           20626     0.1035775
+4           10.067      27228         1           30281     0.1522959
+5            7.360      18410         1           22313     0.1122429
+...            ...        ...       ...             ...           ...
+3301        13.321        370         1             402     0.1994048
+3302         6.139         62         1             100     0.0497018
+3303         6.756        174         1             246     0.1225100
+3304        14.230        309         1             325     0.1618526
+3305         2.156         49         0              85     0.0424575
+     ReadsInBlacklist BlacklistRatio
+            <numeric>      <numeric>
+1                 797     0.00398763
+2                 866     0.00433351
+3                 911     0.00457476
+4                1122     0.00564301
+5                 859     0.00432110
+...               ...            ...
+3301                6     0.00297619
+3302               14     0.00695825
+3303                8     0.00398406
+3304               10     0.00498008
+3305                9     0.00449550
+
+2026-06-17 16:45:47.316806 : (human_brain2_3k : 1 of 1) Removing Fragments from Filtered Cells, 2.033 mins elapsed.
+2026-06-17 16:45:47.320193 : (human_brain2_3k : 1 of 1) Creating Filtered Arrow File, 2.033 mins elapsed.
+
+2026-06-17 16:45:49.353319 : (human_brain2_3k : 1 of 1) .filterCellsFromArrow Fragments-Chr-(1 of 24)-chr1, Class = GRanges
+GRanges object with 7353115 ranges and 1 metadata column:
+            seqnames              ranges strand |                     RG
+               <Rle>           <IRanges>  <Rle> |                  <Rle>
+        [1]     chr1       586061-586103      * | human_brain2_3k#GGCA..
+        [2]     chr1       833516-833562      * | human_brain2_3k#GGCA..
+        [3]     chr1       834087-834205      * | human_brain2_3k#GGCA..
+        [4]     chr1       834519-834989      * | human_brain2_3k#GGCA..
+        [5]     chr1       877232-877442      * | human_brain2_3k#GGCA..
+        ...      ...                 ...    ... .                    ...
+  [7353111]     chr1 232301787-232302333      * | human_brain2_3k#TTAT..
+  [7353112]     chr1 234551321-234551351      * | human_brain2_3k#TTAT..
+  [7353113]     chr1 234609251-234609588      * | human_brain2_3k#TTAT..
+  [7353114]     chr1 239456852-239457045      * | human_brain2_3k#TTAT..
+  [7353115]     chr1 248197122-248197309      * | human_brain2_3k#TTAT..
+  -------
+  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+
+
+2026-06-17 16:45:49.364591 : (human_brain2_3k : 1 of 1) .filterCellsFromArrow Barcodes-Chr-(1 of 24)-chr1, Class = data.frame
+(human_brain2_3k : 1 of 1) .filterCellsFromArrow Barcodes-Chr-(1 of 24)-chr1: nRows = 3020, nCols = 1
+                                  bc
+1 human_brain2_3k#GGCATTGTCCTCCATA-1
+2 human_brain2_3k#CTACCTCAGGGACCTC-1
+3 human_brain2_3k#GTTACAGGTTGGATAT-1
+4 human_brain2_3k#TGTCCTGGTCACGAAC-1
+5 human_brain2_3k#GCTAAGAAGGTTACAC-1
+6 human_brain2_3k#TGCATTAAGAGAGCCG-1
+
+
+2026-06-17 16:46:23.863833 : (human_brain2_3k : 1 of 1) Finished Constructing Filtered Arrow File!, 2.642 mins elapsed.
+2026-06-17 16:46:23.923633 : (human_brain2_3k : 1 of 1) Adding TileMatrix!, 2.643 mins elapsed.
+
+2026-06-17 16:46:24.778799 : human_brain2_3k .addTileMat FeatureDF, Class = DFrame
+DataFrame with 6062095 rows and 3 columns
+           seqnames       idx     start
+        <character> <integer> <numeric>
+1              chr1         1         0
+2              chr1         2       500
+3              chr1         3      1000
+4              chr1         4      1500
+5              chr1         5      2000
+...             ...       ...       ...
+6062091        chrX    312078 156038500
+6062092        chrX    312079 156039000
+6062093        chrX    312080 156039500
+6062094        chrX    312081 156040000
+6062095        chrX    312082 156040500
+
+2026-06-17 16:46:31.098006 : Adding TileMatrix to human_brain2_3k for Chr (1 of 23)!, 0.119 mins elapsed.
+
+2026-06-17 16:46:32.272746 : NTiles_TileMatrix_1_chr1, Class = numeric
+
+NTiles_TileMatrix_1_chr1: length = 1
+  chr1 
+497913 
+
+
+
+2026-06-17 16:46:32.274037 : NCells_TileMatrix_1_chr1, Class = integer
+
+NCells_TileMatrix_1_chr1: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:46:32.27509 : MinTile_TileMatrix_1_chr1, Class = numeric
+
+MinTile_TileMatrix_1_chr1: length = 1
+[1] 21
+
+
+
+2026-06-17 16:46:32.281089 : MaxTile_TileMatrix_1_chr1, Class = numeric
+
+MaxTile_TileMatrix_1_chr1: length = 1
+[1] 497893
+
+
+
+2026-06-17 16:46:32.300746 : MinCell_TileMatrix_1_chr1, Class = integer
+
+MinCell_TileMatrix_1_chr1: length = 1
+[1] 1
+
+
+
+2026-06-17 16:46:32.301999 : MaxCell_TileMatrix_1_chr1, Class = integer
+
+MaxCell_TileMatrix_1_chr1: length = 1
+[1] 3020
+
+
+2026-06-17 16:46:39.237762 : Adding TileMatrix to human_brain2_3k for Chr (2 of 23)!, 0.255 mins elapsed.
+
+2026-06-17 16:46:39.776078 : NTiles_TileMatrix_2_chr2, Class = numeric
+
+NTiles_TileMatrix_2_chr2: length = 1
+  chr2 
+484388 
+
+
+
+2026-06-17 16:46:39.778057 : NCells_TileMatrix_2_chr2, Class = integer
+
+NCells_TileMatrix_2_chr2: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:46:39.779665 : MinTile_TileMatrix_2_chr2, Class = numeric
+
+MinTile_TileMatrix_2_chr2: length = 1
+[1] 21
+
+
+
+2026-06-17 16:46:39.785451 : MaxTile_TileMatrix_2_chr2, Class = numeric
+
+MaxTile_TileMatrix_2_chr2: length = 1
+[1] 484367
+
+
+
+2026-06-17 16:46:39.813659 : MinCell_TileMatrix_2_chr2, Class = integer
+
+MinCell_TileMatrix_2_chr2: length = 1
+[1] 1
+
+
+
+2026-06-17 16:46:39.815272 : MaxCell_TileMatrix_2_chr2, Class = integer
+
+MaxCell_TileMatrix_2_chr2: length = 1
+[1] 3020
+
+
+2026-06-17 16:46:44.808455 : Adding TileMatrix to human_brain2_3k for Chr (3 of 23)!, 0.348 mins elapsed.
+
+2026-06-17 16:46:45.042681 : NTiles_TileMatrix_3_chr3, Class = numeric
+
+NTiles_TileMatrix_3_chr3: length = 1
+  chr3 
+396592 
+
+
+
+2026-06-17 16:46:45.044696 : NCells_TileMatrix_3_chr3, Class = integer
+
+NCells_TileMatrix_3_chr3: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:46:45.046315 : MinTile_TileMatrix_3_chr3, Class = numeric
+
+MinTile_TileMatrix_3_chr3: length = 1
+[1] 21
+
+
+
+2026-06-17 16:46:45.051376 : MaxTile_TileMatrix_3_chr3, Class = numeric
+
+MaxTile_TileMatrix_3_chr3: length = 1
+[1] 396441
+
+
+
+2026-06-17 16:46:45.065855 : MinCell_TileMatrix_3_chr3, Class = integer
+
+MinCell_TileMatrix_3_chr3: length = 1
+[1] 1
+
+
+
+2026-06-17 16:46:45.067482 : MaxCell_TileMatrix_3_chr3, Class = integer
+
+MaxCell_TileMatrix_3_chr3: length = 1
+[1] 3020
+
+
+2026-06-17 16:46:49.335465 : Adding TileMatrix to human_brain2_3k for Chr (4 of 23)!, 0.423 mins elapsed.
+
+2026-06-17 16:46:49.549096 : NTiles_TileMatrix_4_chr4, Class = numeric
+
+NTiles_TileMatrix_4_chr4: length = 1
+  chr4 
+380430 
+
+
+
+2026-06-17 16:46:49.551047 : NCells_TileMatrix_4_chr4, Class = integer
+
+NCells_TileMatrix_4_chr4: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:46:49.55262 : MinTile_TileMatrix_4_chr4, Class = numeric
+
+MinTile_TileMatrix_4_chr4: length = 1
+[1] 21
+
+
+
+2026-06-17 16:46:49.556829 : MaxTile_TileMatrix_4_chr4, Class = numeric
+
+MaxTile_TileMatrix_4_chr4: length = 1
+[1] 380410
+
+
+
+2026-06-17 16:46:49.574107 : MinCell_TileMatrix_4_chr4, Class = integer
+
+MinCell_TileMatrix_4_chr4: length = 1
+[1] 1
+
+
+
+2026-06-17 16:46:49.575738 : MaxCell_TileMatrix_4_chr4, Class = integer
+
+MaxCell_TileMatrix_4_chr4: length = 1
+[1] 3020
+
+
+2026-06-17 16:46:53.160729 : Adding TileMatrix to human_brain2_3k for Chr (5 of 23)!, 0.487 mins elapsed.
+
+2026-06-17 16:46:53.37054 : NTiles_TileMatrix_5_chr5, Class = numeric
+
+NTiles_TileMatrix_5_chr5: length = 1
+  chr5 
+363077 
+
+
+
+2026-06-17 16:46:53.372458 : NCells_TileMatrix_5_chr5, Class = integer
+
+NCells_TileMatrix_5_chr5: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:46:53.374027 : MinTile_TileMatrix_5_chr5, Class = numeric
+
+MinTile_TileMatrix_5_chr5: length = 1
+[1] 21
+
+
+
+2026-06-17 16:46:53.378523 : MaxTile_TileMatrix_5_chr5, Class = numeric
+
+MaxTile_TileMatrix_5_chr5: length = 1
+[1] 362948
+
+
+
+2026-06-17 16:46:53.397903 : MinCell_TileMatrix_5_chr5, Class = integer
+
+MinCell_TileMatrix_5_chr5: length = 1
+[1] 1
+
+
+
+2026-06-17 16:46:53.399493 : MaxCell_TileMatrix_5_chr5, Class = integer
+
+MaxCell_TileMatrix_5_chr5: length = 1
+[1] 3020
+
+
+2026-06-17 16:46:57.058532 : Adding TileMatrix to human_brain2_3k for Chr (6 of 23)!, 0.552 mins elapsed.
+
+2026-06-17 16:46:57.274207 : NTiles_TileMatrix_6_chr6, Class = numeric
+
+NTiles_TileMatrix_6_chr6: length = 1
+  chr6 
+341612 
+
+
+
+2026-06-17 16:46:57.276192 : NCells_TileMatrix_6_chr6, Class = integer
+
+NCells_TileMatrix_6_chr6: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:46:57.277772 : MinTile_TileMatrix_6_chr6, Class = numeric
+
+MinTile_TileMatrix_6_chr6: length = 1
+[1] 128
+
+
+
+2026-06-17 16:46:57.282337 : MaxTile_TileMatrix_6_chr6, Class = numeric
+
+MaxTile_TileMatrix_6_chr6: length = 1
+[1] 341485
+
+
+
+2026-06-17 16:46:57.302476 : MinCell_TileMatrix_6_chr6, Class = integer
+
+MinCell_TileMatrix_6_chr6: length = 1
+[1] 1
+
+
+
+2026-06-17 16:46:57.304104 : MaxCell_TileMatrix_6_chr6, Class = integer
+
+MaxCell_TileMatrix_6_chr6: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:01.164198 : Adding TileMatrix to human_brain2_3k for Chr (7 of 23)!, 0.62 mins elapsed.
+
+2026-06-17 16:47:01.365825 : NTiles_TileMatrix_7_chr7, Class = numeric
+
+NTiles_TileMatrix_7_chr7: length = 1
+  chr7 
+318692 
+
+
+
+2026-06-17 16:47:01.367654 : NCells_TileMatrix_7_chr7, Class = integer
+
+NCells_TileMatrix_7_chr7: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:01.369233 : MinTile_TileMatrix_7_chr7, Class = numeric
+
+MinTile_TileMatrix_7_chr7: length = 1
+[1] 21
+
+
+
+2026-06-17 16:47:01.373625 : MaxTile_TileMatrix_7_chr7, Class = numeric
+
+MaxTile_TileMatrix_7_chr7: length = 1
+[1] 318672
+
+
+
+2026-06-17 16:47:01.391918 : MinCell_TileMatrix_7_chr7, Class = integer
+
+MinCell_TileMatrix_7_chr7: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:01.393528 : MaxCell_TileMatrix_7_chr7, Class = integer
+
+MaxCell_TileMatrix_7_chr7: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:05.130917 : Adding TileMatrix to human_brain2_3k for Chr (8 of 23)!, 0.687 mins elapsed.
+
+2026-06-17 16:47:05.319432 : NTiles_TileMatrix_8_chr8, Class = numeric
+
+NTiles_TileMatrix_8_chr8: length = 1
+  chr8 
+290278 
+
+
+
+2026-06-17 16:47:05.321313 : NCells_TileMatrix_8_chr8, Class = integer
+
+NCells_TileMatrix_8_chr8: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:05.322894 : MinTile_TileMatrix_8_chr8, Class = numeric
+
+MinTile_TileMatrix_8_chr8: length = 1
+[1] 151
+
+
+
+2026-06-17 16:47:05.326865 : MaxTile_TileMatrix_8_chr8, Class = numeric
+
+MaxTile_TileMatrix_8_chr8: length = 1
+[1] 290153
+
+
+
+2026-06-17 16:47:05.342811 : MinCell_TileMatrix_8_chr8, Class = integer
+
+MinCell_TileMatrix_8_chr8: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:05.344413 : MaxCell_TileMatrix_8_chr8, Class = integer
+
+MaxCell_TileMatrix_8_chr8: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:08.772375 : Adding TileMatrix to human_brain2_3k for Chr (9 of 23)!, 0.747 mins elapsed.
+
+2026-06-17 16:47:08.947668 : NTiles_TileMatrix_9_chr9, Class = numeric
+
+NTiles_TileMatrix_9_chr9: length = 1
+  chr9 
+276790 
+
+
+
+2026-06-17 16:47:08.949621 : NCells_TileMatrix_9_chr9, Class = integer
+
+NCells_TileMatrix_9_chr9: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:08.951188 : MinTile_TileMatrix_9_chr9, Class = numeric
+
+MinTile_TileMatrix_9_chr9: length = 1
+[1] 21
+
+
+
+2026-06-17 16:47:08.955217 : MaxTile_TileMatrix_9_chr9, Class = numeric
+
+MaxTile_TileMatrix_9_chr9: length = 1
+[1] 276621
+
+
+
+2026-06-17 16:47:08.96616 : MinCell_TileMatrix_9_chr9, Class = integer
+
+MinCell_TileMatrix_9_chr9: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:08.967768 : MaxCell_TileMatrix_9_chr9, Class = integer
+
+MaxCell_TileMatrix_9_chr9: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:12.377358 : Adding TileMatrix to human_brain2_3k for Chr (10 of 23)!, 0.807 mins elapsed.
+
+2026-06-17 16:47:12.569737 : NTiles_TileMatrix_10_chr10, Class = numeric
+
+NTiles_TileMatrix_10_chr10: length = 1
+ chr10 
+267595 
+
+
+
+2026-06-17 16:47:12.571688 : NCells_TileMatrix_10_chr10, Class = integer
+
+NCells_TileMatrix_10_chr10: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:12.573236 : MinTile_TileMatrix_10_chr10, Class = numeric
+
+MinTile_TileMatrix_10_chr10: length = 1
+[1] 21
+
+
+
+2026-06-17 16:47:12.57737 : MaxTile_TileMatrix_10_chr10, Class = numeric
+
+MaxTile_TileMatrix_10_chr10: length = 1
+[1] 267575
+
+
+
+2026-06-17 16:47:12.595071 : MinCell_TileMatrix_10_chr10, Class = integer
+
+MinCell_TileMatrix_10_chr10: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:12.596675 : MaxCell_TileMatrix_10_chr10, Class = integer
+
+MaxCell_TileMatrix_10_chr10: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:16.034869 : Adding TileMatrix to human_brain2_3k for Chr (11 of 23)!, 0.868 mins elapsed.
+
+2026-06-17 16:47:16.256898 : NTiles_TileMatrix_11_chr11, Class = numeric
+
+NTiles_TileMatrix_11_chr11: length = 1
+ chr11 
+270174 
+
+
+
+2026-06-17 16:47:16.258838 : NCells_TileMatrix_11_chr11, Class = integer
+
+NCells_TileMatrix_11_chr11: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:16.260367 : MinTile_TileMatrix_11_chr11, Class = numeric
+
+MinTile_TileMatrix_11_chr11: length = 1
+[1] 210
+
+
+
+2026-06-17 16:47:16.264886 : MaxTile_TileMatrix_11_chr11, Class = numeric
+
+MaxTile_TileMatrix_11_chr11: length = 1
+[1] 270154
+
+
+
+2026-06-17 16:47:16.284189 : MinCell_TileMatrix_11_chr11, Class = integer
+
+MinCell_TileMatrix_11_chr11: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:16.285745 : MaxCell_TileMatrix_11_chr11, Class = integer
+
+MaxCell_TileMatrix_11_chr11: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:20.109081 : Adding TileMatrix to human_brain2_3k for Chr (12 of 23)!, 0.936 mins elapsed.
+
+2026-06-17 16:47:20.284504 : NTiles_TileMatrix_12_chr12, Class = numeric
+
+NTiles_TileMatrix_12_chr12: length = 1
+ chr12 
+266551 
+
+
+
+2026-06-17 16:47:20.285764 : NCells_TileMatrix_12_chr12, Class = integer
+
+NCells_TileMatrix_12_chr12: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:20.286767 : MinTile_TileMatrix_12_chr12, Class = numeric
+
+MinTile_TileMatrix_12_chr12: length = 1
+[1] 21
+
+
+
+2026-06-17 16:47:20.290373 : MaxTile_TileMatrix_12_chr12, Class = numeric
+
+MaxTile_TileMatrix_12_chr12: length = 1
+[1] 266530
+
+
+
+2026-06-17 16:47:20.307168 : MinCell_TileMatrix_12_chr12, Class = integer
+
+MinCell_TileMatrix_12_chr12: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:20.30823 : MaxCell_TileMatrix_12_chr12, Class = integer
+
+MaxCell_TileMatrix_12_chr12: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:23.744951 : Adding TileMatrix to human_brain2_3k for Chr (13 of 23)!, 0.997 mins elapsed.
+
+2026-06-17 16:47:23.852175 : NTiles_TileMatrix_13_chr13, Class = numeric
+
+NTiles_TileMatrix_13_chr13: length = 1
+ chr13 
+228729 
+
+
+
+2026-06-17 16:47:23.853839 : NCells_TileMatrix_13_chr13, Class = integer
+
+NCells_TileMatrix_13_chr13: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:23.855381 : MinTile_TileMatrix_13_chr13, Class = numeric
+
+MinTile_TileMatrix_13_chr13: length = 1
+[1] 32763
+
+
+
+2026-06-17 16:47:23.858418 : MaxTile_TileMatrix_13_chr13, Class = numeric
+
+MaxTile_TileMatrix_13_chr13: length = 1
+[1] 228709
+
+
+
+2026-06-17 16:47:23.865537 : MinCell_TileMatrix_13_chr13, Class = integer
+
+MinCell_TileMatrix_13_chr13: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:23.867135 : MaxCell_TileMatrix_13_chr13, Class = integer
+
+MaxCell_TileMatrix_13_chr13: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:26.612432 : Adding TileMatrix to human_brain2_3k for Chr (14 of 23)!, 1.045 mins elapsed.
+
+2026-06-17 16:47:26.776707 : NTiles_TileMatrix_14_chr14, Class = numeric
+
+NTiles_TileMatrix_14_chr14: length = 1
+ chr14 
+214088 
+
+
+
+2026-06-17 16:47:26.778598 : NCells_TileMatrix_14_chr14, Class = integer
+
+NCells_TileMatrix_14_chr14: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:26.780185 : MinTile_TileMatrix_14_chr14, Class = numeric
+
+MinTile_TileMatrix_14_chr14: length = 1
+[1] 32047
+
+
+
+2026-06-17 16:47:26.783622 : MaxTile_TileMatrix_14_chr14, Class = numeric
+
+MaxTile_TileMatrix_14_chr14: length = 1
+[1] 213768
+
+
+
+2026-06-17 16:47:26.796421 : MinCell_TileMatrix_14_chr14, Class = integer
+
+MinCell_TileMatrix_14_chr14: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:26.798054 : MaxCell_TileMatrix_14_chr14, Class = integer
+
+MaxCell_TileMatrix_14_chr14: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:29.866976 : Adding TileMatrix to human_brain2_3k for Chr (15 of 23)!, 1.099 mins elapsed.
+
+2026-06-17 16:47:29.989641 : NTiles_TileMatrix_15_chr15, Class = numeric
+
+NTiles_TileMatrix_15_chr15: length = 1
+ chr15 
+203983 
+
+
+
+2026-06-17 16:47:29.991471 : NCells_TileMatrix_15_chr15, Class = integer
+
+NCells_TileMatrix_15_chr15: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:29.993048 : MinTile_TileMatrix_15_chr15, Class = numeric
+
+MinTile_TileMatrix_15_chr15: length = 1
+[1] 34019
+
+
+
+2026-06-17 16:47:29.996366 : MaxTile_TileMatrix_15_chr15, Class = numeric
+
+MaxTile_TileMatrix_15_chr15: length = 1
+[1] 203963
+
+
+
+2026-06-17 16:47:30.004234 : MinCell_TileMatrix_15_chr15, Class = integer
+
+MinCell_TileMatrix_15_chr15: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:30.005744 : MaxCell_TileMatrix_15_chr15, Class = integer
+
+MaxCell_TileMatrix_15_chr15: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:32.960378 : Adding TileMatrix to human_brain2_3k for Chr (16 of 23)!, 1.15 mins elapsed.
+
+2026-06-17 16:47:33.111788 : NTiles_TileMatrix_16_chr16, Class = numeric
+
+NTiles_TileMatrix_16_chr16: length = 1
+ chr16 
+180677 
+
+
+
+2026-06-17 16:47:33.113687 : NCells_TileMatrix_16_chr16, Class = integer
+
+NCells_TileMatrix_16_chr16: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:33.115268 : MinTile_TileMatrix_16_chr16, Class = numeric
+
+MinTile_TileMatrix_16_chr16: length = 1
+[1] 20
+
+
+
+2026-06-17 16:47:33.118845 : MaxTile_TileMatrix_16_chr16, Class = numeric
+
+MaxTile_TileMatrix_16_chr16: length = 1
+[1] 180453
+
+
+
+2026-06-17 16:47:33.132532 : MinCell_TileMatrix_16_chr16, Class = integer
+
+MinCell_TileMatrix_16_chr16: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:33.13415 : MaxCell_TileMatrix_16_chr16, Class = integer
+
+MaxCell_TileMatrix_16_chr16: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:36.147466 : Adding TileMatrix to human_brain2_3k for Chr (17 of 23)!, 1.204 mins elapsed.
+
+2026-06-17 16:47:36.359365 : NTiles_TileMatrix_17_chr17, Class = numeric
+
+NTiles_TileMatrix_17_chr17: length = 1
+ chr17 
+166515 
+
+
+
+2026-06-17 16:47:36.361328 : NCells_TileMatrix_17_chr17, Class = integer
+
+NCells_TileMatrix_17_chr17: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:36.362977 : MinTile_TileMatrix_17_chr17, Class = numeric
+
+MinTile_TileMatrix_17_chr17: length = 1
+[1] 227
+
+
+
+2026-06-17 16:47:36.367104 : MaxTile_TileMatrix_17_chr17, Class = numeric
+
+MaxTile_TileMatrix_17_chr17: length = 1
+[1] 166495
+
+
+
+2026-06-17 16:47:36.384264 : MinCell_TileMatrix_17_chr17, Class = integer
+
+MinCell_TileMatrix_17_chr17: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:36.385886 : MaxCell_TileMatrix_17_chr17, Class = integer
+
+MaxCell_TileMatrix_17_chr17: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:39.679316 : Adding TileMatrix to human_brain2_3k for Chr (18 of 23)!, 1.262 mins elapsed.
+
+2026-06-17 16:47:39.775509 : NTiles_TileMatrix_18_chr18, Class = numeric
+
+NTiles_TileMatrix_18_chr18: length = 1
+ chr18 
+160747 
+
+
+
+2026-06-17 16:47:39.777448 : NCells_TileMatrix_18_chr18, Class = integer
+
+NCells_TileMatrix_18_chr18: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:39.779028 : MinTile_TileMatrix_18_chr18, Class = numeric
+
+MinTile_TileMatrix_18_chr18: length = 1
+[1] 21
+
+
+
+2026-06-17 16:47:39.781881 : MaxTile_TileMatrix_18_chr18, Class = numeric
+
+MaxTile_TileMatrix_18_chr18: length = 1
+[1] 160527
+
+
+
+2026-06-17 16:47:39.787921 : MinCell_TileMatrix_18_chr18, Class = integer
+
+MinCell_TileMatrix_18_chr18: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:39.789446 : MaxCell_TileMatrix_18_chr18, Class = integer
+
+MaxCell_TileMatrix_18_chr18: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:42.386902 : Adding TileMatrix to human_brain2_3k for Chr (19 of 23)!, 1.307 mins elapsed.
+
+2026-06-17 16:47:42.604347 : NTiles_TileMatrix_19_chr19, Class = numeric
+
+NTiles_TileMatrix_19_chr19: length = 1
+ chr19 
+117236 
+
+
+
+2026-06-17 16:47:42.60589 : NCells_TileMatrix_19_chr19, Class = integer
+
+NCells_TileMatrix_19_chr19: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:42.607465 : MinTile_TileMatrix_19_chr19, Class = numeric
+
+MinTile_TileMatrix_19_chr19: length = 1
+[1] 123
+
+
+
+2026-06-17 16:47:42.611295 : MaxTile_TileMatrix_19_chr19, Class = numeric
+
+MaxTile_TileMatrix_19_chr19: length = 1
+[1] 117216
+
+
+
+2026-06-17 16:47:42.626327 : MinCell_TileMatrix_19_chr19, Class = integer
+
+MinCell_TileMatrix_19_chr19: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:42.627969 : MaxCell_TileMatrix_19_chr19, Class = integer
+
+MaxCell_TileMatrix_19_chr19: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:45.860773 : Adding TileMatrix to human_brain2_3k for Chr (20 of 23)!, 1.365 mins elapsed.
+
+2026-06-17 16:47:45.972471 : NTiles_TileMatrix_20_chr20, Class = numeric
+
+NTiles_TileMatrix_20_chr20: length = 1
+ chr20 
+128889 
+
+
+
+2026-06-17 16:47:45.97429 : NCells_TileMatrix_20_chr20, Class = integer
+
+NCells_TileMatrix_20_chr20: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:45.975887 : MinTile_TileMatrix_20_chr20, Class = numeric
+
+MinTile_TileMatrix_20_chr20: length = 1
+[1] 121
+
+
+
+2026-06-17 16:47:45.978945 : MaxTile_TileMatrix_20_chr20, Class = numeric
+
+MaxTile_TileMatrix_20_chr20: length = 1
+[1] 128669
+
+
+
+2026-06-17 16:47:45.986082 : MinCell_TileMatrix_20_chr20, Class = integer
+
+MinCell_TileMatrix_20_chr20: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:45.987695 : MaxCell_TileMatrix_20_chr20, Class = integer
+
+MaxCell_TileMatrix_20_chr20: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:48.713973 : Adding TileMatrix to human_brain2_3k for Chr (21 of 23)!, 1.413 mins elapsed.
+
+2026-06-17 16:47:48.775582 : NTiles_TileMatrix_21_chr21, Class = numeric
+
+NTiles_TileMatrix_21_chr21: length = 1
+chr21 
+93420 
+
+
+
+2026-06-17 16:47:48.777181 : NCells_TileMatrix_21_chr21, Class = integer
+
+NCells_TileMatrix_21_chr21: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:48.778742 : MinTile_TileMatrix_21_chr21, Class = numeric
+
+MinTile_TileMatrix_21_chr21: length = 1
+[1] 10062
+
+
+
+2026-06-17 16:47:48.780949 : MaxTile_TileMatrix_21_chr21, Class = numeric
+
+MaxTile_TileMatrix_21_chr21: length = 1
+[1] 93400
+
+
+
+2026-06-17 16:47:48.784665 : MinCell_TileMatrix_21_chr21, Class = integer
+
+MinCell_TileMatrix_21_chr21: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:48.786226 : MaxCell_TileMatrix_21_chr21, Class = integer
+
+MaxCell_TileMatrix_21_chr21: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:50.966888 : Adding TileMatrix to human_brain2_3k for Chr (22 of 23)!, 1.45 mins elapsed.
+
+2026-06-17 16:47:51.064024 : NTiles_TileMatrix_22_chr22, Class = numeric
+
+NTiles_TileMatrix_22_chr22: length = 1
+ chr22 
+101637 
+
+
+
+2026-06-17 16:47:51.065963 : NCells_TileMatrix_22_chr22, Class = integer
+
+NCells_TileMatrix_22_chr22: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:51.067534 : MinTile_TileMatrix_22_chr22, Class = numeric
+
+MinTile_TileMatrix_22_chr22: length = 1
+[1] 21053
+
+
+
+2026-06-17 16:47:51.070295 : MaxTile_TileMatrix_22_chr22, Class = numeric
+
+MaxTile_TileMatrix_22_chr22: length = 1
+[1] 101617
+
+
+
+2026-06-17 16:47:51.079008 : MinCell_TileMatrix_22_chr22, Class = integer
+
+MinCell_TileMatrix_22_chr22: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:51.080615 : MaxCell_TileMatrix_22_chr22, Class = integer
+
+MaxCell_TileMatrix_22_chr22: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:53.597947 : Adding TileMatrix to human_brain2_3k for Chr (23 of 23)!, 1.494 mins elapsed.
+
+2026-06-17 16:47:53.694809 : NTiles_TileMatrix_23_chrX, Class = numeric
+
+NTiles_TileMatrix_23_chrX: length = 1
+  chrX 
+312082 
+
+
+
+2026-06-17 16:47:53.69681 : NCells_TileMatrix_23_chrX, Class = integer
+
+NCells_TileMatrix_23_chrX: length = 1
+[1] 3020
+
+
+
+2026-06-17 16:47:53.698544 : MinTile_TileMatrix_23_chrX, Class = numeric
+
+MinTile_TileMatrix_23_chrX: length = 1
+[1] 21
+
+
+
+2026-06-17 16:47:53.701342 : MaxTile_TileMatrix_23_chrX, Class = numeric
+
+MaxTile_TileMatrix_23_chrX: length = 1
+[1] 312062
+
+
+
+2026-06-17 16:47:53.709788 : MinCell_TileMatrix_23_chrX, Class = integer
+
+MinCell_TileMatrix_23_chrX: length = 1
+[1] 1
+
+
+
+2026-06-17 16:47:53.711315 : MaxCell_TileMatrix_23_chrX, Class = integer
+
+MaxCell_TileMatrix_23_chrX: length = 1
+[1] 3020
+
+
+2026-06-17 16:47:56.948261 : (human_brain2_3k : 1 of 1) Finished Adding TileMatrix!, 4.193 mins elapsed.
+2026-06-17 16:47:56.949399 : (human_brain2_3k : 1 of 1) Adding GeneScoreMatrix!, 4.193 mins elapsed.
+
+
+2026-06-17 16:47:57.039473 : human_brain2_3k .addGeneScoreMat geneRegions, Class = GRanges
+GRanges object with 24919 ranges and 5 metadata columns:
+          seqnames              ranges strand |     gene_id       symbol
+             <Rle>           <IRanges>  <Rle> | <character>  <character>
+      [1]     chr1         64091-70008      + |       79501        OR4F5
+      [2]     chr1       139790-145339      - |      729737    LOC729737
+      [3]     chr1       585990-634010      - |   101928626 LOC101928626
+      [4]     chr1       812371-819837      + |      400728       FAM87B
+      [5]     chr1       820138-859446      + |      643837    LINC01128
+      ...      ...                 ...    ... .         ...          ...
+  [24915]     chrX 155258241-155269589      - |      116442       RAB39B
+  [24916]     chrX 155276211-155339657      - |        1193        CLIC2
+  [24917]     chrX 155375787-155381134      + |      474382       H2AFB1
+  [24918]     chrX 155377115-155383230      + |      474383         F8A2
+  [24919]     chrX 155490115-155674944      - |       55217        TMLHE
+          geneStart   geneEnd geneWeight
+          <integer> <integer>  <numeric>
+      [1]     69091     70008    4.40770
+      [2]    140339    139790    4.63365
+      [3]    629010    585990    1.41996
+      [4]    817371    819837    3.70079
+      [5]    825138    859446    1.51303
+      ...       ...       ...        ...
+  [24915] 155264589 155258241    2.77696
+  [24916] 155334657 155276211    1.31785
+  [24917] 155380787 155381134    4.77090
+  [24918] 155382115 155383230    4.29738
+  [24919] 155669944 155490115    1.10911
+  -------
+  seqinfo: 23 sequences from hg38 genome
+
+2026-06-17 16:47:57.177463 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (1 of 23)!, 0.001 mins elapsed.
+2026-06-17 16:47:57.202458 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (2 of 23)!, 0.001 mins elapsed.
+2026-06-17 16:47:57.228452 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (3 of 23)!, 0.002 mins elapsed.
+2026-06-17 16:47:57.255884 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (4 of 23)!, 0.002 mins elapsed.
+2026-06-17 16:47:57.282822 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (5 of 23)!, 0.002 mins elapsed.
+2026-06-17 16:47:57.30988 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (6 of 23)!, 0.003 mins elapsed.
+2026-06-17 16:47:57.33664 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (7 of 23)!, 0.003 mins elapsed.
+2026-06-17 16:47:57.364825 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (8 of 23)!, 0.004 mins elapsed.
+2026-06-17 16:47:57.393039 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (9 of 23)!, 0.004 mins elapsed.
+2026-06-17 16:47:57.421631 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (10 of 23)!, 0.005 mins elapsed.
+2026-06-17 16:47:57.451563 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (11 of 23)!, 0.005 mins elapsed.
+2026-06-17 16:47:57.482244 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (12 of 23)!, 0.006 mins elapsed.
+2026-06-17 16:47:57.514104 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (13 of 23)!, 0.006 mins elapsed.
+2026-06-17 16:47:57.546915 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (14 of 23)!, 0.007 mins elapsed.
+2026-06-17 16:47:57.578863 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (15 of 23)!, 0.007 mins elapsed.
+2026-06-17 16:47:57.611669 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (16 of 23)!, 0.008 mins elapsed.
+2026-06-17 16:48:01.304485 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (17 of 23)!, 0.069 mins elapsed.
+2026-06-17 16:48:01.448755 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (18 of 23)!, 0.072 mins elapsed.
+2026-06-17 16:48:01.524043 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (19 of 23)!, 0.073 mins elapsed.
+2026-06-17 16:48:01.649713 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (20 of 23)!, 0.075 mins elapsed.
+2026-06-17 16:48:01.896138 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (21 of 23)!, 0.079 mins elapsed.
+2026-06-17 16:48:01.996724 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (22 of 23)!, 0.081 mins elapsed.
+2026-06-17 16:48:02.042116 : Creating Temp GeneScoreMatrix for human_brain2_3k, Chr (23 of 23)!, 0.082 mins elapsed.
+
+2026-06-17 16:48:05.880687 : human_brain2_3k .addGeneScoreMat FeatureDF, Class = data.frame
+human_brain2_3k .addGeneScoreMat FeatureDF: nRows = 24919, nCols = 6
+  seqnames  start    end strand         name idx
+1     chr1  69091  70008      1        OR4F5   1
+2     chr1 140339 139790      2    LOC729737   2
+3     chr1 629010 585990      2 LOC101928626   3
+4     chr1 817371 819837      1       FAM87B   4
+5     chr1 825138 859446      1    LINC01128   5
+6     chr1 827522 826206      2    LINC00115   6
+
+
+2026-06-17 16:48:06.876462 : Adding GeneScoreMatrix to human_brain2_3k for Chr (1 of 23)!, 0.162 mins elapsed.
+2026-06-17 16:48:08.985705 : Adding GeneScoreMatrix to human_brain2_3k for Chr (2 of 23)!, 0.198 mins elapsed.
+2026-06-17 16:48:10.569753 : Adding GeneScoreMatrix to human_brain2_3k for Chr (3 of 23)!, 0.224 mins elapsed.
+2026-06-17 16:48:12.556914 : Adding GeneScoreMatrix to human_brain2_3k for Chr (4 of 23)!, 0.257 mins elapsed.
+2026-06-17 16:48:13.874678 : Adding GeneScoreMatrix to human_brain2_3k for Chr (5 of 23)!, 0.279 mins elapsed.
+2026-06-17 16:48:15.223739 : Adding GeneScoreMatrix to human_brain2_3k for Chr (6 of 23)!, 0.301 mins elapsed.
+2026-06-17 16:48:17.179934 : Adding GeneScoreMatrix to human_brain2_3k for Chr (7 of 23)!, 0.334 mins elapsed.
+2026-06-17 16:48:18.511392 : Adding GeneScoreMatrix to human_brain2_3k for Chr (8 of 23)!, 0.356 mins elapsed.
+2026-06-17 16:48:19.713748 : Adding GeneScoreMatrix to human_brain2_3k for Chr (9 of 23)!, 0.376 mins elapsed.
+2026-06-17 16:48:21.510189 : Adding GeneScoreMatrix to human_brain2_3k for Chr (10 of 23)!, 0.406 mins elapsed.
+2026-06-17 16:48:22.753118 : Adding GeneScoreMatrix to human_brain2_3k for Chr (11 of 23)!, 0.427 mins elapsed.
+2026-06-17 16:48:24.294832 : Adding GeneScoreMatrix to human_brain2_3k for Chr (12 of 23)!, 0.453 mins elapsed.
+2026-06-17 16:48:26.168441 : Adding GeneScoreMatrix to human_brain2_3k for Chr (13 of 23)!, 0.484 mins elapsed.
+2026-06-17 16:48:27.104564 : Adding GeneScoreMatrix to human_brain2_3k for Chr (14 of 23)!, 0.499 mins elapsed.
+2026-06-17 16:48:28.214872 : Adding GeneScoreMatrix to human_brain2_3k for Chr (15 of 23)!, 0.518 mins elapsed.
+2026-06-17 16:48:29.80079 : Adding GeneScoreMatrix to human_brain2_3k for Chr (16 of 23)!, 0.544 mins elapsed.
+2026-06-17 16:48:31.030562 : Adding GeneScoreMatrix to human_brain2_3k for Chr (17 of 23)!, 0.565 mins elapsed.
+2026-06-17 16:48:32.512702 : Adding GeneScoreMatrix to human_brain2_3k for Chr (18 of 23)!, 0.59 mins elapsed.
+2026-06-17 16:48:33.920458 : Adding GeneScoreMatrix to human_brain2_3k for Chr (19 of 23)!, 0.613 mins elapsed.
+2026-06-17 16:48:35.435057 : Adding GeneScoreMatrix to human_brain2_3k for Chr (20 of 23)!, 0.638 mins elapsed.
+2026-06-17 16:48:36.436835 : Adding GeneScoreMatrix to human_brain2_3k for Chr (21 of 23)!, 0.655 mins elapsed.
+2026-06-17 16:48:37.809137 : Adding GeneScoreMatrix to human_brain2_3k for Chr (22 of 23)!, 0.678 mins elapsed.
+2026-06-17 16:48:38.741771 : Adding GeneScoreMatrix to human_brain2_3k for Chr (23 of 23)!, 0.693 mins elapsed.
+2026-06-17 16:48:40.869193 : (human_brain2_3k : 1 of 1) Finished Adding GeneScoreMatrix!, 4.925 mins elapsed.
+2026-06-17 16:48:40.87041 : (human_brain2_3k : 1 of 1) Finished Creating Arrow File, 4.925 mins elapsed.
+
+------- Completed
+
+End Time : 2026-06-17 16:48:40.877686
+Elapsed Time Minutes = 4.92661690314611
+Elapsed Time Hours = 0.0821103531784481
+
+-------
+
+
+
