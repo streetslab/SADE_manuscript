@@ -13,7 +13,7 @@ for sample in $sample_list; do
 for ws in $windowsize_list; do
 	echo $ws
 
-	bash /home/syyang/GitRepo/atac/auto_process.sh -f /mnt/hdd_bob/syy/adipose/atac/defnd_seq/${sample}/fragments.tsv.gz \
+	bash /home/syyang/GitRepo/atac/sade.sh -f /mnt/hdd_bob/syy/adipose/atac/defnd_seq/${sample}/fragments.tsv.gz \
 		-o ~/adipose_ln/atac/res/${sample}_F \
 		-w ${ws} \
 		-g 'hg38'

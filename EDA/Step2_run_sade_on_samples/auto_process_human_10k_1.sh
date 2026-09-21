@@ -8,7 +8,7 @@ windowsize_list='3000'
 for ws in $windowsize_list; do
 	echo $ws
 
-	bash /home/syyang/GitRepo/atac/auto_process.sh -f /mnt/hdd_bob/syy/adipose/atac/cr_goldstand/${sample}/10k_pbmc_ATACv1p1_nextgem_Chromium_X_fragments.tsv.gz \
+	bash /home/syyang/GitRepo/atac/sade.sh -f /mnt/hdd_bob/syy/adipose/atac/cr_goldstand/${sample}/10k_pbmc_ATACv1p1_nextgem_Chromium_X_fragments.tsv.gz \
 		-o ~/adipose_ln/atac/res/${sample}_WS${ws} \
 		-w ${ws} \
 		-c 'chr1' \
