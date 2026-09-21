@@ -10,7 +10,7 @@ for ws in $windowsize_list; do
 
 	if [[ ! -f ~/adipose_ln/atac/res/_${sample}_WS${ws}/entropy_cutoff.csv ]]; then
 
-	bash /home/syyang/GitRepo/atac/sade.sh -f /mnt/hdd_bob/syy/adipose/atac/protocol_benchmark/cr_results/atac/${sample}/outs/fragments.tsv.gz \
+	bash /home/syyang/GitRepo/SADE/sade.sh -f /mnt/hdd_bob/syy/adipose/atac/protocol_benchmark/cr_results/atac/${sample}/outs/fragments.tsv.gz \
 		-o ~/adipose_ln/atac/res/_${sample}_WS${ws} \
 		-w ${ws} \
 		-c 'chr1' \
