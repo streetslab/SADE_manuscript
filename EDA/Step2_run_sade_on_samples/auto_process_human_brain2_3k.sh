@@ -14,18 +14,3 @@ for ws in $windowsize_list; do
 		-g 'hg38'
 done
 
-
-for ws in $windowsize_list; do
-	echo $ws
-	bash /home/syyang/GitRepo/SADE/compare_cellcalling.sh -d ~/adipose_ln/atac/res/${sample}_WS${ws} \
-		-b /mnt/hdd_bob/syy/adipose/atac/cr_goldstand/${sample}/filtered_feature_bc_matrix/barcodes.tsv 
-done
-
-
-#for ws in $windowsize_list; do
-#	echo $ws
-#	bash /home/syyang/GitRepo/SADE/compare_peakcalling.sh -d ~/adipose_ln/atac/res/${sample}_WS${ws} \
-#		 -s /mnt/hdd_bob/syy/adipose/atac/cr_goldstand/${sample}/atac_possorted_bam.bam \
-#		 -g 'hg38'  
-#done
-
