@@ -5,6 +5,15 @@ genome_name='hg38'
 peak_set_list="lost_peaks newly_discovered_peaks recovered_peaks"
 
 
+# Rawpeaks
+peak_dir="${res_dir}/Rawpeaks"
+
+annotation_subdir="${peak_dir}/annotation"
+mkdir -p $annotation_subdir
+annotatePeaks.pl "${peak_dir}/peaks.bed" $genome_name \
+    -annStats $annotation_subdir/"annStats_${f}.txt" > "$annotation_subdir/annotated_peaks.bed"
+
+
 # SADEpeaks
 peak_dir="${res_dir}/Entropy_cells_peaks"
 
@@ -30,8 +39,16 @@ annotatePeaks.pl "${peak_dir}/peaks.bed" $genome_name \
     -annStats $annotation_subdir/"annStats_${f}.txt" > "$annotation_subdir/annotated_peaks.bed"
 
 
+# Commonpeaks 
+peak_dir="${res_dir}/Commoncells_peaks"
+
+annotation_subdir="${peak_dir}/annotation"
+mkdir -p $annotation_subdir
+annotatePeaks.pl "${peak_dir}/peaks.bed" $genome_name \
+    -annStats $annotation_subdir/"annStats_${f}.txt" > "$annotation_subdir/annotated_peaks.bed"
 
 
+## peak comparison directories
 
 # CRpeak vs Rawpeaks 
 cmp_peak_dir="${res_dir}/FRIPpeaks_vs_Rawpeaks"

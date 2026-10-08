@@ -35,8 +35,24 @@ bedtools intersect -wao -a ${peak_dir}/peaks.bed \
     -b $cCREs_annotation_file > ${cCRE_subdir}/cCRE_annot_peaks.bed  #intersection
 
 
+# Commonpeaks 
+peak_dir="${res_dir}/Commoncells_peaks"
+
+cCRE_subdir="${peak_dir}/cCRE_annotation"
+mkdir -p $cCRE_subdir
+bedtools intersect -wao -a ${peak_dir}/peaks.bed \
+    -b $cCREs_annotation_file > ${cCRE_subdir}/cCRE_annot_peaks.bed  #intersection
+
+# Rawpeaks
+peak_dir="${res_dir}/Rawpeaks"
+
+cCRE_subdir="${peak_dir}/cCRE_annotation"
+mkdir -p $cCRE_subdir
+bedtools intersect -wao -a ${peak_dir}/peaks.bed \
+    -b $cCREs_annotation_file > ${cCRE_subdir}/cCRE_annot_peaks.bed  #intersection
 
 
+## peaks comparison directories
 
 # CRpeak vs Rawpeaks 
 cmp_peak_dir=${res_dir}/FRIPpeaks_vs_Rawpeaks
