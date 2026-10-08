@@ -6,6 +6,38 @@ res_dir='/mnt/hdd_bob/syy/adipose/atac/res/VIB_10xmultiome_2_WS3000F/_cell_calli
 
 peak_set_list="lost_peaks newly_discovered_peaks recovered_peaks"
 
+
+
+
+# SADEpeaks
+peak_dir="${res_dir}/Entropy_cells_peaks"
+
+cCRE_subdir="${peak_dir}/cCRE_annotation"
+mkdir -p $cCRE_subdir
+bedtools intersect -wao -a ${peak_dir}/peaks.bed \
+    -b $cCREs_annotation_file > ${cCRE_subdir}/cCRE_annot_peaks.bed  #intersection
+
+
+# CRpeaks
+peak_dir="${res_dir}/FRIP_cells_peaks"
+
+cCRE_subdir="${peak_dir}/cCRE_annotation"
+mkdir -p $cCRE_subdir
+bedtools intersect -wao -a ${peak_dir}/peaks.bed \
+    -b $cCREs_annotation_file > ${cCRE_subdir}/cCRE_annot_peaks.bed  #intersection
+
+# TSSpeaks
+peak_dir="${res_dir}/TSS_cells_peaks"
+
+cCRE_subdir="${peak_dir}/cCRE_annotation"
+mkdir -p $cCRE_subdir
+bedtools intersect -wao -a ${peak_dir}/peaks.bed \
+    -b $cCREs_annotation_file > ${cCRE_subdir}/cCRE_annot_peaks.bed  #intersection
+
+
+
+
+
 # CRpeak vs Rawpeaks 
 cmp_peak_dir=${res_dir}/FRIPpeaks_vs_Rawpeaks
 
