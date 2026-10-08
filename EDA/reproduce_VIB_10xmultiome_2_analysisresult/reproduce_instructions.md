@@ -65,13 +65,22 @@ bash cmp_peak_sets.sh
 ```
 This finds intersections and unique peaks between peak-set pairs.
 
-### 3.1 Annotate peak sets  
+### 3.2 Annotate peak sets with simple annotations
 Run:
 ```bash
 cd VIB_10xultiome_2_WS3000F/_cell_calling_comparison
 bash  annotate_peaks.sh
 ```
 This annotates all the peaks.
+
+
+### 3.3 Annotate peak sets with cCRE annotations 
+Run:
+```bash
+cd VIB_10xultiome_2_WS3000F/_cell_calling_comparison
+bash  annotate_cCREs.sh
+```
+This annotates all the peaks on cCREs (by intersecting them with known cis-regulatory element regions)
 
 
 ## 4) Prepare RNA modality info

@@ -1,23 +1,42 @@
 #!/bin/bash
 
 res_dir='/mnt/hdd_bob/syy/adipose/atac/res/VIB_10xmultiome_2_WS3000F/_cell_calling_comparison'
-
-annotate_peak_script_dir="$(dirname $res_dir)/scripts"
-
-
-bash ${annotate_peak_script_dir}/annotate_peaks.sh -d $res_dir/Rawpeaks -g hg38 
-bash ${annotate_peak_script_dir}/annotate_peaks.sh -d $res_dir/FRIP_cells_peaks -g hg38 
-bash ${annotate_peak_script_dir}/annotate_peaks.sh -d $res_dir/TSS_cells_peaks -g hg38 
-bash ${annotate_peak_script_dir}/annotate_peaks.sh -d $res_dir/Entropy_cells_peaks -g hg38
+genome_name='hg38'
+peak_set_list="lost_peaks newly_discovered_peaks recovered_peaks"
 
 
-bash ${annotate_peak_script_dir}/annotate_peaks.sh -d $res_dir/Entropypeaks_vs_Rawpeaks -g hg38 
-bash ${annotate_peak_script_dir}/annotate_peaks.sh -d $res_dir/FRIPpeaks_vs_Rawpeaks  -g hg38 
-bash ${annotate_peak_script_dir}/annotate_peaks.sh -d $res_dir/TSSpeaks_vs_Rawpeaks -g hg38 
+# CRpeak vs Rawpeaks 
+cmp_peak_dir="${res_dir}/FRIPpeaks_vs_Rawpeaks"
+
+annotation_subdir="${cmp_peak_dir}/annotation"
+mkdir -p $annotation_subdir
+for f in $peak_set_list; do
+    annotatePeaks.pl "${cmp_peak_dir}/${f}.bed" $genome_name \
+        -annStats $annotation_subdir/"annStats_${f}.txt" > "$annotation_subdir/annotated_${f}.bed"
+    echo "${f}.bed"
+done
 
 
-bash ${annotate_peak_script_dir}/annotate_peaks.sh -d $res_dir/Commoncells_peaks -g hg38
-bash ${annotate_peak_script_dir}/annotate_peaks.sh -d $res_dir/Commonpeaks_vs_Rawpeaks -g hg38
 
+# SADEpeaks vs Rawpeaks 
+cmp_peak_dir="${res_dir}/Entropypeaks_vs_Rawpeaks"
 
-# bash ${annotate_peak_script_dir}/annotate_peaks.sh -d $res_dir/Entropypeaks_vs_TSSpeaks -g hg38
+annotation_subdir="${cmp_peak_dir}/annotation"
+mkdir -p $annotation_subdir
+for f in $peak_set_list; do
+    annotatePeaks.pl "${cmp_peak_dir}/${f}.bed" $genome_name \
+        -annStats $annotation_subdir/"annStats_${f}.txt" > "$annotation_subdir/annotated_${f}.bed"
+    echo "${f}.bed"
+done
+
+# TSSPeaks vs Rawpeaks 
+cmp_peak_dir="${res_dir}/TSSpeaks_vs_Rawpeaks"
+annotation_subdir="${cmp_peak_dir}/annotation"
+mkdir -p $annotation_subdir
+for f in $peak_set_list; do
+    annotatePeaks.pl "${cmp_peak_dir}/${f}.bed" $genome_name \
+        -annStats $annotation_subdir/"annStats_${f}.txt" > "$annotation_subdir/annotated_${f}.bed"
+    echo "${f}.bed"
+done
+
+#
