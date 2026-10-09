@@ -84,4 +84,48 @@ for f in $peak_set_list; do
     echo "${f}.bed"
 done
 
-#
+# CommonPeaks vs Rawpeaks 
+cmp_peak_dir="${res_dir}/Commonpeaks_vs_Rawpeaks"
+annotation_subdir="${cmp_peak_dir}/annotation"
+mkdir -p $annotation_subdir
+for f in $peak_set_list; do
+    annotatePeaks.pl "${cmp_peak_dir}/${f}.bed" $genome_name \
+        -annStats $annotation_subdir/"annStats_${f}.txt" > "$annotation_subdir/annotated_${f}.bed"
+    echo "${f}.bed"
+done
+
+
+
+# SADEpeaks vs CommonPeaks 
+cmp_peak_dir="${res_dir}/Entropypeaks_vs_Commonpeaks"
+
+annotation_subdir="${cmp_peak_dir}/annotation"
+mkdir -p $annotation_subdir
+for f in $peak_set_list; do
+    annotatePeaks.pl "${cmp_peak_dir}/${f}.bed" $genome_name \
+        -annStats $annotation_subdir/"annStats_${f}.txt" > "$annotation_subdir/annotated_${f}.bed"
+    echo "${f}.bed"
+done
+
+
+# CRpeaks vs CommonPeaks 
+cmp_peak_dir="${res_dir}/FRIPpeaks_vs_Commonpeaks"
+
+annotation_subdir="${cmp_peak_dir}/annotation"
+mkdir -p $annotation_subdir
+for f in $peak_set_list; do
+    annotatePeaks.pl "${cmp_peak_dir}/${f}.bed" $genome_name \
+        -annStats $annotation_subdir/"annStats_${f}.txt" > "$annotation_subdir/annotated_${f}.bed"
+    echo "${f}.bed"
+done
+
+# TSSpeaks vs CommonPeaks 
+cmp_peak_dir="${res_dir}/TSSpeaks_vs_Commonpeaks"
+
+annotation_subdir="${cmp_peak_dir}/annotation"
+mkdir -p $annotation_subdir
+for f in $peak_set_list; do
+    annotatePeaks.pl "${cmp_peak_dir}/${f}.bed" $genome_name \
+        -annStats $annotation_subdir/"annStats_${f}.txt" > "$annotation_subdir/annotated_${f}.bed"
+    echo "${f}.bed"
+done
